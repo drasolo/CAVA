@@ -1,0 +1,66 @@
+# === IDEs ===
+.idea/
+.vscode/
+
+# === OS files ===
+.DS_Store
+Thumbs.db
+
+# === Archives & logs ===
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+*.log
+
+# === Images, videos, and datasets ===
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.tiff
+*.mp4
+*.avi
+*.mov
+*.npy
+*.npz
+
+# === Evaluation outputs ===
+evaluare/fisiere_solutie/
+solomon_dragos_tema1_final/cod/evaluare/fisiere_solutie/
+solomon_dragos_tema1_final/cod/evaluare/fisiere_solutie/output/
+solomon_dragos_tema1_final/cod/evaluare/fisiere_solutie/334_Solomon_Dragos/
+solomon_dragos_tema1_final/cod/evaluare/fisiere_solutie/results/
+
+# === Large folders (training / testing / datasets) ===
+solomon_dragos_tema1_final/antrenare/
+solomon_dragos_tema1_final/cod/testare/
+solomon_dragos_tema1_final/cod/templates/
+solomon_dragos_tema1_final/cod/evaluare/imagini_auxiliare/
+Tema_2/antrenare/
+Tema_2/validare/
+Tema_2/evaluare/fisiere_solutie/
+lab/Laborator_1/colectiiImagini/
+lab/Laborator_2+3/CIFAR-10/
+lab/Laborator_6/data/
+lab/Laborator_8/frames/
+lab/Laborator_9+10/Tema 3_2 Solutie/data/data/
+
+# === Generated outputs ===
+output/
+evaluare/
+solomon_dragos_tema1_final/cod/output/
+
+# === Temporary / local only ===
+.env
+*.bak
+*.tmp
+*.swp
+*.swo
+
+# === Jupyter checkpoints ===
+.ipynb_checkpoints/
+
+
+

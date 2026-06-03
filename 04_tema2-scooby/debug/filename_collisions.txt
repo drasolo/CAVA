@@ -1,0 +1,304 @@
+Total images indexed: 4000
+Unique basenames: 1000
+Colliding basenames: 1000
+
+0001.jpg
+  - daphne/0001.jpg
+  - fred/0001.jpg
+  - shaggy/0001.jpg
+  - velma/0001.jpg
+
+0002.jpg
+  - daphne/0002.jpg
+  - fred/0002.jpg
+  - shaggy/0002.jpg
+  - velma/0002.jpg
+
+0003.jpg
+  - daphne/0003.jpg
+  - fred/0003.jpg
+  - shaggy/0003.jpg
+  - velma/0003.jpg
+
+0004.jpg
+  - daphne/0004.jpg
+  - fred/0004.jpg
+  - shaggy/0004.jpg
+  - velma/0004.jpg
+
+0005.jpg
+  - daphne/0005.jpg
+  - fred/0005.jpg
+  - shaggy/0005.jpg
+  - velma/0005.jpg
+
+0006.jpg
+  - daphne/0006.jpg
+  - fred/0006.jpg
+  - shaggy/0006.jpg
+  - velma/0006.jpg
+
+0007.jpg
+  - daphne/0007.jpg
+  - fred/0007.jpg
+  - shaggy/0007.jpg
+  - velma/0007.jpg
+
+0008.jpg
+  - daphne/0008.jpg
+  - fred/0008.jpg
+  - shaggy/0008.jpg
+  - velma/0008.jpg
+
+0009.jpg
+  - daphne/0009.jpg
+  - fred/0009.jpg
+  - shaggy/0009.jpg
+  - velma/0009.jpg
+
+0010.jpg
+  - daphne/0010.jpg
+  - fred/0010.jpg
+  - shaggy/0010.jpg
+  - velma/0010.jpg
+
+0011.jpg
+  - daphne/0011.jpg
+  - fred/0011.jpg
+  - shaggy/0011.jpg
+  - velma/0011.jpg
+
+0012.jpg
+  - daphne/0012.jpg
+  - fred/0012.jpg
+  - shaggy/0012.jpg
+  - velma/0012.jpg
+
+0013.jpg
+  - daphne/0013.jpg
+  - fred/0013.jpg
+  - shaggy/0013.jpg
+  - velma/0013.jpg
+
+0014.jpg
+  - daphne/0014.jpg
+  - fred/0014.jpg
+  - shaggy/0014.jpg
+  - velma/0014.jpg
+
+0015.jpg
+  - daphne/0015.jpg
+  - fred/0015.jpg
+  - shaggy/0015.jpg
+  - velma/0015.jpg
+
+0016.jpg
+  - daphne/0016.jpg
+  - fred/0016.jpg
+  - shaggy/0016.jpg
+  - velma/0016.jpg
+
+0017.jpg
+  - daphne/0017.jpg
+  - fred/0017.jpg
+  - shaggy/0017.jpg
+  - velma/0017.jpg
+
+0018.jpg
+  - daphne/0018.jpg
+  - fred/0018.jpg
+  - shaggy/0018.jpg
+  - velma/0018.jpg
+
+0019.jpg
+  - daphne/0019.jpg
+  - fred/0019.jpg
+  - shaggy/0019.jpg
+  - velma/0019.jpg
+
+0020.jpg
+  - daphne/0020.jpg
+  - fred/0020.jpg
+  - shaggy/0020.jpg
+  - velma/0020.jpg
+
+0021.jpg
+  - daphne/0021.jpg
+  - fred/0021.jpg
+  - shaggy/0021.jpg
+  - velma/0021.jpg
+
+0022.jpg
+  - daphne/0022.jpg
+  - fred/0022.jpg
+  - shaggy/0022.jpg
+  - velma/0022.jpg
+
+0023.jpg
+  - daphne/0023.jpg
+  - fred/0023.jpg
+  - shaggy/0023.jpg
+  - velma/0023.jpg
+
+0024.jpg
+  - daphne/0024.jpg
+  - fred/0024.jpg
+  - shaggy/0024.jpg
+  - velma/0024.jpg
+
+0025.jpg
+  - daphne/0025.jpg
+  - fred/0025.jpg
+  - shaggy/0025.jpg
+  - velma/0025.jpg
+
+0026.jpg
+  - daphne/0026.jpg
+  - fred/0026.jpg
+  - shaggy/0026.jpg
+  - velma/0026.jpg
+
+0027.jpg
+  - daphne/0027.jpg
+  - fred/0027.jpg
+  - shaggy/0027.jpg
+  - velma/0027.jpg
+
+0028.jpg
+  - daphne/0028.jpg
+  - fred/0028.jpg
+  - shaggy/0028.jpg
+  - velma/0028.jpg
+
+0029.jpg
+  - daphne/0029.jpg
+  - fred/0029.jpg
+  - shaggy/0029.jpg
+  - velma/0029.jpg
+
+0030.jpg
+  - daphne/0030.jpg
+  - fred/0030.jpg
+  - shaggy/0030.jpg
+  - velma/0030.jpg
+
+0031.jpg
+  - daphne/0031.jpg
+  - fred/0031.jpg
+  - shaggy/0031.jpg
+  - velma/0031.jpg
+
+0032.jpg
+  - daphne/0032.jpg
+  - fred/0032.jpg
+  - shaggy/0032.jpg
+  - velma/0032.jpg
+
+0033.jpg
+  - daphne/0033.jpg
+  - fred/0033.jpg
+  - shaggy/0033.jpg
+  - velma/0033.jpg
+
+0034.jpg
+  - daphne/0034.jpg
+  - fred/0034.jpg
+  - shaggy/0034.jpg
+  - velma/0034.jpg
+
+0035.jpg
+  - daphne/0035.jpg
+  - fred/0035.jpg
+  - shaggy/0035.jpg
+  - velma/0035.jpg
+
+0036.jpg
+  - daphne/0036.jpg
+  - fred/0036.jpg
+  - shaggy/0036.jpg
+  - velma/0036.jpg
+
+0037.jpg
+  - daphne/0037.jpg
+  - fred/0037.jpg
+  - shaggy/0037.jpg
+  - velma/0037.jpg
+
+0038.jpg
+  - daphne/0038.jpg
+  - fred/0038.jpg
+  - shaggy/0038.jpg
+  - velma/0038.jpg
+
+0039.jpg
+  - daphne/0039.jpg
+  - fred/0039.jpg
+  - shaggy/0039.jpg
+  - velma/0039.jpg
+
+0040.jpg
+  - daphne/0040.jpg
+  - fred/0040.jpg
+  - shaggy/0040.jpg
+  - velma/0040.jpg
+
+0041.jpg
+  - daphne/0041.jpg
+  - fred/0041.jpg
+  - shaggy/0041.jpg
+  - velma/0041.jpg
+
+0042.jpg
+  - daphne/0042.jpg
+  - fred/0042.jpg
+  - shaggy/0042.jpg
+  - velma/0042.jpg
+
+0043.jpg
+  - daphne/0043.jpg
+  - fred/0043.jpg
+  - shaggy/0043.jpg
+  - velma/0043.jpg
+
+0044.jpg
+  - daphne/0044.jpg
+  - fred/0044.jpg
+  - shaggy/0044.jpg
+  - velma/0044.jpg
+
+0045.jpg
+  - daphne/0045.jpg
+  - fred/0045.jpg
+  - shaggy/0045.jpg
+  - velma/0045.jpg
+
+0046.jpg
+  - daphne/0046.jpg
+  - fred/0046.jpg
+  - shaggy/0046.jpg
+  - velma/0046.jpg
+
+0047.jpg
+  - daphne/0047.jpg
+  - fred/0047.jpg
+  - shaggy/0047.jpg
+  - velma/0047.jpg
+
+0048.jpg
+  - daphne/0048.jpg
+  - fred/0048.jpg
+  - shaggy/0048.jpg
+  - velma/0048.jpg
+
+0049.jpg
+  - daphne/0049.jpg
+  - fred/0049.jpg
+  - shaggy/0049.jpg
+  - velma/0049.jpg
+
+0050.jpg
+  - daphne/0050.jpg
+  - fred/0050.jpg
+  - shaggy/0050.jpg
+  - velma/0050.jpg
+

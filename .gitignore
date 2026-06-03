@@ -1,0 +1,98 @@
+# =====================================================================
+# CAVA repo — "code + docs + annotations + structure" only.
+# Heavy binaries (images, zips, models, oversized PDFs) live ONLY in the
+# local mirror (CAVA-ALL_BACKUP_2026-06-03). Empty/data-only folders are
+# preserved on GitHub via .gitkeep markers (see bottom of file).
+# =====================================================================
+
+# ----- OS / IDE -----
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+__MACOSX/
+
+# ----- Python -----
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.env
+.venv/
+venv/
+env/
+**/site-packages/
+**/node_modules/
+
+# ----- Another student's submission dump (kept on disk only, not in repo) -----
+02_exam-jun2025/reference_343_Gabroveanu/**
+!02_exam-jun2025/reference_343_Gabroveanu/
+!02_exam-jun2025/reference_343_Gabroveanu/.gitkeep
+
+# ----- Empty leftover shell (was filesystem-locked during reorg) -----
+/CAVA/
+
+# ----- Archives (duplicate the extracted folders; mirror-only) -----
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+
+# ----- Images / video (the bulk data) -----
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.tif
+*.tiff
+*.gif
+*.webp
+*.ico
+*.mp4
+*.avi
+*.mov
+
+# ----- Model / feature caches -----
+*.npy
+*.npz
+*.pkl
+*.joblib
+*.dat
+
+# ----- Oversized PDFs (>50 MB) — mirror-only to keep the repo lean -----
+00_course/lectures/2025-26_Cursuri_1-8/Cursuri_CAVA_1-8_merged.pdf
+03_tema1-qwirkle/statement/Tema1.pdf
+03_tema1-qwirkle/statement/Tema1_copy.pdf
+
+# ----- Always keep folder-structure markers -----
+!.gitkeep
+
+# ---- auto-excluded: files >5MB (kept in local mirror only) ----
+/00_course/labs/setA_Laborator_1-10/Laborator_2+3/Tema 1.pdf
+/00_course/labs/setA_Laborator_1-10/Laborator_6/Laborator_6.pdf
+/00_course/labs/setA_Laborator_1-10/Laborator_8/Laborator 8.pdf
+/00_course/labs/setB_Lab_25-26/Lab2+3CAVA/Tema 1.pdf
+/00_course/labs/setB_Lab_25-26/Lab6/Laborator_6.pdf
+/00_course/labs/tema2_Lab_8-11/Lab_8-10/Laborator 8/Laborator 8.pdf
+/00_course/lectures/2025-26_Cursuri_1-8/Curs1.pdf
+/00_course/lectures/2025-26_Cursuri_1-8/Curs2.pdf
+/00_course/lectures/2025-26_Cursuri_1-8/Curs3.pdf
+/00_course/lectures/2025-26_Cursuri_1-8/Curs4.pdf
+/00_course/lectures/2025-26_Cursuri_1-8/Curs5.pdf
+/00_course/lectures/2025-26_Cursuri_1-8/Curs6.pdf
+/00_course/lectures/2025-26_Cursuri_1-8/Curs7.pdf
+/00_course/lectures/2025-26_Cursuri_1-8/Curs8.pdf
+/00_course/lectures/2025-26_Cursuri_1-8/Cursuri_CAVA_1-8_merged.pdf
+/00_course/lectures/older_curs_1-8/Curs1.pdf
+/00_course/lectures/older_curs_1-8/Curs2.pdf
+/00_course/lectures/older_curs_1-8/Curs6.pdf
+/00_course/lectures/older_curs_1-8/Curs7.pdf
+/00_course/lectures/older_curs_1-8/Curs8.pdf
+/00_course/lectures/tema2_Curs_8-12/Curs10.pdf
+/00_course/lectures/tema2_Curs_8-12/Curs12.pdf
+/00_course/lectures/tema2_Curs_8-12/Curs8.pdf
+/00_course/lectures/tema2_Curs_8-12/Curs9.pdf
+/03_tema1-qwirkle/_alt_final-submission/Tema1.pdf
+/03_tema1-qwirkle/statement/Tema1_copy.pdf
+/03_tema1-qwirkle/statement/Tema1.pdf

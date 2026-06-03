@@ -1,0 +1,141 @@
+job_id,status,ap,step,pyramid_scales,score_thr,topk_pre_nms,nms_iou,run_s,eval_s,detections,matched,duplicates,error
+0,fail,,6,"1.0,0.9,0.8,0.7,0.6",1.6,60,0.1,2818.96,0.00,,,,"run_t1 did not produce expected Task1 npy files in job-specific folder.
+Expected:
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0000\task1\detections_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0000\task1\scores_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0000\task1\file_names_all_faces.npy
+This usually means run_t1.py ignores STUDENT_FOLDER when saving, or wrote somewhere else."
+2,fail,,6,"1.0,0.9,0.8,0.7,0.6",1.6,80,0.1,2824.36,0.00,,,,"run_t1 did not produce expected Task1 npy files in job-specific folder.
+Expected:
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0002\task1\detections_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0002\task1\scores_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0002\task1\file_names_all_faces.npy
+This usually means run_t1.py ignores STUDENT_FOLDER when saving, or wrote somewhere else."
+3,fail,,6,"1.0,0.9,0.8,0.7,0.6",1.6,80,0.15,2841.26,0.00,,,,"run_t1 did not produce expected Task1 npy files in job-specific folder.
+Expected:
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0003\task1\detections_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0003\task1\scores_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0003\task1\file_names_all_faces.npy
+This usually means run_t1.py ignores STUDENT_FOLDER when saving, or wrote somewhere else."
+1,fail,,6,"1.0,0.9,0.8,0.7,0.6",1.6,60,0.15,2851.71,0.00,,,,"run_t1 did not produce expected Task1 npy files in job-specific folder.
+Expected:
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0001\task1\detections_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0001\task1\scores_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0001\task1\file_names_all_faces.npy
+This usually means run_t1.py ignores STUDENT_FOLDER when saving, or wrote somewhere else."
+4,fail,,6,"1.0,0.9,0.8,0.7,0.6",1.6,120,0.1,438.09,0.00,,,,run_t1 failed rc=1
+6,fail,,6,"1.0,0.9,0.8,0.7,0.6",1.8,60,0.1,2826.39,0.00,,,,run_t1 failed rc=1
+5,fail,,6,"1.0,0.9,0.8,0.7,0.6",1.6,120,0.15,4754.17,0.00,,,,"run_t1 did not produce expected Task1 npy files in job-specific folder.
+Expected:
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0005\task1\detections_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0005\task1\scores_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0005\task1\file_names_all_faces.npy
+This usually means run_t1.py ignores STUDENT_FOLDER when saving, or wrote somewhere else."
+7,fail,,6,"1.0,0.9,0.8,0.7,0.6",1.8,60,0.15,4775.42,0.00,,,,"run_t1 did not produce expected Task1 npy files in job-specific folder.
+Expected:
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0007\task1\detections_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0007\task1\scores_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0007\task1\file_names_all_faces.npy
+This usually means run_t1.py ignores STUDENT_FOLDER when saving, or wrote somewhere else."
+8,fail,,6,"1.0,0.9,0.8,0.7,0.6",1.8,80,0.1,5151.83,0.00,,,,"run_t1 did not produce expected Task1 npy files in job-specific folder.
+Expected:
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0008\task1\detections_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0008\task1\scores_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0008\task1\file_names_all_faces.npy
+This usually means run_t1.py ignores STUDENT_FOLDER when saving, or wrote somewhere else."
+9,fail,,6,"1.0,0.9,0.8,0.7,0.6",1.8,80,0.15,5400.05,0.00,,,,run_t1 failed rc=124
+11,fail,,6,"1.0,0.9,0.8,0.7,0.6",1.8,120,0.15,5330.33,0.00,,,,run_t1 failed rc=1
+10,fail,,6,"1.0,0.9,0.8,0.7,0.6",1.8,120,0.1,5400.03,0.00,,,,run_t1 failed rc=124
+12,fail,,6,"1.0,0.9,0.8,0.7,0.6",2.0,60,0.1,5400.10,0.00,,,,run_t1 failed rc=124
+13,fail,,6,"1.0,0.9,0.8,0.7,0.6",2.0,60,0.15,5400.08,0.00,,,,run_t1 failed rc=124
+14,fail,,6,"1.0,0.9,0.8,0.7,0.6",2.0,80,0.1,5400.09,0.00,,,,run_t1 failed rc=124
+15,fail,,6,"1.0,0.9,0.8,0.7,0.6",2.0,80,0.15,5400.13,0.00,,,,run_t1 failed rc=124
+16,fail,,6,"1.0,0.9,0.8,0.7,0.6",2.0,120,0.1,5400.11,0.00,,,,run_t1 failed rc=124
+17,fail,,6,"1.0,0.9,0.8,0.7,0.6",2.0,120,0.15,5400.03,0.00,,,,run_t1 failed rc=124
+20,fail,,6,"1.0,0.9,0.8,0.7,0.6",2.2,80,0.1,2684.64,0.00,,,,run_t1 failed rc=1
+18,fail,,6,"1.0,0.9,0.8,0.7,0.6",2.2,60,0.1,5400.06,0.00,,,,run_t1 failed rc=124
+19,fail,,6,"1.0,0.9,0.8,0.7,0.6",2.2,60,0.15,5400.12,0.00,,,,run_t1 failed rc=124
+21,fail,,6,"1.0,0.9,0.8,0.7,0.6",2.2,80,0.15,5400.17,0.00,,,,run_t1 failed rc=124
+22,fail,,6,"1.0,0.9,0.8,0.7,0.6",2.2,120,0.1,5400.16,0.00,,,,run_t1 failed rc=124
+24,fail,,6,"1.0,0.85,0.7,0.6",1.6,60,0.1,4348.31,0.00,,,,"run_t1 did not produce expected Task1 npy files in job-specific folder.
+Expected:
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0024\task1\detections_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0024\task1\scores_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0024\task1\file_names_all_faces.npy
+This usually means run_t1.py ignores STUDENT_FOLDER when saving, or wrote somewhere else."
+23,fail,,6,"1.0,0.9,0.8,0.7,0.6",2.2,120,0.15,5400.19,0.00,,,,run_t1 failed rc=124
+26,fail,,6,"1.0,0.85,0.7,0.6",1.6,80,0.1,4332.94,0.00,,,,"run_t1 did not produce expected Task1 npy files in job-specific folder.
+Expected:
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0026\task1\detections_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0026\task1\scores_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0026\task1\file_names_all_faces.npy
+This usually means run_t1.py ignores STUDENT_FOLDER when saving, or wrote somewhere else."
+25,fail,,6,"1.0,0.85,0.7,0.6",1.6,60,0.15,4366.49,0.00,,,,"run_t1 did not produce expected Task1 npy files in job-specific folder.
+Expected:
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0025\task1\detections_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0025\task1\scores_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0025\task1\file_names_all_faces.npy
+This usually means run_t1.py ignores STUDENT_FOLDER when saving, or wrote somewhere else."
+27,fail,,6,"1.0,0.85,0.7,0.6",1.6,80,0.15,4376.42,0.00,,,,"run_t1 did not produce expected Task1 npy files in job-specific folder.
+Expected:
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0027\task1\detections_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0027\task1\scores_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0027\task1\file_names_all_faces.npy
+This usually means run_t1.py ignores STUDENT_FOLDER when saving, or wrote somewhere else."
+28,fail,,6,"1.0,0.85,0.7,0.6",1.6,120,0.1,4328.39,0.00,,,,"run_t1 did not produce expected Task1 npy files in job-specific folder.
+Expected:
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0028\task1\detections_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0028\task1\scores_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0028\task1\file_names_all_faces.npy
+This usually means run_t1.py ignores STUDENT_FOLDER when saving, or wrote somewhere else."
+29,fail,,6,"1.0,0.85,0.7,0.6",1.6,120,0.15,4347.75,0.00,,,,"run_t1 did not produce expected Task1 npy files in job-specific folder.
+Expected:
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0029\task1\detections_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0029\task1\scores_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0029\task1\file_names_all_faces.npy
+This usually means run_t1.py ignores STUDENT_FOLDER when saving, or wrote somewhere else."
+30,fail,,6,"1.0,0.85,0.7,0.6",1.8,60,0.1,4344.32,0.00,,,,"run_t1 did not produce expected Task1 npy files in job-specific folder.
+Expected:
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0030\task1\detections_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0030\task1\scores_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0030\task1\file_names_all_faces.npy
+This usually means run_t1.py ignores STUDENT_FOLDER when saving, or wrote somewhere else."
+31,fail,,6,"1.0,0.85,0.7,0.6",1.8,60,0.15,3865.81,0.00,,,,run_t1 failed rc=1
+32,fail,,6,"1.0,0.85,0.7,0.6",1.8,80,0.1,4359.32,0.00,,,,"run_t1 did not produce expected Task1 npy files in job-specific folder.
+Expected:
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0032\task1\detections_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0032\task1\scores_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0032\task1\file_names_all_faces.npy
+This usually means run_t1.py ignores STUDENT_FOLDER when saving, or wrote somewhere else."
+33,fail,,6,"1.0,0.85,0.7,0.6",1.8,80,0.15,4359.29,0.00,,,,"run_t1 did not produce expected Task1 npy files in job-specific folder.
+Expected:
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0033\task1\detections_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0033\task1\scores_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0033\task1\file_names_all_faces.npy
+This usually means run_t1.py ignores STUDENT_FOLDER when saving, or wrote somewhere else."
+34,fail,,6,"1.0,0.85,0.7,0.6",1.8,120,0.1,4379.60,0.00,,,,"run_t1 did not produce expected Task1 npy files in job-specific folder.
+Expected:
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0034\task1\detections_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0034\task1\scores_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0034\task1\file_names_all_faces.npy
+This usually means run_t1.py ignores STUDENT_FOLDER when saving, or wrote somewhere else."
+35,fail,,6,"1.0,0.85,0.7,0.6",1.8,120,0.15,4356.81,0.00,,,,"run_t1 did not produce expected Task1 npy files in job-specific folder.
+Expected:
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0035\task1\detections_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0035\task1\scores_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0035\task1\file_names_all_faces.npy
+This usually means run_t1.py ignores STUDENT_FOLDER when saving, or wrote somewhere else."
+39,fail,,6,"1.0,0.85,0.7,0.6",2.0,80,0.15,548.79,0.00,,,,run_t1 failed rc=1
+38,fail,,6,"1.0,0.85,0.7,0.6",2.0,80,0.1,1250.56,0.00,,,,run_t1 failed rc=1
+36,fail,,6,"1.0,0.85,0.7,0.6",2.0,60,0.1,4389.75,0.00,,,,"run_t1 did not produce expected Task1 npy files in job-specific folder.
+Expected:
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0036\task1\detections_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0036\task1\scores_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0036\task1\file_names_all_faces.npy
+This usually means run_t1.py ignores STUDENT_FOLDER when saving, or wrote somewhere else."
+37,fail,,6,"1.0,0.85,0.7,0.6",2.0,60,0.15,4317.33,0.00,,,,"run_t1 did not produce expected Task1 npy files in job-specific folder.
+Expected:
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0037\task1\detections_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0037\task1\scores_all_faces.npy
+  C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0037\task1\file_names_all_faces.npy
+This usually means run_t1.py ignores STUDENT_FOLDER when saving, or wrote somewhere else."

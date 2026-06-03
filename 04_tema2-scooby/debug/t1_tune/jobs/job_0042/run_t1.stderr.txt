@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "C:\Users\drago\Desktop\CAVA-2025-TEMA2\cod\task1\run_t1.py", line 303, in <module>
+    main()
+  File "C:\Users\drago\Desktop\CAVA-2025-TEMA2\cod\task1\run_t1.py", line 223, in main
+    score = float(clf.decision_function(feat)[0])
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\drago\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\linear_model\_base.py", line 363, in decision_function
+    X = validate_data(self, X, accept_sparse="csr", reset=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\drago\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py", line 2902, in validate_data
+    out = check_array(X, input_name="X", **check_params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\drago\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py", line 1074, in check_array
+    _assert_all_finite(
+  File "C:\Users\drago\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py", line 129, in _assert_all_finite
+    first_pass_isfinite = xp.isfinite(xp.sum(X))
+                          ^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

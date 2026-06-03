@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\drago\Desktop\CAVA-2025-TEMA2\cod\task1\run_t1.py", line 303, in <module>
+    main()
+  File "C:\Users\drago\Desktop\CAVA-2025-TEMA2\cod\task1\run_t1.py", line 222, in main
+    feat = hog_like(gray).reshape(1, -1)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\drago\Desktop\CAVA-2025-TEMA2\cod\features.py", line 120, in hog_like
+    norm = np.sqrt(np.sum(block * block) + eps * eps)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

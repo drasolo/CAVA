@@ -1,0 +1,52 @@
+Folder structure (all folders shown; files filtered) 
+ 
+.\Lucrare2 
+    .\Lucrare2\.DS_Store 
+    .\Lucrare2\Enunt.pdf 
+.\__MACOSX 
+    .\__MACOSX\._Lucrare2 
+.\Lucrare2\data 
+    .\Lucrare2\data\.DS_Store 
+.\Lucrare2\data\ex1 
+    .\Lucrare2\data\ex1\.DS_Store 
+.\Lucrare2\data\ex2 
+    .\Lucrare2\data\ex2\.DS_Store 
+.\Lucrare2\data\ex2\antrenare 
+    .\Lucrare2\data\ex2\antrenare\.DS_Store 
+    .\Lucrare2\data\ex2\antrenare\001.txt 
+    .\Lucrare2\data\ex2\antrenare\002.txt 
+    .\Lucrare2\data\ex2\antrenare\003.txt 
+    .\Lucrare2\data\ex2\antrenare\004.txt 
+    .\Lucrare2\data\ex2\antrenare\005.txt 
+    .\Lucrare2\data\ex2\antrenare\006.txt 
+    .\Lucrare2\data\ex2\antrenare\007.txt 
+    .\Lucrare2\data\ex2\antrenare\008.txt 
+    .\Lucrare2\data\ex2\antrenare\009.txt 
+    .\Lucrare2\data\ex2\antrenare\010.txt 
+.\Lucrare2\data\ex2\testare 
+.\__MACOSX\Lucrare2 
+    .\__MACOSX\Lucrare2\._.DS_Store 
+    .\__MACOSX\Lucrare2\._data 
+    .\__MACOSX\Lucrare2\._Enunt.pdf 
+.\__MACOSX\Lucrare2\data 
+    .\__MACOSX\Lucrare2\data\._.DS_Store 
+    .\__MACOSX\Lucrare2\data\._ex1 
+    .\__MACOSX\Lucrare2\data\._ex2 
+.\__MACOSX\Lucrare2\data\ex1 
+    .\__MACOSX\Lucrare2\data\ex1\._.DS_Store 
+.\__MACOSX\Lucrare2\data\ex2 
+    .\__MACOSX\Lucrare2\data\ex2\._.DS_Store 
+    .\__MACOSX\Lucrare2\data\ex2\._antrenare 
+    .\__MACOSX\Lucrare2\data\ex2\._testare 
+.\__MACOSX\Lucrare2\data\ex2\antrenare 
+    .\__MACOSX\Lucrare2\data\ex2\antrenare\._.DS_Store 
+    .\__MACOSX\Lucrare2\data\ex2\antrenare\._001.txt 
+    .\__MACOSX\Lucrare2\data\ex2\antrenare\._002.txt 
+    .\__MACOSX\Lucrare2\data\ex2\antrenare\._003.txt 
+    .\__MACOSX\Lucrare2\data\ex2\antrenare\._004.txt 
+    .\__MACOSX\Lucrare2\data\ex2\antrenare\._005.txt 
+    .\__MACOSX\Lucrare2\data\ex2\antrenare\._006.txt 
+    .\__MACOSX\Lucrare2\data\ex2\antrenare\._007.txt 
+    .\__MACOSX\Lucrare2\data\ex2\antrenare\._008.txt 
+    .\__MACOSX\Lucrare2\data\ex2\antrenare\._009.txt 
+    .\__MACOSX\Lucrare2\data\ex2\antrenare\._010.txt 

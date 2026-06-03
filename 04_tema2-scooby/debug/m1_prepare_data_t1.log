@@ -1,0 +1,22 @@
+[OK] train_dir=C:\Users\drago\Desktop\CAVA-2025-TEMA2\antrenare
+[OK] debug_dir=C:\Users\drago\Desktop\CAVA-2025-TEMA2\debug
+[OK] saved C:\Users\drago\Desktop\CAVA-2025-TEMA2\debug\params_snapshot.json
+[OK] building image index (recursive under antrenare/)...
+[OK] indexed images=4000
+[OK] saved C:\Users\drago\Desktop\CAVA-2025-TEMA2\debug\filename_collisions.txt
+[OK] loaded daphne_annotations.txt: images=1000, boxes=2209
+[OK] loaded fred_annotations.txt: images=1000, boxes=1729
+[OK] loaded shaggy_annotations.txt: images=1000, boxes=1196
+[OK] loaded velma_annotations.txt: images=1000, boxes=1413
+[OK] merged(all faces): images=4000, boxes=6547
+[OK] saved C:\Users\drago\Desktop\CAVA-2025-TEMA2\debug\gt_missing_images.txt
+[OK] w stats: min=8 med=52 max=178
+[OK] h stats: min=2 med=67 max=277
+[OK] saved C:\Users\drago\Desktop\CAVA-2025-TEMA2\debug\gt_face_wh_hist.png
+[OK] sampled crops: pos=25, neg=25
+[OK] saved C:\Users\drago\Desktop\CAVA-2025-TEMA2\debug\pos_grid.png
+[OK] saved C:\Users\drago\Desktop\CAVA-2025-TEMA2\debug\neg_grid.png
+[OK] saved GT overlays to C:\Users\drago\Desktop\CAVA-2025-TEMA2\debug\gt_overlays
+[OK] neg IoU check passed: max_iou=0.0929 thr=0.1
+[OK] saved C:\Users\drago\Desktop\CAVA-2025-TEMA2\debug\neg_max_iou_hist.png
+[OK] M1 prepare_data_t1 complete.

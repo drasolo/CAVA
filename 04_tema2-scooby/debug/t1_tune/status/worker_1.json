@@ -1,0 +1,18 @@
+{
+  "worker": 1,
+  "job_id": 42,
+  "stage": "RUN_T1",
+  "started": 1769685039.1150305,
+  "params": {
+    "job_id": 42,
+    "STEP": 6,
+    "PYRAMID_SCALES": "1.0,0.85,0.7,0.6",
+    "DETECTION_SCORE_THRESH": 2.2,
+    "TOPK_PRE_NMS": 60,
+    "NMS_IOU_THRESH": 0.1
+  },
+  "student_folder": "341_Solomon_Dragos_TUNE_0042",
+  "img_i": 144,
+  "img_total": 200,
+  "img_name": "validare/0144.jpg"
+}

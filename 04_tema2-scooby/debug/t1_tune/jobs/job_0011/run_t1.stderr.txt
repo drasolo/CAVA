@@ -1,0 +1,2 @@
+
+[TUNE] EXCEPTION: [WinError 5] Access is denied: 'C:\\Users\\drago\\Desktop\\CAVA-2025-TEMA2\\debug\\t1_tune\\status\\worker_1.json.tmp' -> 'C:\\Users\\drago\\Desktop\\CAVA-2025-TEMA2\\debug\\t1_tune\\status\\worker_1.json'

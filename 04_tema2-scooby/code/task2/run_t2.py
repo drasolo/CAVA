@@ -1,0 +1,1 @@
+#Run detect→classify pipeline and write Task 2 per-character .npy outputs.

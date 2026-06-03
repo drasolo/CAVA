@@ -1,0 +1,1223 @@
+[OK] loaded pos_feat=(3000, 1764) neg_feat=(10000, 1764)
+[OK] trained LinearSVC detector
+[OK] RUN_SPLIT=val scan_dir=C:\Users\drago\Desktop\CAVA-2025-TEMA2\validare
+[OK] images indexed=200 will_process=200
+[OK] win=64 step=6 score_thr=1.6 nms_thr=0.15 topk_pre_nms=60
+[OK] pyramid scales=[1.0, 0.9, 0.8, 0.7, 0.6]
+[OK] [1] validare/0001.jpg: det_pre_nms=30
+[OK] [1] score stats: min=1.625 med=2.311 max=4.261 thr=1.600
+[OK] [1] saved: score_hist_0001.png
+[OK] [1] kept topK_pre_nms=30
+[OK] [1] validare/0001.jpg: det_post_nms=2
+[OK] [1] top post_nms scores: [4.26 1.8 ]
+[OK] [1] time=13.79s
+[OK] [2] validare/0002.jpg: det_pre_nms=58
+[OK] [2] score stats: min=1.607 med=1.987 max=3.693 thr=1.600
+[OK] [2] saved: score_hist_0002.png
+[OK] [2] kept topK_pre_nms=58
+[OK] [2] validare/0002.jpg: det_post_nms=7
+[OK] [2] top post_nms scores: [3.69 2.85 2.77 2.41 2.29 2.22 2.05]
+[OK] [2] time=14.76s
+[OK] [3] validare/0003.jpg: det_pre_nms=24
+[OK] [3] score stats: min=1.608 med=1.898 max=2.916 thr=1.600
+[OK] [3] saved: score_hist_0003.png
+[OK] [3] kept topK_pre_nms=24
+[OK] [3] validare/0003.jpg: det_post_nms=5
+[OK] [3] top post_nms scores: [2.92 2.43 2.37 2.21 1.62]
+[OK] [3] time=16.21s
+[OK] [4] validare/0004.jpg: det_pre_nms=60
+[OK] [4] score stats: min=1.647 med=2.157 max=4.531 thr=1.600
+[OK] [4] saved: score_hist_0004.png
+[OK] [4] kept topK_pre_nms=60
+[OK] [4] validare/0004.jpg: det_post_nms=6
+[OK] [4] top post_nms scores: [4.53 3.67 3.28 2.36 2.12 2.01]
+[OK] [4] time=14.97s
+[OK] [5] validare/0005.jpg: det_pre_nms=199
+[OK] [5] score stats: min=1.602 med=2.323 max=5.966 thr=1.600
+[OK] [5] saved: score_hist_0005.png
+[OK] [5] kept topK_pre_nms=60
+[OK] [5] validare/0005.jpg: det_post_nms=5
+[OK] [5] top post_nms scores: [5.97 5.71 4.21 3.37 3.25]
+[OK] [5] time=13.86s
+[OK] [6] validare/0006.jpg: det_pre_nms=81
+[OK] [6] score stats: min=1.605 med=2.537 max=5.550 thr=1.600
+[OK] [6] saved: score_hist_0006.png
+[OK] [6] kept topK_pre_nms=60
+[OK] [6] validare/0006.jpg: det_post_nms=3
+[OK] [6] top post_nms scores: [5.55 4.95 2.73]
+[OK] [6] time=13.56s
+[OK] [7] validare/0007.jpg: det_pre_nms=7
+[OK] [7] score stats: min=1.647 med=1.857 max=2.526 thr=1.600
+[OK] [7] saved: score_hist_0007.png
+[OK] [7] kept topK_pre_nms=7
+[OK] [7] validare/0007.jpg: det_post_nms=3
+[OK] [7] top post_nms scores: [2.53 1.86 1.79]
+[OK] [7] time=13.83s
+[OK] [8] validare/0008.jpg: det_pre_nms=45
+[OK] [8] score stats: min=1.612 med=2.478 max=4.918 thr=1.600
+[OK] [8] saved: score_hist_0008.png
+[OK] [8] kept topK_pre_nms=45
+[OK] [8] validare/0008.jpg: det_post_nms=7
+[OK] [8] top post_nms scores: [4.92 3.27 2.48 2.01 1.72 1.64 1.63]
+[OK] [8] time=14.25s
+[OK] [9] validare/0009.jpg: det_pre_nms=123
+[OK] [9] score stats: min=1.617 med=2.220 max=4.299 thr=1.600
+[OK] [9] saved: score_hist_0009.png
+[OK] [9] kept topK_pre_nms=60
+[OK] [9] validare/0009.jpg: det_post_nms=6
+[OK] [9] top post_nms scores: [4.3  4.15 2.84 2.71 2.33 2.26]
+[OK] [9] time=14.47s
+[OK] [10] validare/0010.jpg: det_pre_nms=50
+[OK] [10] score stats: min=1.617 med=2.318 max=5.301 thr=1.600
+[OK] [10] saved: score_hist_0010.png
+[OK] [10] kept topK_pre_nms=50
+[OK] [10] validare/0010.jpg: det_post_nms=6
+[OK] [10] top post_nms scores: [5.3  4.26 2.5  2.06 1.84 1.64]
+[OK] [10] time=13.94s
+[OK] [11] validare/0011.jpg: det_pre_nms=20
+[OK] [11] score stats: min=1.622 med=1.942 max=2.836 thr=1.600
+[OK] [11] kept topK_pre_nms=20
+[OK] [11] validare/0011.jpg: det_post_nms=4
+[OK] [11] top post_nms scores: [2.84 2.4  2.02 1.96]
+[OK] [11] time=14.03s
+[OK] [12] validare/0012.jpg: det_pre_nms=33
+[OK] [12] score stats: min=1.622 med=2.119 max=4.219 thr=1.600
+[OK] [12] kept topK_pre_nms=33
+[OK] [12] validare/0012.jpg: det_post_nms=5
+[OK] [12] top post_nms scores: [4.22 3.13 2.61 2.06 1.74]
+[OK] [12] time=14.32s
+[OK] [13] validare/0013.jpg: det_pre_nms=67
+[OK] [13] score stats: min=1.602 med=2.572 max=5.451 thr=1.600
+[OK] [13] kept topK_pre_nms=60
+[OK] [13] validare/0013.jpg: det_post_nms=2
+[OK] [13] top post_nms scores: [5.45 2.51]
+[OK] [13] time=14.18s
+[OK] [14] validare/0014.jpg: det_pre_nms=34
+[OK] [14] score stats: min=1.630 med=2.053 max=3.537 thr=1.600
+[OK] [14] kept topK_pre_nms=34
+[OK] [14] validare/0014.jpg: det_post_nms=5
+[OK] [14] top post_nms scores: [3.54 2.9  2.89 1.89 1.65]
+[OK] [14] time=13.96s
+[OK] [15] validare/0015.jpg: det_pre_nms=40
+[OK] [15] score stats: min=1.626 med=2.116 max=3.633 thr=1.600
+[OK] [15] kept topK_pre_nms=40
+[OK] [15] validare/0015.jpg: det_post_nms=4
+[OK] [15] top post_nms scores: [3.63 3.37 1.99 1.74]
+[OK] [15] time=13.50s
+[OK] [16] validare/0016.jpg: det_pre_nms=32
+[OK] [16] score stats: min=1.647 med=2.181 max=6.133 thr=1.600
+[OK] [16] kept topK_pre_nms=32
+[OK] [16] validare/0016.jpg: det_post_nms=4
+[OK] [16] top post_nms scores: [6.13 3.44 2.33 2.24]
+[OK] [16] time=13.47s
+[OK] [17] validare/0017.jpg: det_pre_nms=18
+[OK] [17] score stats: min=1.625 med=1.921 max=3.916 thr=1.600
+[OK] [17] kept topK_pre_nms=18
+[OK] [17] validare/0017.jpg: det_post_nms=6
+[OK] [17] top post_nms scores: [3.92 2.53 2.04 1.95 1.91 1.86]
+[OK] [17] time=12.84s
+[OK] [18] validare/0018.jpg: det_pre_nms=79
+[OK] [18] score stats: min=1.608 med=2.171 max=5.218 thr=1.600
+[OK] [18] kept topK_pre_nms=60
+[OK] [18] validare/0018.jpg: det_post_nms=6
+[OK] [18] top post_nms scores: [5.22 2.63 2.33 2.31 2.19 1.97]
+[OK] [18] time=12.81s
+[OK] [19] validare/0019.jpg: det_pre_nms=23
+[OK] [19] score stats: min=1.601 med=1.858 max=3.928 thr=1.600
+[OK] [19] kept topK_pre_nms=23
+[OK] [19] validare/0019.jpg: det_post_nms=2
+[OK] [19] top post_nms scores: [3.93 2.05]
+[OK] [19] time=12.81s
+[OK] [20] validare/0020.jpg: det_pre_nms=56
+[OK] [20] score stats: min=1.636 med=2.289 max=5.045 thr=1.600
+[OK] [20] kept topK_pre_nms=56
+[OK] [20] validare/0020.jpg: det_post_nms=6
+[OK] [20] top post_nms scores: [5.05 4.97 3.14 2.01 1.91 1.75]
+[OK] [20] time=12.95s
+[OK] [21] validare/0021.jpg: det_pre_nms=26
+[OK] [21] score stats: min=1.607 med=2.306 max=3.490 thr=1.600
+[OK] [21] kept topK_pre_nms=26
+[OK] [21] validare/0021.jpg: det_post_nms=4
+[OK] [21] top post_nms scores: [3.49 3.46 2.78 1.76]
+[OK] [21] time=12.88s
+[OK] [22] validare/0022.jpg: det_pre_nms=31
+[OK] [22] score stats: min=1.604 med=2.368 max=6.137 thr=1.600
+[OK] [22] kept topK_pre_nms=31
+[OK] [22] validare/0022.jpg: det_post_nms=6
+[OK] [22] top post_nms scores: [6.14 4.11 2.86 2.2  1.9  1.9 ]
+[OK] [22] time=13.05s
+[OK] [23] validare/0023.jpg: det_pre_nms=69
+[OK] [23] score stats: min=1.611 med=2.084 max=5.869 thr=1.600
+[OK] [23] kept topK_pre_nms=60
+[OK] [23] validare/0023.jpg: det_post_nms=3
+[OK] [23] top post_nms scores: [5.87 4.2  1.98]
+[OK] [23] time=13.48s
+[OK] [24] validare/0024.jpg: det_pre_nms=53
+[OK] [24] score stats: min=1.601 med=2.520 max=5.570 thr=1.600
+[OK] [24] kept topK_pre_nms=53
+[OK] [24] validare/0024.jpg: det_post_nms=1
+[OK] [24] top post_nms scores: [5.57]
+[OK] [24] time=18.98s
+[OK] [25] validare/0025.jpg: det_pre_nms=73
+[OK] [25] score stats: min=1.639 med=2.632 max=6.505 thr=1.600
+[OK] [25] kept topK_pre_nms=60
+[OK] [25] validare/0025.jpg: det_post_nms=3
+[OK] [25] top post_nms scores: [6.51 2.13 2.09]
+[OK] [25] time=28.44s
+[OK] [26] validare/0026.jpg: det_pre_nms=22
+[OK] [26] score stats: min=1.672 med=2.471 max=4.612 thr=1.600
+[OK] [26] kept topK_pre_nms=22
+[OK] [26] validare/0026.jpg: det_post_nms=4
+[OK] [26] top post_nms scores: [4.61 2.94 2.11 1.83]
+[OK] [26] time=21.32s
+[OK] [27] validare/0027.jpg: det_pre_nms=43
+[OK] [27] score stats: min=1.618 med=2.179 max=3.795 thr=1.600
+[OK] [27] kept topK_pre_nms=43
+[OK] [27] validare/0027.jpg: det_post_nms=4
+[OK] [27] top post_nms scores: [3.79 2.54 2.07 2.07]
+[OK] [27] time=13.19s
+[OK] [28] validare/0028.jpg: det_pre_nms=48
+[OK] [28] score stats: min=1.639 med=2.426 max=5.306 thr=1.600
+[OK] [28] kept topK_pre_nms=48
+[OK] [28] validare/0028.jpg: det_post_nms=2
+[OK] [28] top post_nms scores: [5.31 2.02]
+[OK] [28] time=13.86s
+[OK] [29] validare/0029.jpg: det_pre_nms=22
+[OK] [29] score stats: min=1.608 med=2.091 max=2.836 thr=1.600
+[OK] [29] kept topK_pre_nms=22
+[OK] [29] validare/0029.jpg: det_post_nms=8
+[OK] [29] top post_nms scores: [2.84 2.69 2.37 2.22 2.14 2.11 1.69 1.63]
+[OK] [29] time=15.67s
+[OK] [30] validare/0030.jpg: det_pre_nms=2
+[OK] [30] score stats: min=1.618 med=1.692 max=1.767 thr=1.600
+[OK] [30] kept topK_pre_nms=2
+[OK] [30] validare/0030.jpg: det_post_nms=1
+[OK] [30] top post_nms scores: [1.77]
+[OK] [30] time=14.69s
+[OK] [31] validare/0031.jpg: det_pre_nms=23
+[OK] [31] score stats: min=1.604 med=1.905 max=2.780 thr=1.600
+[OK] [31] kept topK_pre_nms=23
+[OK] [31] validare/0031.jpg: det_post_nms=5
+[OK] [31] top post_nms scores: [2.78 2.53 1.8  1.77 1.63]
+[OK] [31] time=14.50s
+[OK] [32] validare/0032.jpg: det_pre_nms=49
+[OK] [32] score stats: min=1.649 med=2.440 max=5.697 thr=1.600
+[OK] [32] kept topK_pre_nms=49
+[OK] [32] validare/0032.jpg: det_post_nms=6
+[OK] [32] top post_nms scores: [5.7  2.62 2.55 1.84 1.67 1.65]
+[OK] [32] time=14.54s
+[OK] [33] validare/0033.jpg: det_pre_nms=134
+[OK] [33] score stats: min=1.601 med=2.383 max=6.037 thr=1.600
+[OK] [33] kept topK_pre_nms=60
+[OK] [33] validare/0033.jpg: det_post_nms=3
+[OK] [33] top post_nms scores: [6.04 5.77 2.88]
+[OK] [33] time=14.19s
+[OK] [34] validare/0034.jpg: det_pre_nms=14
+[OK] [34] score stats: min=1.652 med=1.858 max=2.764 thr=1.600
+[OK] [34] kept topK_pre_nms=14
+[OK] [34] validare/0034.jpg: det_post_nms=5
+[OK] [34] top post_nms scores: [2.76 1.97 1.89 1.82 1.65]
+[OK] [34] time=14.68s
+[OK] [35] validare/0035.jpg: det_pre_nms=106
+[OK] [35] score stats: min=1.606 med=2.319 max=5.188 thr=1.600
+[OK] [35] kept topK_pre_nms=60
+[OK] [35] validare/0035.jpg: det_post_nms=9
+[OK] [35] top post_nms scores: [5.19 5.18 4.94 4.2  3.46 3.3  2.97 2.83 2.53]
+[OK] [35] time=15.29s
+[OK] [36] validare/0036.jpg: det_pre_nms=70
+[OK] [36] score stats: min=1.607 med=2.091 max=4.028 thr=1.600
+[OK] [36] kept topK_pre_nms=60
+[OK] [36] validare/0036.jpg: det_post_nms=10
+[OK] [36] top post_nms scores: [4.03 3.7  3.22 3.11 3.   2.59 2.32 2.31 2.23 2.17]
+[OK] [36] time=14.20s
+[OK] [37] validare/0037.jpg: det_pre_nms=70
+[OK] [37] score stats: min=1.605 med=2.305 max=5.864 thr=1.600
+[OK] [37] kept topK_pre_nms=60
+[OK] [37] validare/0037.jpg: det_post_nms=2
+[OK] [37] top post_nms scores: [5.86 3.99]
+[OK] [37] time=13.29s
+[OK] [38] validare/0038.jpg: det_pre_nms=57
+[OK] [38] score stats: min=1.619 med=2.100 max=4.652 thr=1.600
+[OK] [38] kept topK_pre_nms=57
+[OK] [38] validare/0038.jpg: det_post_nms=6
+[OK] [38] top post_nms scores: [4.65 3.07 2.93 2.72 2.64 1.91]
+[OK] [38] time=14.02s
+[OK] [39] validare/0039.jpg: det_pre_nms=1
+[OK] [39] score stats: min=2.371 med=2.371 max=2.371 thr=1.600
+[OK] [39] kept topK_pre_nms=1
+[OK] [39] validare/0039.jpg: det_post_nms=1
+[OK] [39] top post_nms scores: [2.37]
+[OK] [39] time=13.58s
+[OK] [40] validare/0040.jpg: det_pre_nms=13
+[OK] [40] score stats: min=1.600 med=2.353 max=2.849 thr=1.600
+[OK] [40] kept topK_pre_nms=13
+[OK] [40] validare/0040.jpg: det_post_nms=3
+[OK] [40] top post_nms scores: [2.85 1.62 1.6 ]
+[OK] [40] time=13.43s
+[OK] [41] validare/0041.jpg: det_pre_nms=21
+[OK] [41] score stats: min=1.625 med=1.965 max=3.049 thr=1.600
+[OK] [41] kept topK_pre_nms=21
+[OK] [41] validare/0041.jpg: det_post_nms=8
+[OK] [41] top post_nms scores: [3.05 2.17 2.12 2.04 1.98 1.92 1.79 1.64]
+[OK] [41] time=13.96s
+[OK] [42] validare/0042.jpg: det_pre_nms=12
+[OK] [42] score stats: min=1.719 med=2.209 max=4.572 thr=1.600
+[OK] [42] kept topK_pre_nms=12
+[OK] [42] validare/0042.jpg: det_post_nms=4
+[OK] [42] top post_nms scores: [4.57 2.07 1.94 1.81]
+[OK] [42] time=13.69s
+[OK] [43] validare/0043.jpg: det_pre_nms=33
+[OK] [43] score stats: min=1.630 med=2.121 max=4.415 thr=1.600
+[OK] [43] kept topK_pre_nms=33
+[OK] [43] validare/0043.jpg: det_post_nms=5
+[OK] [43] top post_nms scores: [4.41 3.27 2.07 1.8  1.74]
+[OK] [43] time=14.58s
+[OK] [44] validare/0044.jpg: det_pre_nms=83
+[OK] [44] score stats: min=1.615 med=2.301 max=5.528 thr=1.600
+[OK] [44] kept topK_pre_nms=60
+[OK] [44] validare/0044.jpg: det_post_nms=3
+[OK] [44] top post_nms scores: [5.53 3.16 3.  ]
+[OK] [44] time=13.78s
+[OK] [45] validare/0045.jpg: det_pre_nms=53
+[OK] [45] score stats: min=1.610 med=2.104 max=3.746 thr=1.600
+[OK] [45] kept topK_pre_nms=53
+[OK] [45] validare/0045.jpg: det_post_nms=7
+[OK] [45] top post_nms scores: [3.75 2.68 1.99 1.99 1.97 1.84 1.83]
+[OK] [45] time=13.70s
+[OK] [46] validare/0046.jpg: det_pre_nms=58
+[OK] [46] score stats: min=1.632 med=2.020 max=2.902 thr=1.600
+[OK] [46] kept topK_pre_nms=58
+[OK] [46] validare/0046.jpg: det_post_nms=10
+[OK] [46] top post_nms scores: [2.9  2.66 2.53 2.53 2.4  2.38 2.16 1.99 1.69 1.64]
+[OK] [46] time=13.60s
+[OK] [47] validare/0047.jpg: det_pre_nms=73
+[OK] [47] score stats: min=1.601 med=2.176 max=5.022 thr=1.600
+[OK] [47] kept topK_pre_nms=60
+[OK] [47] validare/0047.jpg: det_post_nms=6
+[OK] [47] top post_nms scores: [5.02 4.32 2.39 2.16 2.14 1.81]
+[OK] [47] time=13.32s
+[OK] [48] validare/0048.jpg: det_pre_nms=13
+[OK] [48] score stats: min=1.718 med=2.220 max=3.956 thr=1.600
+[OK] [48] kept topK_pre_nms=13
+[OK] [48] validare/0048.jpg: det_post_nms=4
+[OK] [48] top post_nms scores: [3.96 2.47 2.22 2.14]
+[OK] [48] time=13.92s
+[OK] [49] validare/0049.jpg: det_pre_nms=49
+[OK] [49] score stats: min=1.610 med=2.173 max=3.800 thr=1.600
+[OK] [49] kept topK_pre_nms=49
+[OK] [49] validare/0049.jpg: det_post_nms=5
+[OK] [49] top post_nms scores: [3.8  3.72 2.53 2.03 1.66]
+[OK] [49] time=14.45s
+[OK] [50] validare/0050.jpg: det_pre_nms=31
+[OK] [50] score stats: min=1.621 med=2.227 max=3.962 thr=1.600
+[OK] [50] kept topK_pre_nms=31
+[OK] [50] validare/0050.jpg: det_post_nms=5
+[OK] [50] top post_nms scores: [3.96 3.8  2.95 2.69 2.18]
+[OK] [50] time=13.42s
+[OK] [51] validare/0051.jpg: det_pre_nms=21
+[OK] [51] score stats: min=1.612 med=2.074 max=4.575 thr=1.600
+[OK] [51] kept topK_pre_nms=21
+[OK] [51] validare/0051.jpg: det_post_nms=4
+[OK] [51] top post_nms scores: [4.57 3.32 3.26 1.76]
+[OK] [51] time=13.46s
+[OK] [52] validare/0052.jpg: det_pre_nms=53
+[OK] [52] score stats: min=1.604 med=2.120 max=3.426 thr=1.600
+[OK] [52] kept topK_pre_nms=53
+[OK] [52] validare/0052.jpg: det_post_nms=5
+[OK] [52] top post_nms scores: [3.43 3.18 2.94 2.27 1.78]
+[OK] [52] time=13.21s
+[OK] [53] validare/0053.jpg: det_pre_nms=33
+[OK] [53] score stats: min=1.601 med=1.905 max=3.171 thr=1.600
+[OK] [53] kept topK_pre_nms=33
+[OK] [53] validare/0053.jpg: det_post_nms=6
+[OK] [53] top post_nms scores: [3.17 2.59 2.12 1.83 1.78 1.7 ]
+[OK] [53] time=13.82s
+[OK] [54] validare/0054.jpg: det_pre_nms=32
+[OK] [54] score stats: min=1.631 med=2.033 max=3.888 thr=1.600
+[OK] [54] kept topK_pre_nms=32
+[OK] [54] validare/0054.jpg: det_post_nms=2
+[OK] [54] top post_nms scores: [3.89 2.  ]
+[OK] [54] time=13.42s
+[OK] [55] validare/0055.jpg: det_pre_nms=25
+[OK] [55] score stats: min=1.633 med=2.000 max=4.123 thr=1.600
+[OK] [55] kept topK_pre_nms=25
+[OK] [55] validare/0055.jpg: det_post_nms=3
+[OK] [55] top post_nms scores: [4.12 2.4  1.75]
+[OK] [55] time=13.87s
+[OK] [56] validare/0056.jpg: det_pre_nms=12
+[OK] [56] score stats: min=1.792 med=2.226 max=3.137 thr=1.600
+[OK] [56] kept topK_pre_nms=12
+[OK] [56] validare/0056.jpg: det_post_nms=2
+[OK] [56] top post_nms scores: [3.14 2.32]
+[OK] [56] time=13.17s
+[OK] [57] validare/0057.jpg: det_pre_nms=76
+[OK] [57] score stats: min=1.658 med=2.326 max=5.329 thr=1.600
+[OK] [57] kept topK_pre_nms=60
+[OK] [57] validare/0057.jpg: det_post_nms=3
+[OK] [57] top post_nms scores: [5.33 3.07 2.82]
+[OK] [57] time=13.44s
+[OK] [58] validare/0058.jpg: det_pre_nms=57
+[OK] [58] score stats: min=1.613 med=2.102 max=3.817 thr=1.600
+[OK] [58] kept topK_pre_nms=57
+[OK] [58] validare/0058.jpg: det_post_nms=7
+[OK] [58] top post_nms scores: [3.82 3.2  2.93 2.6  2.48 2.39 1.96]
+[OK] [58] time=13.48s
+[OK] [59] validare/0059.jpg: det_pre_nms=29
+[OK] [59] score stats: min=1.611 med=2.325 max=4.464 thr=1.600
+[OK] [59] kept topK_pre_nms=29
+[OK] [59] validare/0059.jpg: det_post_nms=3
+[OK] [59] top post_nms scores: [4.46 1.65 1.62]
+[OK] [59] time=13.55s
+[OK] [60] validare/0060.jpg: det_pre_nms=45
+[OK] [60] score stats: min=1.607 med=1.981 max=4.562 thr=1.600
+[OK] [60] kept topK_pre_nms=45
+[OK] [60] validare/0060.jpg: det_post_nms=4
+[OK] [60] top post_nms scores: [4.56 2.18 2.12 2.02]
+[OK] [60] time=13.07s
+[OK] [61] validare/0061.jpg: det_pre_nms=46
+[OK] [61] score stats: min=1.641 med=2.222 max=3.343 thr=1.600
+[OK] [61] kept topK_pre_nms=46
+[OK] [61] validare/0061.jpg: det_post_nms=6
+[OK] [61] top post_nms scores: [3.34 2.39 2.19 2.03 1.95 1.72]
+[OK] [61] time=13.40s
+[OK] [62] validare/0062.jpg: det_pre_nms=42
+[OK] [62] score stats: min=1.601 med=2.152 max=4.377 thr=1.600
+[OK] [62] kept topK_pre_nms=42
+[OK] [62] validare/0062.jpg: det_post_nms=6
+[OK] [62] top post_nms scores: [4.38 3.64 2.98 2.46 1.82 1.82]
+[OK] [62] time=13.22s
+[OK] [63] validare/0063.jpg: det_pre_nms=23
+[OK] [63] score stats: min=1.681 med=2.085 max=3.940 thr=1.600
+[OK] [63] kept topK_pre_nms=23
+[OK] [63] validare/0063.jpg: det_post_nms=6
+[OK] [63] top post_nms scores: [3.94 2.44 2.09 2.02 1.83 1.8 ]
+[OK] [63] time=13.73s
+[OK] [64] validare/0064.jpg: det_pre_nms=99
+[OK] [64] score stats: min=1.601 med=2.273 max=5.346 thr=1.600
+[OK] [64] kept topK_pre_nms=60
+[OK] [64] validare/0064.jpg: det_post_nms=7
+[OK] [64] top post_nms scores: [5.35 3.85 2.89 2.75 2.52 2.36 2.34]
+[OK] [64] time=13.99s
+[OK] [65] validare/0065.jpg: det_pre_nms=80
+[OK] [65] score stats: min=1.605 med=2.767 max=5.604 thr=1.600
+[OK] [65] kept topK_pre_nms=60
+[OK] [65] validare/0065.jpg: det_post_nms=4
+[OK] [65] top post_nms scores: [5.6  3.95 3.2  2.12]
+[OK] [65] time=14.87s
+[OK] [66] validare/0066.jpg: det_pre_nms=35
+[OK] [66] score stats: min=1.655 med=2.320 max=4.544 thr=1.600
+[OK] [66] kept topK_pre_nms=35
+[OK] [66] validare/0066.jpg: det_post_nms=3
+[OK] [66] top post_nms scores: [4.54 2.2  1.66]
+[OK] [66] time=14.88s
+[OK] [67] validare/0067.jpg: det_pre_nms=24
+[OK] [67] score stats: min=1.606 med=2.087 max=4.903 thr=1.600
+[OK] [67] kept topK_pre_nms=24
+[OK] [67] validare/0067.jpg: det_post_nms=5
+[OK] [67] top post_nms scores: [4.9  2.84 2.6  1.72 1.7 ]
+[OK] [67] time=15.13s
+[OK] [68] validare/0068.jpg: det_pre_nms=126
+[OK] [68] score stats: min=1.604 med=2.641 max=6.670 thr=1.600
+[OK] [68] kept topK_pre_nms=60
+[OK] [68] validare/0068.jpg: det_post_nms=3
+[OK] [68] top post_nms scores: [6.67 5.77 4.04]
+[OK] [68] time=14.07s
+[OK] [69] validare/0069.jpg: det_pre_nms=37
+[OK] [69] score stats: min=1.639 med=2.074 max=3.041 thr=1.600
+[OK] [69] kept topK_pre_nms=37
+[OK] [69] validare/0069.jpg: det_post_nms=5
+[OK] [69] top post_nms scores: [3.04 2.71 2.4  2.35 1.65]
+[OK] [69] time=13.08s
+[OK] [70] validare/0070.jpg: det_pre_nms=58
+[OK] [70] score stats: min=1.619 med=2.111 max=5.726 thr=1.600
+[OK] [70] kept topK_pre_nms=58
+[OK] [70] validare/0070.jpg: det_post_nms=7
+[OK] [70] top post_nms scores: [5.73 2.86 2.05 2.01 1.91 1.9  1.66]
+[OK] [70] time=13.31s
+[OK] [71] validare/0071.jpg: det_pre_nms=9
+[OK] [71] score stats: min=1.691 med=1.827 max=2.563 thr=1.600
+[OK] [71] kept topK_pre_nms=9
+[OK] [71] validare/0071.jpg: det_post_nms=3
+[OK] [71] top post_nms scores: [2.56 1.83 1.69]
+[OK] [71] time=13.17s
+[OK] [72] validare/0072.jpg: det_pre_nms=47
+[OK] [72] score stats: min=1.602 med=2.061 max=4.992 thr=1.600
+[OK] [72] kept topK_pre_nms=47
+[OK] [72] validare/0072.jpg: det_post_nms=6
+[OK] [72] top post_nms scores: [4.99 2.49 2.35 1.72 1.7  1.69]
+[OK] [72] time=13.44s
+[OK] [73] validare/0073.jpg: det_pre_nms=34
+[OK] [73] score stats: min=1.604 med=1.936 max=3.453 thr=1.600
+[OK] [73] kept topK_pre_nms=34
+[OK] [73] validare/0073.jpg: det_post_nms=6
+[OK] [73] top post_nms scores: [3.45 2.27 2.1  2.08 2.03 2.02]
+[OK] [73] time=13.48s
+[OK] [74] validare/0074.jpg: det_pre_nms=131
+[OK] [74] score stats: min=1.600 med=2.331 max=4.467 thr=1.600
+[OK] [74] kept topK_pre_nms=60
+[OK] [74] validare/0074.jpg: det_post_nms=6
+[OK] [74] top post_nms scores: [4.47 4.23 3.55 3.16 2.82 2.68]
+[OK] [74] time=13.49s
+[OK] [75] validare/0075.jpg: det_pre_nms=35
+[OK] [75] score stats: min=1.608 med=2.017 max=3.727 thr=1.600
+[OK] [75] kept topK_pre_nms=35
+[OK] [75] validare/0075.jpg: det_post_nms=3
+[OK] [75] top post_nms scores: [3.73 3.04 2.39]
+[OK] [75] time=14.60s
+[OK] [76] validare/0076.jpg: det_pre_nms=105
+[OK] [76] score stats: min=1.601 med=2.134 max=4.917 thr=1.600
+[OK] [76] kept topK_pre_nms=60
+[OK] [76] validare/0076.jpg: det_post_nms=8
+[OK] [76] top post_nms scores: [4.92 3.89 3.49 3.46 3.14 2.41 2.14 2.09]
+[OK] [76] time=14.39s
+[OK] [77] validare/0077.jpg: det_pre_nms=7
+[OK] [77] score stats: min=1.618 med=1.986 max=2.634 thr=1.600
+[OK] [77] kept topK_pre_nms=7
+[OK] [77] validare/0077.jpg: det_post_nms=3
+[OK] [77] top post_nms scores: [2.63 2.06 1.9 ]
+[OK] [77] time=13.69s
+[OK] [78] validare/0078.jpg: det_pre_nms=28
+[OK] [78] score stats: min=1.648 med=2.267 max=4.319 thr=1.600
+[OK] [78] kept topK_pre_nms=28
+[OK] [78] validare/0078.jpg: det_post_nms=2
+[OK] [78] top post_nms scores: [4.32 3.2 ]
+[OK] [78] time=13.49s
+[OK] [79] validare/0079.jpg: det_pre_nms=17
+[OK] [79] score stats: min=1.657 med=1.848 max=3.242 thr=1.600
+[OK] [79] kept topK_pre_nms=17
+[OK] [79] validare/0079.jpg: det_post_nms=4
+[OK] [79] top post_nms scores: [3.24 2.54 2.33 1.81]
+[OK] [79] time=13.28s
+[OK] [80] validare/0080.jpg: det_pre_nms=67
+[OK] [80] score stats: min=1.604 med=1.976 max=3.806 thr=1.600
+[OK] [80] kept topK_pre_nms=60
+[OK] [80] validare/0080.jpg: det_post_nms=11
+[OK] [80] top post_nms scores: [3.81 3.43 3.22 2.92 2.71 2.59 2.44 2.4  2.23 1.89]
+[OK] [80] time=14.40s
+[OK] [81] validare/0081.jpg: det_pre_nms=19
+[OK] [81] score stats: min=1.635 med=2.330 max=3.236 thr=1.600
+[OK] [81] kept topK_pre_nms=19
+[OK] [81] validare/0081.jpg: det_post_nms=4
+[OK] [81] top post_nms scores: [3.24 2.33 1.92 1.84]
+[OK] [81] time=14.57s
+[OK] [82] validare/0082.jpg: det_pre_nms=49
+[OK] [82] score stats: min=1.612 med=2.061 max=3.167 thr=1.600
+[OK] [82] kept topK_pre_nms=49
+[OK] [82] validare/0082.jpg: det_post_nms=6
+[OK] [82] top post_nms scores: [3.17 2.89 2.65 2.03 1.89 1.67]
+[OK] [82] time=14.41s
+[OK] [83] validare/0083.jpg: det_pre_nms=8
+[OK] [83] score stats: min=1.614 med=2.048 max=3.262 thr=1.600
+[OK] [83] kept topK_pre_nms=8
+[OK] [83] validare/0083.jpg: det_post_nms=3
+[OK] [83] top post_nms scores: [3.26 1.84 1.7 ]
+[OK] [83] time=14.40s
+[OK] [84] validare/0084.jpg: det_pre_nms=45
+[OK] [84] score stats: min=1.661 med=2.244 max=3.461 thr=1.600
+[OK] [84] kept topK_pre_nms=45
+[OK] [84] validare/0084.jpg: det_post_nms=6
+[OK] [84] top post_nms scores: [3.46 3.22 2.69 2.44 2.04 1.69]
+[OK] [84] time=13.20s
+[OK] [85] validare/0085.jpg: det_pre_nms=7
+[OK] [85] score stats: min=1.781 med=2.003 max=3.277 thr=1.600
+[OK] [85] kept topK_pre_nms=7
+[OK] [85] validare/0085.jpg: det_post_nms=1
+[OK] [85] top post_nms scores: [3.28]
+[OK] [85] time=13.59s
+[OK] [86] validare/0086.jpg: det_pre_nms=177
+[OK] [86] score stats: min=1.606 med=2.017 max=3.543 thr=1.600
+[OK] [86] kept topK_pre_nms=60
+[OK] [86] validare/0086.jpg: det_post_nms=11
+[OK] [86] top post_nms scores: [3.54 3.16 3.11 3.03 2.9  2.85 2.74 2.67 2.59 2.29]
+[OK] [86] time=14.03s
+[OK] [87] validare/0087.jpg: det_pre_nms=3
+[OK] [87] score stats: min=1.708 med=1.808 max=1.827 thr=1.600
+[OK] [87] kept topK_pre_nms=3
+[OK] [87] validare/0087.jpg: det_post_nms=3
+[OK] [87] top post_nms scores: [1.83 1.81 1.71]
+[OK] [87] time=15.18s
+[OK] [88] validare/0088.jpg: det_pre_nms=13
+[OK] [88] score stats: min=1.651 med=2.270 max=4.187 thr=1.600
+[OK] [88] kept topK_pre_nms=13
+[OK] [88] validare/0088.jpg: det_post_nms=3
+[OK] [88] top post_nms scores: [4.19 2.46 1.81]
+[OK] [88] time=13.38s
+[OK] [89] validare/0089.jpg: det_pre_nms=28
+[OK] [89] score stats: min=1.619 med=2.041 max=3.545 thr=1.600
+[OK] [89] kept topK_pre_nms=28
+[OK] [89] validare/0089.jpg: det_post_nms=5
+[OK] [89] top post_nms scores: [3.55 2.79 2.43 2.15 1.91]
+[OK] [89] time=13.25s
+[OK] [90] validare/0090.jpg: det_pre_nms=57
+[OK] [90] score stats: min=1.621 med=2.158 max=5.116 thr=1.600
+[OK] [90] kept topK_pre_nms=57
+[OK] [90] validare/0090.jpg: det_post_nms=8
+[OK] [90] top post_nms scores: [5.12 4.68 3.   2.46 2.16 2.16 2.08 1.97]
+[OK] [90] time=13.05s
+[OK] [91] validare/0091.jpg: det_pre_nms=51
+[OK] [91] score stats: min=1.638 med=2.236 max=4.692 thr=1.600
+[OK] [91] kept topK_pre_nms=51
+[OK] [91] validare/0091.jpg: det_post_nms=6
+[OK] [91] top post_nms scores: [4.69 3.36 2.56 2.24 1.94 1.72]
+[OK] [91] time=13.23s
+[OK] [92] validare/0092.jpg: det_pre_nms=76
+[OK] [92] score stats: min=1.605 med=2.418 max=5.590 thr=1.600
+[OK] [92] kept topK_pre_nms=60
+[OK] [92] validare/0092.jpg: det_post_nms=2
+[OK] [92] top post_nms scores: [5.59 3.97]
+[OK] [92] time=13.57s
+[OK] [93] validare/0093.jpg: det_pre_nms=37
+[OK] [93] score stats: min=1.602 med=2.161 max=3.910 thr=1.600
+[OK] [93] kept topK_pre_nms=37
+[OK] [93] validare/0093.jpg: det_post_nms=4
+[OK] [93] top post_nms scores: [3.91 3.07 1.62 1.61]
+[OK] [93] time=13.06s
+[OK] [94] validare/0094.jpg: det_pre_nms=51
+[OK] [94] score stats: min=1.608 med=2.322 max=5.756 thr=1.600
+[OK] [94] kept topK_pre_nms=51
+[OK] [94] validare/0094.jpg: det_post_nms=4
+[OK] [94] top post_nms scores: [5.76 3.28 2.45 1.92]
+[OK] [94] time=14.15s
+[OK] [95] validare/0095.jpg: det_pre_nms=77
+[OK] [95] score stats: min=1.605 med=2.332 max=5.540 thr=1.600
+[OK] [95] kept topK_pre_nms=60
+[OK] [95] validare/0095.jpg: det_post_nms=3
+[OK] [95] top post_nms scores: [5.54 5.05 4.52]
+[OK] [95] time=16.53s
+[OK] [96] validare/0096.jpg: det_pre_nms=19
+[OK] [96] score stats: min=1.653 med=1.937 max=3.107 thr=1.600
+[OK] [96] kept topK_pre_nms=19
+[OK] [96] validare/0096.jpg: det_post_nms=6
+[OK] [96] top post_nms scores: [3.11 2.59 2.33 1.94 1.9  1.83]
+[OK] [96] time=14.43s
+[OK] [97] validare/0097.jpg: det_pre_nms=67
+[OK] [97] score stats: min=1.640 med=2.576 max=4.928 thr=1.600
+[OK] [97] kept topK_pre_nms=60
+[OK] [97] validare/0097.jpg: det_post_nms=4
+[OK] [97] top post_nms scores: [4.93 3.86 3.49 2.84]
+[OK] [97] time=14.45s
+[OK] [98] validare/0098.jpg: det_pre_nms=42
+[OK] [98] score stats: min=1.614 med=2.058 max=3.421 thr=1.600
+[OK] [98] kept topK_pre_nms=42
+[OK] [98] validare/0098.jpg: det_post_nms=3
+[OK] [98] top post_nms scores: [3.42 2.64 1.97]
+[OK] [98] time=14.66s
+[OK] [99] validare/0099.jpg: det_pre_nms=52
+[OK] [99] score stats: min=1.606 med=2.339 max=4.349 thr=1.600
+[OK] [99] kept topK_pre_nms=52
+[OK] [99] validare/0099.jpg: det_post_nms=2
+[OK] [99] top post_nms scores: [4.35 1.84]
+[OK] [99] time=15.83s
+[OK] [100] validare/0100.jpg: det_pre_nms=38
+[OK] [100] score stats: min=1.626 med=2.664 max=5.299 thr=1.600
+[OK] [100] kept topK_pre_nms=38
+[OK] [100] validare/0100.jpg: det_post_nms=5
+[OK] [100] top post_nms scores: [5.3  2.54 1.83 1.81 1.63]
+[OK] [100] time=14.07s
+[OK] [101] validare/0101.jpg: det_pre_nms=18
+[OK] [101] score stats: min=1.631 med=1.833 max=3.243 thr=1.600
+[OK] [101] kept topK_pre_nms=18
+[OK] [101] validare/0101.jpg: det_post_nms=3
+[OK] [101] top post_nms scores: [3.24 2.41 1.9 ]
+[OK] [101] time=14.72s
+[OK] [102] validare/0102.jpg: det_pre_nms=8
+[OK] [102] score stats: min=1.621 med=1.917 max=2.311 thr=1.600
+[OK] [102] kept topK_pre_nms=8
+[OK] [102] validare/0102.jpg: det_post_nms=3
+[OK] [102] top post_nms scores: [2.31 2.24 1.98]
+[OK] [102] time=14.08s
+[OK] [103] validare/0103.jpg: det_pre_nms=36
+[OK] [103] score stats: min=1.632 med=2.095 max=4.602 thr=1.600
+[OK] [103] kept topK_pre_nms=36
+[OK] [103] validare/0103.jpg: det_post_nms=2
+[OK] [103] top post_nms scores: [4.6  2.23]
+[OK] [103] time=15.07s
+[OK] [104] validare/0104.jpg: det_pre_nms=30
+[OK] [104] score stats: min=1.655 med=2.111 max=3.289 thr=1.600
+[OK] [104] kept topK_pre_nms=30
+[OK] [104] validare/0104.jpg: det_post_nms=5
+[OK] [104] top post_nms scores: [3.29 2.03 1.99 1.78 1.65]
+[OK] [104] time=14.23s
+[OK] [105] validare/0105.jpg: det_pre_nms=72
+[OK] [105] score stats: min=1.610 med=2.274 max=6.404 thr=1.600
+[OK] [105] kept topK_pre_nms=60
+[OK] [105] validare/0105.jpg: det_post_nms=5
+[OK] [105] top post_nms scores: [6.4  3.73 2.63 2.28 2.22]
+[OK] [105] time=13.71s
+[OK] [106] validare/0106.jpg: det_pre_nms=23
+[OK] [106] score stats: min=1.680 med=2.266 max=3.397 thr=1.600
+[OK] [106] kept topK_pre_nms=23
+[OK] [106] validare/0106.jpg: det_post_nms=1
+[OK] [106] top post_nms scores: [3.4]
+[OK] [106] time=13.66s
+[OK] [107] validare/0107.jpg: det_pre_nms=67
+[OK] [107] score stats: min=1.636 med=2.140 max=4.007 thr=1.600
+[OK] [107] kept topK_pre_nms=60
+[OK] [107] validare/0107.jpg: det_post_nms=6
+[OK] [107] top post_nms scores: [4.01 2.88 2.81 2.21 2.14 1.86]
+[OK] [107] time=14.18s
+[OK] [108] validare/0108.jpg: det_pre_nms=40
+[OK] [108] score stats: min=1.630 med=1.939 max=3.980 thr=1.600
+[OK] [108] kept topK_pre_nms=40
+[OK] [108] validare/0108.jpg: det_post_nms=6
+[OK] [108] top post_nms scores: [3.98 2.88 2.57 2.56 2.1  1.65]
+[OK] [108] time=14.37s
+[OK] [109] validare/0109.jpg: det_pre_nms=17
+[OK] [109] score stats: min=1.634 med=1.892 max=2.850 thr=1.600
+[OK] [109] kept topK_pre_nms=17
+[OK] [109] validare/0109.jpg: det_post_nms=1
+[OK] [109] top post_nms scores: [2.85]
+[OK] [109] time=14.23s
+[OK] [110] validare/0110.jpg: det_pre_nms=50
+[OK] [110] score stats: min=1.650 med=2.150 max=5.241 thr=1.600
+[OK] [110] kept topK_pre_nms=50
+[OK] [110] validare/0110.jpg: det_post_nms=3
+[OK] [110] top post_nms scores: [5.24 4.34 2.34]
+[OK] [110] time=13.97s
+[OK] [111] validare/0111.jpg: det_pre_nms=3
+[OK] [111] score stats: min=1.617 med=1.892 max=1.996 thr=1.600
+[OK] [111] kept topK_pre_nms=3
+[OK] [111] validare/0111.jpg: det_post_nms=2
+[OK] [111] top post_nms scores: [2.   1.62]
+[OK] [111] time=14.50s
+[OK] [112] validare/0112.jpg: det_pre_nms=114
+[OK] [112] score stats: min=1.614 med=2.839 max=5.906 thr=1.600
+[OK] [112] kept topK_pre_nms=60
+[OK] [112] validare/0112.jpg: det_post_nms=4
+[OK] [112] top post_nms scores: [5.91 5.03 4.01 3.17]
+[OK] [112] time=15.33s
+[OK] [113] validare/0113.jpg: det_pre_nms=23
+[OK] [113] score stats: min=1.619 med=2.006 max=3.140 thr=1.600
+[OK] [113] kept topK_pre_nms=23
+[OK] [113] validare/0113.jpg: det_post_nms=3
+[OK] [113] top post_nms scores: [3.14 2.93 2.48]
+[OK] [113] time=14.90s
+[OK] [114] validare/0114.jpg: det_pre_nms=46
+[OK] [114] score stats: min=1.647 med=2.008 max=3.499 thr=1.600
+[OK] [114] kept topK_pre_nms=46
+[OK] [114] validare/0114.jpg: det_post_nms=5
+[OK] [114] top post_nms scores: [3.5  2.56 2.34 2.17 2.16]
+[OK] [114] time=14.94s
+[OK] [115] validare/0115.jpg: det_pre_nms=4
+[OK] [115] score stats: min=1.697 med=1.812 max=2.080 thr=1.600
+[OK] [115] kept topK_pre_nms=4
+[OK] [115] validare/0115.jpg: det_post_nms=2
+[OK] [115] top post_nms scores: [2.08 1.91]
+[OK] [115] time=13.20s
+[OK] [116] validare/0116.jpg: det_pre_nms=11
+[OK] [116] score stats: min=1.636 med=2.155 max=2.547 thr=1.600
+[OK] [116] kept topK_pre_nms=11
+[OK] [116] validare/0116.jpg: det_post_nms=3
+[OK] [116] top post_nms scores: [2.55 1.77 1.67]
+[OK] [116] time=13.95s
+[OK] [117] validare/0117.jpg: det_pre_nms=107
+[OK] [117] score stats: min=1.602 med=2.051 max=4.228 thr=1.600
+[OK] [117] kept topK_pre_nms=60
+[OK] [117] validare/0117.jpg: det_post_nms=7
+[OK] [117] top post_nms scores: [4.23 3.88 3.61 2.76 2.57 2.5  2.26]
+[OK] [117] time=13.80s
+[OK] [118] validare/0118.jpg: det_pre_nms=142
+[OK] [118] score stats: min=1.610 med=2.122 max=4.421 thr=1.600
+[OK] [118] kept topK_pre_nms=60
+[OK] [118] validare/0118.jpg: det_post_nms=7
+[OK] [118] top post_nms scores: [4.42 4.09 4.05 3.73 3.18 2.47 2.35]
+[OK] [118] time=15.54s
+[OK] [119] validare/0119.jpg: det_pre_nms=4
+[OK] [119] score stats: min=1.672 med=2.026 max=2.343 thr=1.600
+[OK] [119] kept topK_pre_nms=4
+[OK] [119] validare/0119.jpg: det_post_nms=3
+[OK] [119] top post_nms scores: [2.34 2.33 1.67]
+[OK] [119] time=13.77s
+[OK] [120] validare/0120.jpg: det_pre_nms=7
+[OK] [120] score stats: min=1.602 med=2.185 max=2.733 thr=1.600
+[OK] [120] kept topK_pre_nms=7
+[OK] [120] validare/0120.jpg: det_post_nms=2
+[OK] [120] top post_nms scores: [2.73 2.32]
+[OK] [120] time=13.70s
+[OK] [121] validare/0121.jpg: det_pre_nms=39
+[OK] [121] score stats: min=1.621 med=2.109 max=3.632 thr=1.600
+[OK] [121] kept topK_pre_nms=39
+[OK] [121] validare/0121.jpg: det_post_nms=6
+[OK] [121] top post_nms scores: [3.63 2.68 2.5  2.48 1.9  1.71]
+[OK] [121] time=13.99s
+[OK] [122] validare/0122.jpg: det_pre_nms=8
+[OK] [122] score stats: min=1.608 med=1.899 max=3.049 thr=1.600
+[OK] [122] kept topK_pre_nms=8
+[OK] [122] validare/0122.jpg: det_post_nms=5
+[OK] [122] top post_nms scores: [3.05 1.89 1.75 1.69 1.61]
+[OK] [122] time=13.46s
+[OK] [123] validare/0123.jpg: det_pre_nms=100
+[OK] [123] score stats: min=1.602 med=2.455 max=5.647 thr=1.600
+[OK] [123] kept topK_pre_nms=60
+[OK] [123] validare/0123.jpg: det_post_nms=3
+[OK] [123] top post_nms scores: [5.65 4.8  4.62]
+[OK] [123] time=13.54s
+[OK] [124] validare/0124.jpg: det_pre_nms=93
+[OK] [124] score stats: min=1.666 med=2.491 max=5.294 thr=1.600
+[OK] [124] kept topK_pre_nms=60
+[OK] [124] validare/0124.jpg: det_post_nms=5
+[OK] [124] top post_nms scores: [5.29 3.93 3.69 2.61 2.26]
+[OK] [124] time=13.38s
+[OK] [125] validare/0125.jpg: det_pre_nms=35
+[OK] [125] score stats: min=1.648 med=2.054 max=3.192 thr=1.600
+[OK] [125] kept topK_pre_nms=35
+[OK] [125] validare/0125.jpg: det_post_nms=6
+[OK] [125] top post_nms scores: [3.19 2.76 2.29 2.25 2.07 2.03]
+[OK] [125] time=13.56s
+[OK] [126] validare/0126.jpg: det_pre_nms=5
+[OK] [126] score stats: min=1.727 med=1.768 max=2.260 thr=1.600
+[OK] [126] kept topK_pre_nms=5
+[OK] [126] validare/0126.jpg: det_post_nms=1
+[OK] [126] top post_nms scores: [2.26]
+[OK] [126] time=13.53s
+[OK] [127] validare/0127.jpg: det_pre_nms=26
+[OK] [127] score stats: min=1.626 med=2.637 max=5.897 thr=1.600
+[OK] [127] kept topK_pre_nms=26
+[OK] [127] validare/0127.jpg: det_post_nms=4
+[OK] [127] top post_nms scores: [5.9  2.64 2.41 2.06]
+[OK] [127] time=13.62s
+[OK] [128] validare/0128.jpg: det_pre_nms=75
+[OK] [128] score stats: min=1.612 med=2.150 max=4.212 thr=1.600
+[OK] [128] kept topK_pre_nms=60
+[OK] [128] validare/0128.jpg: det_post_nms=5
+[OK] [128] top post_nms scores: [4.21 3.12 2.86 2.78 2.18]
+[OK] [128] time=16.56s
+[OK] [129] validare/0129.jpg: det_pre_nms=78
+[OK] [129] score stats: min=1.602 med=2.144 max=4.877 thr=1.600
+[OK] [129] kept topK_pre_nms=60
+[OK] [129] validare/0129.jpg: det_post_nms=6
+[OK] [129] top post_nms scores: [4.88 3.47 3.   2.89 2.68 2.06]
+[OK] [129] time=16.16s
+[OK] [130] validare/0130.jpg: det_pre_nms=51
+[OK] [130] score stats: min=1.674 med=2.087 max=3.141 thr=1.600
+[OK] [130] kept topK_pre_nms=51
+[OK] [130] validare/0130.jpg: det_post_nms=9
+[OK] [130] top post_nms scores: [3.14 3.02 2.9  2.4  2.1  1.92 1.76 1.71 1.69]
+[OK] [130] time=15.14s
+[OK] [131] validare/0131.jpg: det_pre_nms=74
+[OK] [131] score stats: min=1.603 med=2.286 max=4.899 thr=1.600
+[OK] [131] kept topK_pre_nms=60
+[OK] [131] validare/0131.jpg: det_post_nms=3
+[OK] [131] top post_nms scores: [4.9  2.12 1.91]
+[OK] [131] time=14.77s
+[OK] [132] validare/0132.jpg: det_pre_nms=21
+[OK] [132] score stats: min=1.638 med=2.518 max=3.755 thr=1.600
+[OK] [132] kept topK_pre_nms=21
+[OK] [132] validare/0132.jpg: det_post_nms=2
+[OK] [132] top post_nms scores: [3.75 3.59]
+[OK] [132] time=15.30s
+[OK] [133] validare/0133.jpg: det_pre_nms=2
+[OK] [133] score stats: min=1.877 med=2.033 max=2.189 thr=1.600
+[OK] [133] kept topK_pre_nms=2
+[OK] [133] validare/0133.jpg: det_post_nms=1
+[OK] [133] top post_nms scores: [2.19]
+[OK] [133] time=14.71s
+[OK] [134] validare/0134.jpg: det_pre_nms=54
+[OK] [134] score stats: min=1.604 med=2.363 max=4.500 thr=1.600
+[OK] [134] kept topK_pre_nms=54
+[OK] [134] validare/0134.jpg: det_post_nms=5
+[OK] [134] top post_nms scores: [4.5  3.43 1.98 1.75 1.6 ]
+[OK] [134] time=14.12s
+[OK] [135] validare/0135.jpg: det_pre_nms=41
+[OK] [135] score stats: min=1.603 med=2.159 max=3.972 thr=1.600
+[OK] [135] kept topK_pre_nms=41
+[OK] [135] validare/0135.jpg: det_post_nms=5
+[OK] [135] top post_nms scores: [3.97 2.01 1.8  1.79 1.62]
+[OK] [135] time=13.93s
+[OK] [136] validare/0136.jpg: det_pre_nms=49
+[OK] [136] score stats: min=1.602 med=2.204 max=3.723 thr=1.600
+[OK] [136] kept topK_pre_nms=49
+[OK] [136] validare/0136.jpg: det_post_nms=6
+[OK] [136] top post_nms scores: [3.72 3.34 2.37 2.12 1.82 1.77]
+[OK] [136] time=14.13s
+[OK] [137] validare/0137.jpg: det_pre_nms=30
+[OK] [137] score stats: min=1.602 med=1.947 max=3.044 thr=1.600
+[OK] [137] kept topK_pre_nms=30
+[OK] [137] validare/0137.jpg: det_post_nms=6
+[OK] [137] top post_nms scores: [3.04 2.6  2.5  2.29 2.13 1.91]
+[OK] [137] time=13.84s
+[OK] [138] validare/0138.jpg: det_pre_nms=30
+[OK] [138] score stats: min=1.619 med=1.999 max=3.286 thr=1.600
+[OK] [138] kept topK_pre_nms=30
+[OK] [138] validare/0138.jpg: det_post_nms=8
+[OK] [138] top post_nms scores: [3.29 2.2  2.18 2.17 1.86 1.72 1.67 1.65]
+[OK] [138] time=13.46s
+[OK] [139] validare/0139.jpg: det_pre_nms=56
+[OK] [139] score stats: min=1.608 med=2.137 max=5.969 thr=1.600
+[OK] [139] kept topK_pre_nms=56
+[OK] [139] validare/0139.jpg: det_post_nms=6
+[OK] [139] top post_nms scores: [5.97 3.44 3.19 3.18 2.23 1.75]
+[OK] [139] time=13.72s
+[OK] [140] validare/0140.jpg: det_pre_nms=47
+[OK] [140] score stats: min=1.612 med=2.063 max=3.717 thr=1.600
+[OK] [140] kept topK_pre_nms=47
+[OK] [140] validare/0140.jpg: det_post_nms=9
+[OK] [140] top post_nms scores: [3.72 3.45 2.29 2.06 1.85 1.77 1.7  1.65 1.64]
+[OK] [140] time=13.38s
+[OK] [141] validare/0141.jpg: det_pre_nms=32
+[OK] [141] score stats: min=1.619 med=1.998 max=3.171 thr=1.600
+[OK] [141] kept topK_pre_nms=32
+[OK] [141] validare/0141.jpg: det_post_nms=8
+[OK] [141] top post_nms scores: [3.17 2.95 2.7  2.48 2.33 2.12 2.01 2.  ]
+[OK] [141] time=13.53s
+[OK] [142] validare/0142.jpg: det_pre_nms=64
+[OK] [142] score stats: min=1.607 med=2.170 max=4.785 thr=1.600
+[OK] [142] kept topK_pre_nms=60
+[OK] [142] validare/0142.jpg: det_post_nms=7
+[OK] [142] top post_nms scores: [4.78 3.99 3.66 2.22 2.17 2.1  1.99]
+[OK] [142] time=13.35s
+[OK] [143] validare/0143.jpg: det_pre_nms=1
+[OK] [143] score stats: min=2.076 med=2.076 max=2.076 thr=1.600
+[OK] [143] kept topK_pre_nms=1
+[OK] [143] validare/0143.jpg: det_post_nms=1
+[OK] [143] top post_nms scores: [2.08]
+[OK] [143] time=13.25s
+[OK] [144] validare/0144.jpg: det_pre_nms=16
+[OK] [144] score stats: min=1.606 med=1.907 max=2.634 thr=1.600
+[OK] [144] kept topK_pre_nms=16
+[OK] [144] validare/0144.jpg: det_post_nms=3
+[OK] [144] top post_nms scores: [2.63 2.42 2.05]
+[OK] [144] time=13.40s
+[OK] [145] validare/0145.jpg: det_pre_nms=18
+[OK] [145] score stats: min=1.639 med=2.025 max=3.552 thr=1.600
+[OK] [145] kept topK_pre_nms=18
+[OK] [145] validare/0145.jpg: det_post_nms=6
+[OK] [145] top post_nms scores: [3.55 2.24 2.21 1.98 1.78 1.64]
+[OK] [145] time=13.13s
+[OK] [146] validare/0146.jpg: det_pre_nms=37
+[OK] [146] score stats: min=1.602 med=2.547 max=5.999 thr=1.600
+[OK] [146] kept topK_pre_nms=37
+[OK] [146] validare/0146.jpg: det_post_nms=4
+[OK] [146] top post_nms scores: [6.   2.47 2.13 1.73]
+[OK] [146] time=13.36s
+[OK] [147] validare/0147.jpg: det_pre_nms=52
+[OK] [147] score stats: min=1.658 med=2.124 max=5.201 thr=1.600
+[OK] [147] kept topK_pre_nms=52
+[OK] [147] validare/0147.jpg: det_post_nms=5
+[OK] [147] top post_nms scores: [5.2  4.05 3.64 2.14 1.97]
+[OK] [147] time=13.21s
+[OK] [148] validare/0148.jpg: det_pre_nms=36
+[OK] [148] score stats: min=1.619 med=2.009 max=3.340 thr=1.600
+[OK] [148] kept topK_pre_nms=36
+[OK] [148] validare/0148.jpg: det_post_nms=6
+[OK] [148] top post_nms scores: [3.34 2.3  2.04 2.04 1.85 1.64]
+[OK] [148] time=12.85s
+[OK] [149] validare/0149.jpg: det_pre_nms=54
+[OK] [149] score stats: min=1.608 med=2.375 max=5.316 thr=1.600
+[OK] [149] kept topK_pre_nms=54
+[OK] [149] validare/0149.jpg: det_post_nms=5
+[OK] [149] top post_nms scores: [5.32 3.59 2.13 2.12 1.91]
+[OK] [149] time=13.49s
+[OK] [150] validare/0150.jpg: det_pre_nms=52
+[OK] [150] score stats: min=1.631 med=2.422 max=4.822 thr=1.600
+[OK] [150] kept topK_pre_nms=52
+[OK] [150] validare/0150.jpg: det_post_nms=2
+[OK] [150] top post_nms scores: [4.82 1.98]
+[OK] [150] time=12.65s
+[OK] [151] validare/0151.jpg: det_pre_nms=5
+[OK] [151] score stats: min=1.718 med=1.917 max=3.094 thr=1.600
+[OK] [151] kept topK_pre_nms=5
+[OK] [151] validare/0151.jpg: det_post_nms=1
+[OK] [151] top post_nms scores: [3.09]
+[OK] [151] time=13.31s
+[OK] [152] validare/0152.jpg: det_pre_nms=7
+[OK] [152] score stats: min=1.608 med=1.649 max=2.893 thr=1.600
+[OK] [152] kept topK_pre_nms=7
+[OK] [152] validare/0152.jpg: det_post_nms=2
+[OK] [152] top post_nms scores: [2.89 1.72]
+[OK] [152] time=13.09s
+[OK] [153] validare/0153.jpg: det_pre_nms=58
+[OK] [153] score stats: min=1.602 med=2.117 max=3.681 thr=1.600
+[OK] [153] kept topK_pre_nms=58
+[OK] [153] validare/0153.jpg: det_post_nms=4
+[OK] [153] top post_nms scores: [3.68 2.76 2.55 1.84]
+[OK] [153] time=13.74s
+[OK] [154] validare/0154.jpg: det_pre_nms=34
+[OK] [154] score stats: min=1.633 med=2.295 max=4.216 thr=1.600
+[OK] [154] kept topK_pre_nms=34
+[OK] [154] validare/0154.jpg: det_post_nms=5
+[OK] [154] top post_nms scores: [4.22 3.82 2.29 2.23 1.69]
+[OK] [154] time=14.80s
+[OK] [155] validare/0155.jpg: det_pre_nms=47
+[OK] [155] score stats: min=1.602 med=2.115 max=3.817 thr=1.600
+[OK] [155] kept topK_pre_nms=47
+[OK] [155] validare/0155.jpg: det_post_nms=2
+[OK] [155] top post_nms scores: [3.82 3.74]
+[OK] [155] time=14.42s
+[OK] [156] validare/0156.jpg: det_pre_nms=76
+[OK] [156] score stats: min=1.607 med=2.261 max=5.839 thr=1.600
+[OK] [156] kept topK_pre_nms=60
+[OK] [156] validare/0156.jpg: det_post_nms=5
+[OK] [156] top post_nms scores: [5.84 4.59 4.1  2.04 1.88]
+[OK] [156] time=14.07s
+[OK] [157] validare/0157.jpg: det_pre_nms=1
+[OK] [157] score stats: min=2.278 med=2.278 max=2.278 thr=1.600
+[OK] [157] kept topK_pre_nms=1
+[OK] [157] validare/0157.jpg: det_post_nms=1
+[OK] [157] top post_nms scores: [2.28]
+[OK] [157] time=14.27s
+[OK] [158] validare/0158.jpg: det_pre_nms=8
+[OK] [158] score stats: min=1.643 med=1.709 max=2.390 thr=1.600
+[OK] [158] kept topK_pre_nms=8
+[OK] [158] validare/0158.jpg: det_post_nms=6
+[OK] [158] top post_nms scores: [2.39 1.95 1.88 1.68 1.65 1.64]
+[OK] [158] time=14.47s
+[OK] [159] validare/0159.jpg: det_pre_nms=37
+[OK] [159] score stats: min=1.610 med=2.220 max=4.719 thr=1.600
+[OK] [159] kept topK_pre_nms=37
+[OK] [159] validare/0159.jpg: det_post_nms=5
+[OK] [159] top post_nms scores: [4.72 3.07 2.87 2.63 2.22]
+[OK] [159] time=14.43s
+[OK] [160] validare/0160.jpg: det_pre_nms=15
+[OK] [160] score stats: min=1.666 med=2.085 max=3.990 thr=1.600
+[OK] [160] kept topK_pre_nms=15
+[OK] [160] validare/0160.jpg: det_post_nms=5
+[OK] [160] top post_nms scores: [3.99 1.97 1.93 1.88 1.81]
+[OK] [160] time=14.21s
+[OK] [161] validare/0161.jpg: det_pre_nms=52
+[OK] [161] score stats: min=1.608 med=2.360 max=4.042 thr=1.600
+[OK] [161] kept topK_pre_nms=52
+[OK] [161] validare/0161.jpg: det_post_nms=6
+[OK] [161] top post_nms scores: [4.04 3.84 3.8  2.42 2.38 1.64]
+[OK] [161] time=14.05s
+[OK] [162] validare/0162.jpg: det_pre_nms=20
+[OK] [162] score stats: min=1.666 med=2.099 max=3.556 thr=1.600
+[OK] [162] kept topK_pre_nms=20
+[OK] [162] validare/0162.jpg: det_post_nms=7
+[OK] [162] top post_nms scores: [3.56 3.35 2.61 1.89 1.87 1.8  1.68]
+[OK] [162] time=14.49s
+[OK] [163] validare/0163.jpg: det_pre_nms=6
+[OK] [163] score stats: min=1.633 med=1.837 max=2.506 thr=1.600
+[OK] [163] kept topK_pre_nms=6
+[OK] [163] validare/0163.jpg: det_post_nms=1
+[OK] [163] top post_nms scores: [2.51]
+[OK] [163] time=13.91s
+[OK] [164] validare/0164.jpg: det_pre_nms=23
+[OK] [164] score stats: min=1.603 med=2.027 max=3.325 thr=1.600
+[OK] [164] kept topK_pre_nms=23
+[OK] [164] validare/0164.jpg: det_post_nms=5
+[OK] [164] top post_nms scores: [3.33 3.23 3.17 2.42 2.16]
+[OK] [164] time=14.06s
+[OK] [165] validare/0165.jpg: det_pre_nms=28
+[OK] [165] score stats: min=1.641 med=2.249 max=3.302 thr=1.600
+[OK] [165] kept topK_pre_nms=28
+[OK] [165] validare/0165.jpg: det_post_nms=5
+[OK] [165] top post_nms scores: [3.3  3.1  3.03 2.71 2.32]
+[OK] [165] time=14.58s
+[OK] [166] validare/0166.jpg: det_pre_nms=48
+[OK] [166] score stats: min=1.615 med=2.632 max=6.233 thr=1.600
+[OK] [166] kept topK_pre_nms=48
+[OK] [166] validare/0166.jpg: det_post_nms=2
+[OK] [166] top post_nms scores: [6.23 2.46]
+[OK] [166] time=14.50s
+[OK] [167] validare/0167.jpg: det_pre_nms=29
+[OK] [167] score stats: min=1.654 med=2.076 max=3.062 thr=1.600
+[OK] [167] kept topK_pre_nms=29
+[OK] [167] validare/0167.jpg: det_post_nms=5
+[OK] [167] top post_nms scores: [3.06 2.8  2.39 2.34 2.25]
+[OK] [167] time=14.25s
+[OK] [168] validare/0168.jpg: det_pre_nms=42
+[OK] [168] score stats: min=1.615 med=2.087 max=4.240 thr=1.600
+[OK] [168] kept topK_pre_nms=42
+[OK] [168] validare/0168.jpg: det_post_nms=5
+[OK] [168] top post_nms scores: [4.24 3.53 2.11 1.89 1.62]
+[OK] [168] time=14.23s
+[OK] [169] validare/0169.jpg: det_pre_nms=76
+[OK] [169] score stats: min=1.605 med=2.105 max=4.587 thr=1.600
+[OK] [169] kept topK_pre_nms=60
+[OK] [169] validare/0169.jpg: det_post_nms=6
+[OK] [169] top post_nms scores: [4.59 3.43 3.37 2.3  2.22 2.22]
+[OK] [169] time=14.41s
+[OK] [170] validare/0170.jpg: det_pre_nms=35
+[OK] [170] score stats: min=1.609 med=1.916 max=3.881 thr=1.600
+[OK] [170] kept topK_pre_nms=35
+[OK] [170] validare/0170.jpg: det_post_nms=7
+[OK] [170] top post_nms scores: [3.88 2.66 2.53 2.26 1.78 1.75 1.66]
+[OK] [170] time=14.60s
+[OK] [171] validare/0171.jpg: det_pre_nms=30
+[OK] [171] score stats: min=1.628 med=2.040 max=3.773 thr=1.600
+[OK] [171] kept topK_pre_nms=30
+[OK] [171] validare/0171.jpg: det_post_nms=5
+[OK] [171] top post_nms scores: [3.77 3.51 2.74 2.67 2.35]
+[OK] [171] time=15.18s
+[OK] [172] validare/0172.jpg: det_pre_nms=15
+[OK] [172] score stats: min=1.607 med=1.954 max=2.792 thr=1.600
+[OK] [172] kept topK_pre_nms=15
+[OK] [172] validare/0172.jpg: det_post_nms=7
+[OK] [172] top post_nms scores: [2.79 2.23 2.03 2.01 1.93 1.83 1.7 ]
+[OK] [172] time=14.91s
+[OK] [173] validare/0173.jpg: det_pre_nms=34
+[OK] [173] score stats: min=1.650 med=2.320 max=5.934 thr=1.600
+[OK] [173] kept topK_pre_nms=34
+[OK] [173] validare/0173.jpg: det_post_nms=4
+[OK] [173] top post_nms scores: [5.93 2.42 1.94 1.65]
+[OK] [173] time=14.44s
+[OK] [174] validare/0174.jpg: det_pre_nms=51
+[OK] [174] score stats: min=1.602 med=2.339 max=4.839 thr=1.600
+[OK] [174] kept topK_pre_nms=51
+[OK] [174] validare/0174.jpg: det_post_nms=4
+[OK] [174] top post_nms scores: [4.84 3.5  2.79 1.8 ]
+[OK] [174] time=14.27s
+[OK] [175] validare/0175.jpg: det_pre_nms=65
+[OK] [175] score stats: min=1.602 med=2.028 max=4.279 thr=1.600
+[OK] [175] kept topK_pre_nms=60
+[OK] [175] validare/0175.jpg: det_post_nms=6
+[OK] [175] top post_nms scores: [4.28 3.9  3.46 2.33 1.91 1.86]
+[OK] [175] time=14.23s
+[OK] [176] validare/0176.jpg: det_pre_nms=33
+[OK] [176] score stats: min=1.605 med=2.018 max=3.543 thr=1.600
+[OK] [176] kept topK_pre_nms=33
+[OK] [176] validare/0176.jpg: det_post_nms=6
+[OK] [176] top post_nms scores: [3.54 3.38 2.8  2.51 2.46 1.81]
+[OK] [176] time=14.17s
+[OK] [177] validare/0177.jpg: det_pre_nms=101
+[OK] [177] score stats: min=1.610 med=2.130 max=4.853 thr=1.600
+[OK] [177] kept topK_pre_nms=60
+[OK] [177] validare/0177.jpg: det_post_nms=4
+[OK] [177] top post_nms scores: [4.85 3.94 3.8  3.34]
+[OK] [177] time=14.11s
+[OK] [178] validare/0178.jpg: det_pre_nms=48
+[OK] [178] score stats: min=1.633 med=1.954 max=3.742 thr=1.600
+[OK] [178] kept topK_pre_nms=48
+[OK] [178] validare/0178.jpg: det_post_nms=4
+[OK] [178] top post_nms scores: [3.74 3.42 2.25 1.87]
+[OK] [178] time=14.43s
+[OK] [179] validare/0179.jpg: det_pre_nms=72
+[OK] [179] score stats: min=1.601 med=2.132 max=3.830 thr=1.600
+[OK] [179] kept topK_pre_nms=60
+[OK] [179] validare/0179.jpg: det_post_nms=6
+[OK] [179] top post_nms scores: [3.83 3.57 3.34 2.3  2.   1.74]
+[OK] [179] time=14.43s
+[OK] [180] validare/0180.jpg: det_pre_nms=18
+[OK] [180] score stats: min=1.608 med=1.890 max=3.119 thr=1.600
+[OK] [180] kept topK_pre_nms=18
+[OK] [180] validare/0180.jpg: det_post_nms=8
+[OK] [180] top post_nms scores: [3.12 3.1  2.26 2.24 2.16 1.98 1.83 1.65]
+[OK] [180] time=14.32s
+[OK] [181] validare/0181.jpg: det_pre_nms=8
+[OK] [181] score stats: min=1.701 med=2.074 max=3.013 thr=1.600
+[OK] [181] kept topK_pre_nms=8
+[OK] [181] validare/0181.jpg: det_post_nms=2
+[OK] [181] top post_nms scores: [3.01 1.88]
+[OK] [181] time=13.76s
+[OK] [182] validare/0182.jpg: det_pre_nms=21
+[OK] [182] score stats: min=1.612 med=2.100 max=4.087 thr=1.600
+[OK] [182] kept topK_pre_nms=21
+[OK] [182] validare/0182.jpg: det_post_nms=6
+[OK] [182] top post_nms scores: [4.09 2.29 2.1  1.89 1.77 1.68]
+[OK] [182] time=13.90s
+[OK] [183] validare/0183.jpg: det_pre_nms=43
+[OK] [183] score stats: min=1.625 med=2.055 max=4.457 thr=1.600
+[OK] [183] kept topK_pre_nms=43
+[OK] [183] validare/0183.jpg: det_post_nms=5
+[OK] [183] top post_nms scores: [4.46 3.47 2.08 2.07 1.88]
+[OK] [183] time=15.63s
+[OK] [184] validare/0184.jpg: det_pre_nms=94
+[OK] [184] score stats: min=1.646 med=2.463 max=5.478 thr=1.600
+[OK] [184] kept topK_pre_nms=60
+[OK] [184] validare/0184.jpg: det_post_nms=3
+[OK] [184] top post_nms scores: [5.48 4.14 2.3 ]
+[OK] [184] time=14.92s
+[OK] [185] validare/0185.jpg: det_pre_nms=29
+[OK] [185] score stats: min=1.616 med=1.862 max=2.721 thr=1.600
+[OK] [185] kept topK_pre_nms=29
+[OK] [185] validare/0185.jpg: det_post_nms=5
+[OK] [185] top post_nms scores: [2.72 2.41 2.31 2.03 1.65]
+[OK] [185] time=14.94s
+[OK] [186] validare/0186.jpg: det_pre_nms=53
+[OK] [186] score stats: min=1.621 med=2.007 max=4.682 thr=1.600
+[OK] [186] kept topK_pre_nms=53
+[OK] [186] validare/0186.jpg: det_post_nms=8
+[OK] [186] top post_nms scores: [4.68 2.85 2.54 2.42 2.23 2.15 2.01 1.93]
+[OK] [186] time=14.71s
+[OK] [187] validare/0187.jpg: det_pre_nms=39
+[OK] [187] score stats: min=1.624 med=2.244 max=4.736 thr=1.600
+[OK] [187] kept topK_pre_nms=39
+[OK] [187] validare/0187.jpg: det_post_nms=4
+[OK] [187] top post_nms scores: [4.74 3.37 2.12 1.89]
+[OK] [187] time=14.40s
+[OK] [188] validare/0188.jpg: det_pre_nms=52
+[OK] [188] score stats: min=1.609 med=2.120 max=5.040 thr=1.600
+[OK] [188] kept topK_pre_nms=52
+[OK] [188] validare/0188.jpg: det_post_nms=5
+[OK] [188] top post_nms scores: [5.04 3.39 2.72 2.01 1.63]
+[OK] [188] time=14.58s
+[OK] [189] validare/0189.jpg: det_pre_nms=43
+[OK] [189] score stats: min=1.633 med=2.543 max=5.284 thr=1.600
+[OK] [189] kept topK_pre_nms=43
+[OK] [189] validare/0189.jpg: det_post_nms=2
+[OK] [189] top post_nms scores: [5.28 2.06]
+[OK] [189] time=14.74s
+[OK] [190] validare/0190.jpg: det_pre_nms=61
+[OK] [190] score stats: min=1.606 med=2.376 max=5.677 thr=1.600
+[OK] [190] kept topK_pre_nms=60
+[OK] [190] validare/0190.jpg: det_post_nms=4
+[OK] [190] top post_nms scores: [5.68 4.55 2.15 1.62]
+[OK] [190] time=14.86s
+[OK] [191] validare/0191.jpg: det_pre_nms=46
+[OK] [191] score stats: min=1.600 med=2.430 max=4.081 thr=1.600
+[OK] [191] kept topK_pre_nms=46
+[OK] [191] validare/0191.jpg: det_post_nms=2
+[OK] [191] top post_nms scores: [4.08 1.82]
+[OK] [191] time=14.49s
+[OK] [192] validare/0192.jpg: det_pre_nms=17
+[OK] [192] score stats: min=1.614 med=2.143 max=4.160 thr=1.600
+[OK] [192] kept topK_pre_nms=17
+[OK] [192] validare/0192.jpg: det_post_nms=4
+[OK] [192] top post_nms scores: [4.16 2.91 1.66 1.61]
+[OK] [192] time=14.27s
+[OK] [193] validare/0193.jpg: det_pre_nms=53
+[OK] [193] score stats: min=1.612 med=2.557 max=5.863 thr=1.600
+[OK] [193] kept topK_pre_nms=53
+[OK] [193] validare/0193.jpg: det_post_nms=3
+[OK] [193] top post_nms scores: [5.86 2.89 2.09]
+[OK] [193] time=15.26s
+[OK] [194] validare/0194.jpg: det_pre_nms=17
+[OK] [194] score stats: min=1.620 med=1.974 max=2.809 thr=1.600
+[OK] [194] kept topK_pre_nms=17
+[OK] [194] validare/0194.jpg: det_post_nms=5
+[OK] [194] top post_nms scores: [2.81 2.2  2.19 1.84 1.79]
+[OK] [194] time=15.03s
+[OK] [195] validare/0195.jpg: det_pre_nms=25
+[OK] [195] score stats: min=1.622 med=1.874 max=2.988 thr=1.600
+[OK] [195] kept topK_pre_nms=25
+[OK] [195] validare/0195.jpg: det_post_nms=7
+[OK] [195] top post_nms scores: [2.99 2.57 2.29 2.11 1.89 1.84 1.68]
+[OK] [195] time=15.46s
+[OK] [196] validare/0196.jpg: det_pre_nms=143
+[OK] [196] score stats: min=1.602 med=2.301 max=5.665 thr=1.600
+[OK] [196] kept topK_pre_nms=60
+[OK] [196] validare/0196.jpg: det_post_nms=7
+[OK] [196] top post_nms scores: [5.67 4.38 3.9  3.53 2.98 2.9  2.58]
+[OK] [196] time=14.97s
+[OK] [197] validare/0197.jpg: det_pre_nms=80
+[OK] [197] score stats: min=1.660 med=2.610 max=4.993 thr=1.600
+[OK] [197] kept topK_pre_nms=60
+[OK] [197] validare/0197.jpg: det_post_nms=3
+[OK] [197] top post_nms scores: [4.99 4.68 2.23]
+[OK] [197] time=14.46s
+[OK] [198] validare/0198.jpg: det_pre_nms=5
+[OK] [198] score stats: min=1.740 med=1.939 max=2.025 thr=1.600
+[OK] [198] kept topK_pre_nms=5
+[OK] [198] validare/0198.jpg: det_post_nms=3
+[OK] [198] top post_nms scores: [2.03 2.   1.74]
+[OK] [198] time=14.36s
+[OK] [199] validare/0199.jpg: det_pre_nms=2
+[OK] [199] score stats: min=1.973 med=2.086 max=2.199 thr=1.600
+[OK] [199] kept topK_pre_nms=2
+[OK] [199] validare/0199.jpg: det_post_nms=1
+[OK] [199] top post_nms scores: [2.2]
+[OK] [199] time=15.08s
+[OK] [200] validare/0200.jpg: det_pre_nms=19
+[OK] [200] score stats: min=1.613 med=1.821 max=2.904 thr=1.600
+[OK] [200] kept topK_pre_nms=19
+[OK] [200] validare/0200.jpg: det_post_nms=3
+[OK] [200] top post_nms scores: [2.9  2.26 2.04]
+[OK] [200] time=15.46s
+[OK] scan done.
+[OK] [Task1] saved .npy outputs
+[OK]   path: C:\Users\drago\Desktop\CAVA-2025-TEMA2\evaluare\fisiere_solutie\341_Solomon_Dragos_TUNE_0001\task1_runs\job_0001
+[OK]   detections: (911, 4) int32
+[OK]   scores:     (911,) float32
+[OK]   file_names: (911,) str
+[OK] Next: run evaluator (for val) to get PR/AP.

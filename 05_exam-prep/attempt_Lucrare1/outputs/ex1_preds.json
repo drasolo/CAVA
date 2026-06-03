@@ -1,0 +1,302 @@
+[
+  {
+    "file": "0041.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0042.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0043.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0044.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0045.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0046.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0047.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0048.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0049.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0050.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0051.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0052.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0053.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0054.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0055.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0096.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0097.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0098.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0099.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0100.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0101.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0102.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0103.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0104.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0105.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0106.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0107.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0108.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0109.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0110.jpg",
+    "y_true": 0,
+    "y_pred": 0
+  },
+  {
+    "file": "0151.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  },
+  {
+    "file": "0152.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  },
+  {
+    "file": "0153.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  },
+  {
+    "file": "0154.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  },
+  {
+    "file": "0155.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  },
+  {
+    "file": "0156.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  },
+  {
+    "file": "0157.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  },
+  {
+    "file": "0158.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  },
+  {
+    "file": "0159.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  },
+  {
+    "file": "0160.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  },
+  {
+    "file": "0161.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  },
+  {
+    "file": "0162.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  },
+  {
+    "file": "0163.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  },
+  {
+    "file": "0164.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  },
+  {
+    "file": "0165.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  },
+  {
+    "file": "0206.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  },
+  {
+    "file": "0207.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  },
+  {
+    "file": "0208.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  },
+  {
+    "file": "0209.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  },
+  {
+    "file": "0210.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  },
+  {
+    "file": "0211.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  },
+  {
+    "file": "0212.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  },
+  {
+    "file": "0213.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  },
+  {
+    "file": "0214.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  },
+  {
+    "file": "0215.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  },
+  {
+    "file": "0216.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  },
+  {
+    "file": "0217.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  },
+  {
+    "file": "0218.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  },
+  {
+    "file": "0219.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  },
+  {
+    "file": "0220.jpg",
+    "y_true": 1,
+    "y_pred": 1
+  }
+]

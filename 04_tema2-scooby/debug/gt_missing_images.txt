@@ -1,0 +1,4 @@
+GT images: 4000
+Indexed images: 4000
+Missing GT keys in index: 0
+

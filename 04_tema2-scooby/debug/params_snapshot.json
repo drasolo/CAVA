@@ -1,0 +1,21 @@
+{
+  "seed": 42,
+  "train_dir": "C:\\Users\\drago\\Desktop\\CAVA-2025-TEMA2\\antrenare",
+  "debug_dir": "C:\\Users\\drago\\Desktop\\CAVA-2025-TEMA2\\debug",
+  "dim_window": 64,
+  "neg_iou_thresh": 0.1,
+  "step": 8,
+  "pyramid_scales": [
+    1.0,
+    0.9,
+    0.8,
+    0.7,
+    0.6
+  ],
+  "hog_cell_size": 8,
+  "hog_block_size": 2,
+  "hog_num_bins": 9,
+  "nms_iou_thresh": 0.3,
+  "detection_score_thresh": -1000000000.0,
+  "student_folder": "331_Alexe_Bogdan"
+}

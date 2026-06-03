@@ -1,0 +1,1 @@
+#Train character classifier on face crops (GT) OR on detected faces (depending on your design), save model.

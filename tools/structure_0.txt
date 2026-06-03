@@ -1,0 +1,71 @@
+Folder structure (all folders shown; files filtered) 
+ 
+.\Lucrare1 
+    .\Lucrare1\.DS_Store 
+    .\Lucrare1\Enunt.pdf 
+.\__MACOSX 
+    .\__MACOSX\._Lucrare1 
+.\Lucrare1\data 
+    .\Lucrare1\data\.DS_Store 
+.\Lucrare1\outputs 
+.\Lucrare1\data\ex1 
+    .\Lucrare1\data\ex1\annotations.txt 
+.\Lucrare1\data\ex2 
+    .\Lucrare1\data\ex2\.DS_Store 
+.\Lucrare1\data\ex2\antrenare 
+    .\Lucrare1\data\ex2\antrenare\001_1.txt 
+    .\Lucrare1\data\ex2\antrenare\001_2.txt 
+    .\Lucrare1\data\ex2\antrenare\002_1.txt 
+    .\Lucrare1\data\ex2\antrenare\002_2.txt 
+    .\Lucrare1\data\ex2\antrenare\003_1.txt 
+    .\Lucrare1\data\ex2\antrenare\003_2.txt 
+    .\Lucrare1\data\ex2\antrenare\004_1.txt 
+    .\Lucrare1\data\ex2\antrenare\004_2.txt 
+    .\Lucrare1\data\ex2\antrenare\005_1.txt 
+    .\Lucrare1\data\ex2\antrenare\005_2.txt 
+    .\Lucrare1\data\ex2\antrenare\006_1.txt 
+    .\Lucrare1\data\ex2\antrenare\006_2.txt 
+    .\Lucrare1\data\ex2\antrenare\007_1.txt 
+    .\Lucrare1\data\ex2\antrenare\007_2.txt 
+    .\Lucrare1\data\ex2\antrenare\008_1.txt 
+    .\Lucrare1\data\ex2\antrenare\008_2.txt 
+    .\Lucrare1\data\ex2\antrenare\009_1.txt 
+    .\Lucrare1\data\ex2\antrenare\009_2.txt 
+    .\Lucrare1\data\ex2\antrenare\010_1.txt 
+    .\Lucrare1\data\ex2\antrenare\010_2.txt 
+.\Lucrare1\data\ex2\testare 
+.\__MACOSX\Lucrare1 
+    .\__MACOSX\Lucrare1\._.DS_Store 
+    .\__MACOSX\Lucrare1\._data 
+    .\__MACOSX\Lucrare1\._Enunt.pdf 
+.\__MACOSX\Lucrare1\data 
+    .\__MACOSX\Lucrare1\data\._.DS_Store 
+    .\__MACOSX\Lucrare1\data\._ex1 
+    .\__MACOSX\Lucrare1\data\._ex2 
+.\__MACOSX\Lucrare1\data\ex1 
+    .\__MACOSX\Lucrare1\data\ex1\._annotations.txt 
+.\__MACOSX\Lucrare1\data\ex2 
+    .\__MACOSX\Lucrare1\data\ex2\._.DS_Store 
+    .\__MACOSX\Lucrare1\data\ex2\._antrenare 
+    .\__MACOSX\Lucrare1\data\ex2\._testare 
+.\__MACOSX\Lucrare1\data\ex2\antrenare 
+    .\__MACOSX\Lucrare1\data\ex2\antrenare\._001_1.txt 
+    .\__MACOSX\Lucrare1\data\ex2\antrenare\._001_2.txt 
+    .\__MACOSX\Lucrare1\data\ex2\antrenare\._002_1.txt 
+    .\__MACOSX\Lucrare1\data\ex2\antrenare\._002_2.txt 
+    .\__MACOSX\Lucrare1\data\ex2\antrenare\._003_1.txt 
+    .\__MACOSX\Lucrare1\data\ex2\antrenare\._003_2.txt 
+    .\__MACOSX\Lucrare1\data\ex2\antrenare\._004_1.txt 
+    .\__MACOSX\Lucrare1\data\ex2\antrenare\._004_2.txt 
+    .\__MACOSX\Lucrare1\data\ex2\antrenare\._005_1.txt 
+    .\__MACOSX\Lucrare1\data\ex2\antrenare\._005_2.txt 
+    .\__MACOSX\Lucrare1\data\ex2\antrenare\._006_1.txt 
+    .\__MACOSX\Lucrare1\data\ex2\antrenare\._006_2.txt 
+    .\__MACOSX\Lucrare1\data\ex2\antrenare\._007_1.txt 
+    .\__MACOSX\Lucrare1\data\ex2\antrenare\._007_2.txt 
+    .\__MACOSX\Lucrare1\data\ex2\antrenare\._008_1.txt 
+    .\__MACOSX\Lucrare1\data\ex2\antrenare\._008_2.txt 
+    .\__MACOSX\Lucrare1\data\ex2\antrenare\._009_1.txt 
+    .\__MACOSX\Lucrare1\data\ex2\antrenare\._009_2.txt 
+    .\__MACOSX\Lucrare1\data\ex2\antrenare\._010_1.txt 
+    .\__MACOSX\Lucrare1\data\ex2\antrenare\._010_2.txt 

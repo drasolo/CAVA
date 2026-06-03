@@ -1,0 +1,101 @@
+Folder structure (all folders shown; files filtered) 
+ 
+.\CAVA-2025-TEMA1 
+    .\CAVA-2025-TEMA1\.env 
+    .\CAVA-2025-TEMA1\CAVA-2025-TEMA1.zip 
+    .\CAVA-2025-TEMA1\README.txt 
+    .\CAVA-2025-TEMA1\requirements.txt 
+    .\CAVA-2025-TEMA1\structure.txt 
+    .\CAVA-2025-TEMA1\structure_maker.bat 
+.\Cursuri_CAVA_1-8_25-26 
+    .\Cursuri_CAVA_1-8_25-26\Curs1.pdf 
+    .\Cursuri_CAVA_1-8_25-26\Curs2.pdf 
+    .\Cursuri_CAVA_1-8_25-26\Curs3.pdf 
+    .\Cursuri_CAVA_1-8_25-26\Curs4.pdf 
+    .\Cursuri_CAVA_1-8_25-26\Curs5.pdf 
+    .\Cursuri_CAVA_1-8_25-26\Curs6.pdf 
+    .\Cursuri_CAVA_1-8_25-26\Curs7.pdf 
+    .\Cursuri_CAVA_1-8_25-26\Curs8.pdf 
+    .\Cursuri_CAVA_1-8_25-26\Cursuri_CAVA_1-8_merged.pdf 
+    .\Cursuri_CAVA_1-8_25-26\OneDrive_1_11-26-2025.zip 
+.\Lab1CAVA 
+    .\Lab1CAVA\Laborator 1 .pdf 
+    .\Lab1CAVA\Laborator 1 CAVA Solutie.ipynb 
+.\Lab2+3CAVA 
+    .\Lab2+3CAVA\Lab2+3cod.zip 
+    .\Lab2+3CAVA\Tema 1.pdf 
+.\Lab4+5CAVA 
+    .\Lab4+5CAVA\Articol.pdf 
+    .\Lab4+5CAVA\Lab4+5cod.zip 
+    .\Lab4+5CAVA\Tema 2.pdf 
+.\Lab6 
+    .\Lab6\Laborator 6 -Solutie.ipynb 
+    .\Lab6\Laborator_6.pdf 
+.\Lab7 
+    .\Lab7\Filtrarea culorilor.ipynb 
+.\CAVA-2025-TEMA1\code 
+    .\CAVA-2025-TEMA1\code\calibrator.py 
+    .\CAVA-2025-TEMA1\code\classifier.py 
+    .\CAVA-2025-TEMA1\code\config.py 
+    .\CAVA-2025-TEMA1\code\detector.py 
+    .\CAVA-2025-TEMA1\code\evalueaza_solutie.py 
+    .\CAVA-2025-TEMA1\code\main.py 
+    .\CAVA-2025-TEMA1\code\scorer.py 
+    .\CAVA-2025-TEMA1\code\templates.py 
+    .\CAVA-2025-TEMA1\code\test_classifier.py 
+    .\CAVA-2025-TEMA1\code\test_templates.py 
+    .\CAVA-2025-TEMA1\code\utils.py 
+    .\CAVA-2025-TEMA1\code\validator.py 
+    .\CAVA-2025-TEMA1\code\writer.py 
+.\CAVA-2025-TEMA1\data 
+.\CAVA-2025-TEMA1\debug_templates 
+.\CAVA-2025-TEMA1\notes 
+    .\CAVA-2025-TEMA1\notes\Plan for Building the Qwirkle Connect Score Calculator.pdf 
+    .\CAVA-2025-TEMA1\notes\Robust CV Pipeline Plan for Qwirkle Connect Score Calculator.pdf 
+    .\CAVA-2025-TEMA1\notes\Tema1.pdf 
+.\CAVA-2025-TEMA1\runs 
+.\CAVA-2025-TEMA1\tests 
+.\CAVA-2025-TEMA1\code\__pycache__ 
+    .\CAVA-2025-TEMA1\code\__pycache__\calibrator.cpython-312.pyc 
+    .\CAVA-2025-TEMA1\code\__pycache__\classifier.cpython-312.pyc 
+    .\CAVA-2025-TEMA1\code\__pycache__\config.cpython-312.pyc 
+    .\CAVA-2025-TEMA1\code\__pycache__\detector.cpython-312.pyc 
+    .\CAVA-2025-TEMA1\code\__pycache__\scorer.cpython-312.pyc 
+    .\CAVA-2025-TEMA1\code\__pycache__\templates.cpython-312.pyc 
+    .\CAVA-2025-TEMA1\code\__pycache__\utils.cpython-312.pyc 
+    .\CAVA-2025-TEMA1\code\__pycache__\validator.cpython-312.pyc 
+    .\CAVA-2025-TEMA1\code\__pycache__\writer.cpython-312.pyc 
+.\CAVA-2025-TEMA1\data\antrenare 
+    [skipped: folder contains 100 txt files] 
+.\CAVA-2025-TEMA1\data\evaluare 
+.\CAVA-2025-TEMA1\data\imagini_auxiliare 
+.\CAVA-2025-TEMA1\data\antrenare\bonus 
+    [skipped: folder contains 20 txt files] 
+.\CAVA-2025-TEMA1\data\evaluare\fake_test 
+.\CAVA-2025-TEMA1\data\evaluare\fisiere_solutie 
+.\CAVA-2025-TEMA1\data\evaluare\fake_test\bonus 
+.\CAVA-2025-TEMA1\data\evaluare\fake_test\ground-truth 
+    [skipped: folder contains 20 txt files] 
+.\CAVA-2025-TEMA1\data\evaluare\fake_test\ground-truth\bonus 
+    [skipped: folder contains 20 txt files] 
+.\CAVA-2025-TEMA1\data\evaluare\fisiere_solutie\331_Alexe_Bogdan 
+    [skipped: folder contains 20 txt files] 
+.\CAVA-2025-TEMA1\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\bonus 
+    [skipped: folder contains 20 txt files] 
+.\CAVA-2025-TEMA1\data\imagini_auxiliare\manual_templates 
+.\CAVA-2025-TEMA1\data\imagini_auxiliare\manual_templates\colors 
+.\CAVA-2025-TEMA1\data\imagini_auxiliare\manual_templates\shapes 
+.\CAVA-2025-TEMA1\debug_templates\colors 
+.\CAVA-2025-TEMA1\debug_templates\shapes 
+.\Lab2+3CAVA\Lab2+3cod 
+    .\Lab2+3CAVA\Lab2+3cod\add_pieces_mosaic.py 
+    .\Lab2+3CAVA\Lab2+3cod\add_pieces_mosaic_all.py 
+    .\Lab2+3CAVA\Lab2+3cod\build_mosaic.py 
+    .\Lab2+3CAVA\Lab2+3cod\parameters.py 
+    .\Lab2+3CAVA\Lab2+3cod\run_project.py 
+.\Lab4+5CAVA\Lab4+5cod 
+    .\Lab4+5CAVA\Lab4+5cod\parameters.py 
+    .\Lab4+5CAVA\Lab4+5cod\resize_image.py 
+    .\Lab4+5CAVA\Lab4+5cod\resize_image_all.py 
+    .\Lab4+5CAVA\Lab4+5cod\run_project.py 
+    .\Lab4+5CAVA\Lab4+5cod\select_path.py 

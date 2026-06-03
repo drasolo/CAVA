@@ -1,0 +1,281 @@
+Folder structure (all folders + per-extension file counts, max 30 files listed) 
+ 
+.\code 
+    .\code\calibrator.py 
+    .\code\classifier.py 
+    .\code\config.py 
+    .\code\detector.py 
+    .\code\evalueaza_solutie.py 
+    .\code\main.py 
+    .\code\scorer.py 
+    .\code\templates.py 
+    .\code\utils.py 
+    .\code\validator.py 
+    .\code\writer.py 
+    [file type counts:] 
+        .PY: 11 
+ 
+.\data 
+    [no files in this folder] 
+ 
+.\notes 
+    .\notes\Plan for Building the Qwirkle Connect Score Calculator.pdf 
+    .\notes\Robust CV Pipeline Plan for Qwirkle Connect Score Calculator.pdf 
+    .\notes\Tema1.pdf 
+    [file type counts:] 
+        .PDF: 3 
+ 
+.\runs 
+    [no files in this folder] 
+ 
+.\tests 
+    [no files in this folder] 
+ 
+.\code\__pycache__ 
+    .\code\__pycache__\calibrator.cpython-312.pyc 
+    .\code\__pycache__\classifier.cpython-312.pyc 
+    .\code\__pycache__\config.cpython-312.pyc 
+    .\code\__pycache__\detector.cpython-312.pyc 
+    .\code\__pycache__\scorer.cpython-312.pyc 
+    .\code\__pycache__\templates.cpython-312.pyc 
+    .\code\__pycache__\utils.cpython-312.pyc 
+    .\code\__pycache__\validator.cpython-312.pyc 
+    .\code\__pycache__\writer.cpython-312.pyc 
+    [file type counts:] 
+        .PYC: 9 
+ 
+.\data\antrenare 
+    .\data\antrenare\1_00.jpg 
+    .\data\antrenare\1_01.jpg 
+    .\data\antrenare\1_01.txt 
+    .\data\antrenare\1_02.jpg 
+    .\data\antrenare\1_02.txt 
+    .\data\antrenare\1_03.jpg 
+    .\data\antrenare\1_03.txt 
+    .\data\antrenare\1_04.jpg 
+    .\data\antrenare\1_04.txt 
+    .\data\antrenare\1_05.jpg 
+    .\data\antrenare\1_05.txt 
+    .\data\antrenare\1_06.jpg 
+    .\data\antrenare\1_06.txt 
+    .\data\antrenare\1_07.jpg 
+    .\data\antrenare\1_07.txt 
+    .\data\antrenare\1_08.jpg 
+    .\data\antrenare\1_08.txt 
+    .\data\antrenare\1_09.jpg 
+    .\data\antrenare\1_09.txt 
+    .\data\antrenare\1_10.jpg 
+    .\data\antrenare\1_10.txt 
+    .\data\antrenare\1_11.jpg 
+    .\data\antrenare\1_11.txt 
+    .\data\antrenare\1_12.jpg 
+    .\data\antrenare\1_12.txt 
+    .\data\antrenare\1_13.jpg 
+    .\data\antrenare\1_13.txt 
+    .\data\antrenare\1_14.jpg 
+    .\data\antrenare\1_14.txt 
+    .\data\antrenare\1_15.jpg 
+    [skipped: folder contains 205 files, showing only first 30] 
+    [file type counts:] 
+        .JPG: 105 
+        .TXT: 100 
+ 
+.\data\evaluare 
+    [no files in this folder] 
+ 
+.\data\imagini_auxiliare 
+    .\data\imagini_auxiliare\01.jpg 
+    .\data\imagini_auxiliare\02.jpg 
+    .\data\imagini_auxiliare\03.jpg 
+    .\data\imagini_auxiliare\04.jpg 
+    .\data\imagini_auxiliare\05.jpg 
+    .\data\imagini_auxiliare\06.jpg 
+    .\data\imagini_auxiliare\07.jpg 
+    .\data\imagini_auxiliare\08.jpg 
+    [file type counts:] 
+        .JPG: 8 
+ 
+.\data\antrenare\bonus 
+    .\data\antrenare\bonus\1_01.jpg 
+    .\data\antrenare\bonus\1_01.txt 
+    .\data\antrenare\bonus\1_02.jpg 
+    .\data\antrenare\bonus\1_02.txt 
+    .\data\antrenare\bonus\1_03.jpg 
+    .\data\antrenare\bonus\1_03.txt 
+    .\data\antrenare\bonus\1_04.jpg 
+    .\data\antrenare\bonus\1_04.txt 
+    .\data\antrenare\bonus\1_05.jpg 
+    .\data\antrenare\bonus\1_05.txt 
+    .\data\antrenare\bonus\1_06.jpg 
+    .\data\antrenare\bonus\1_06.txt 
+    .\data\antrenare\bonus\1_07.jpg 
+    .\data\antrenare\bonus\1_07.txt 
+    .\data\antrenare\bonus\1_08.jpg 
+    .\data\antrenare\bonus\1_08.txt 
+    .\data\antrenare\bonus\1_09.jpg 
+    .\data\antrenare\bonus\1_09.txt 
+    .\data\antrenare\bonus\1_10.jpg 
+    .\data\antrenare\bonus\1_10.txt 
+    .\data\antrenare\bonus\1_11.jpg 
+    .\data\antrenare\bonus\1_11.txt 
+    .\data\antrenare\bonus\1_12.jpg 
+    .\data\antrenare\bonus\1_12.txt 
+    .\data\antrenare\bonus\1_13.jpg 
+    .\data\antrenare\bonus\1_13.txt 
+    .\data\antrenare\bonus\1_14.jpg 
+    .\data\antrenare\bonus\1_14.txt 
+    .\data\antrenare\bonus\1_15.jpg 
+    .\data\antrenare\bonus\1_15.txt 
+    [skipped: folder contains 40 files, showing only first 30] 
+    [file type counts:] 
+        .JPG: 20 
+        .TXT: 20 
+ 
+.\data\evaluare\fake_test 
+    .\data\evaluare\fake_test\1_00.jpg 
+    .\data\evaluare\fake_test\1_01.jpg 
+    .\data\evaluare\fake_test\1_02.jpg 
+    .\data\evaluare\fake_test\1_03.jpg 
+    .\data\evaluare\fake_test\1_04.jpg 
+    .\data\evaluare\fake_test\1_05.jpg 
+    .\data\evaluare\fake_test\1_06.jpg 
+    .\data\evaluare\fake_test\1_07.jpg 
+    .\data\evaluare\fake_test\1_08.jpg 
+    .\data\evaluare\fake_test\1_09.jpg 
+    .\data\evaluare\fake_test\1_10.jpg 
+    .\data\evaluare\fake_test\1_11.jpg 
+    .\data\evaluare\fake_test\1_12.jpg 
+    .\data\evaluare\fake_test\1_13.jpg 
+    .\data\evaluare\fake_test\1_14.jpg 
+    .\data\evaluare\fake_test\1_15.jpg 
+    .\data\evaluare\fake_test\1_16.jpg 
+    .\data\evaluare\fake_test\1_17.jpg 
+    .\data\evaluare\fake_test\1_18.jpg 
+    .\data\evaluare\fake_test\1_19.jpg 
+    .\data\evaluare\fake_test\1_20.jpg 
+    [file type counts:] 
+        .JPG: 21 
+ 
+.\data\evaluare\fisiere_solutie 
+    [no files in this folder] 
+ 
+.\data\evaluare\fake_test\bonus 
+    .\data\evaluare\fake_test\bonus\1_01.jpg 
+    .\data\evaluare\fake_test\bonus\1_02.jpg 
+    .\data\evaluare\fake_test\bonus\1_03.jpg 
+    .\data\evaluare\fake_test\bonus\1_04.jpg 
+    .\data\evaluare\fake_test\bonus\1_05.jpg 
+    .\data\evaluare\fake_test\bonus\1_06.jpg 
+    .\data\evaluare\fake_test\bonus\1_07.jpg 
+    .\data\evaluare\fake_test\bonus\1_08.jpg 
+    .\data\evaluare\fake_test\bonus\1_09.jpg 
+    .\data\evaluare\fake_test\bonus\1_10.jpg 
+    .\data\evaluare\fake_test\bonus\1_11.jpg 
+    .\data\evaluare\fake_test\bonus\1_12.jpg 
+    .\data\evaluare\fake_test\bonus\1_13.jpg 
+    .\data\evaluare\fake_test\bonus\1_14.jpg 
+    .\data\evaluare\fake_test\bonus\1_15.jpg 
+    .\data\evaluare\fake_test\bonus\1_16.jpg 
+    .\data\evaluare\fake_test\bonus\1_17.jpg 
+    .\data\evaluare\fake_test\bonus\1_18.jpg 
+    .\data\evaluare\fake_test\bonus\1_19.jpg 
+    .\data\evaluare\fake_test\bonus\1_20.jpg 
+    [file type counts:] 
+        .JPG: 20 
+ 
+.\data\evaluare\fake_test\ground-truth 
+    .\data\evaluare\fake_test\ground-truth\1_01.txt 
+    .\data\evaluare\fake_test\ground-truth\1_02.txt 
+    .\data\evaluare\fake_test\ground-truth\1_03.txt 
+    .\data\evaluare\fake_test\ground-truth\1_04.txt 
+    .\data\evaluare\fake_test\ground-truth\1_05.txt 
+    .\data\evaluare\fake_test\ground-truth\1_06.txt 
+    .\data\evaluare\fake_test\ground-truth\1_07.txt 
+    .\data\evaluare\fake_test\ground-truth\1_08.txt 
+    .\data\evaluare\fake_test\ground-truth\1_09.txt 
+    .\data\evaluare\fake_test\ground-truth\1_10.txt 
+    .\data\evaluare\fake_test\ground-truth\1_11.txt 
+    .\data\evaluare\fake_test\ground-truth\1_12.txt 
+    .\data\evaluare\fake_test\ground-truth\1_13.txt 
+    .\data\evaluare\fake_test\ground-truth\1_14.txt 
+    .\data\evaluare\fake_test\ground-truth\1_15.txt 
+    .\data\evaluare\fake_test\ground-truth\1_16.txt 
+    .\data\evaluare\fake_test\ground-truth\1_17.txt 
+    .\data\evaluare\fake_test\ground-truth\1_18.txt 
+    .\data\evaluare\fake_test\ground-truth\1_19.txt 
+    .\data\evaluare\fake_test\ground-truth\1_20.txt 
+    [file type counts:] 
+        .TXT: 20 
+ 
+.\data\evaluare\fake_test\ground-truth\bonus 
+    .\data\evaluare\fake_test\ground-truth\bonus\1_01.txt 
+    .\data\evaluare\fake_test\ground-truth\bonus\1_02.txt 
+    .\data\evaluare\fake_test\ground-truth\bonus\1_03.txt 
+    .\data\evaluare\fake_test\ground-truth\bonus\1_04.txt 
+    .\data\evaluare\fake_test\ground-truth\bonus\1_05.txt 
+    .\data\evaluare\fake_test\ground-truth\bonus\1_06.txt 
+    .\data\evaluare\fake_test\ground-truth\bonus\1_07.txt 
+    .\data\evaluare\fake_test\ground-truth\bonus\1_08.txt 
+    .\data\evaluare\fake_test\ground-truth\bonus\1_09.txt 
+    .\data\evaluare\fake_test\ground-truth\bonus\1_10.txt 
+    .\data\evaluare\fake_test\ground-truth\bonus\1_11.txt 
+    .\data\evaluare\fake_test\ground-truth\bonus\1_12.txt 
+    .\data\evaluare\fake_test\ground-truth\bonus\1_13.txt 
+    .\data\evaluare\fake_test\ground-truth\bonus\1_14.txt 
+    .\data\evaluare\fake_test\ground-truth\bonus\1_15.txt 
+    .\data\evaluare\fake_test\ground-truth\bonus\1_16.txt 
+    .\data\evaluare\fake_test\ground-truth\bonus\1_17.txt 
+    .\data\evaluare\fake_test\ground-truth\bonus\1_18.txt 
+    .\data\evaluare\fake_test\ground-truth\bonus\1_19.txt 
+    .\data\evaluare\fake_test\ground-truth\bonus\1_20.txt 
+    [file type counts:] 
+        .TXT: 20 
+ 
+.\data\evaluare\fisiere_solutie\331_Alexe_Bogdan 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\1_01.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\1_02.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\1_03.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\1_04.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\1_05.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\1_06.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\1_07.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\1_08.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\1_09.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\1_10.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\1_11.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\1_12.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\1_13.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\1_14.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\1_15.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\1_16.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\1_17.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\1_18.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\1_19.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\1_20.txt 
+    [file type counts:] 
+        .TXT: 20 
+ 
+.\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\bonus 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\bonus\1_01.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\bonus\1_02.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\bonus\1_03.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\bonus\1_04.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\bonus\1_05.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\bonus\1_06.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\bonus\1_07.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\bonus\1_08.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\bonus\1_09.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\bonus\1_10.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\bonus\1_11.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\bonus\1_12.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\bonus\1_13.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\bonus\1_14.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\bonus\1_15.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\bonus\1_16.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\bonus\1_17.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\bonus\1_18.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\bonus\1_19.txt 
+    .\data\evaluare\fisiere_solutie\331_Alexe_Bogdan\bonus\1_20.txt 
+    [file type counts:] 
+        .TXT: 20 
+ 
