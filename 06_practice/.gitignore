@@ -1,0 +1,8 @@
+__pycache__/
+# mock attempts: keep your notebooks and outputs, not the copied exam data or the sealed answers
+mocks/attempts/*/data/
+mocks/attempts/*/.sealed/
+# personal state: progress, cards, journal, sessions. It is its own private repo (drasolo/cava-progress).
+me/
+progress.json
+theory_progress.json
