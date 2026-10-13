@@ -9,8 +9,7 @@ TASK
   bgr_to_rgb(img)   -> HxWx3 array with the channel order reversed.
 
 RULES  no cv2.cvtColor.
-HINTS  In a BGR image, img[..., 2] is RED. Compute in float64, then
-       np.round(...).astype(np.uint8).
+HINTS  hidden on purpose: python check.py d00 --hint (one step at a time)
 """
 import numpy as np
 

@@ -16,9 +16,7 @@ TASK
 
 RULES  Hyperparameters are fixed in code. Don't tune them by looking at test
        accuracy: that's what d62 is for (cross-validate on the training set).
-IDEAS  HOG (d50) on a 64x64 grayscale face; HSV histogram (d51); both
-       concatenated; StandardScaler + LinearSVC or SVC. Print the confusion
-       matrix (d63) on the exam that fails to see what's going wrong.
+HINTS  hidden on purpose: python check.py d64 --hint (one step at a time)
 """
 
 

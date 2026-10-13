@@ -11,13 +11,7 @@ TASK
 
 ANY cv2 function is allowed.
 
-IDEAS
-  - Crop a margin to drop the border, threshold (Otsu, inverted), open to
-    kill specks, then cv2.connectedComponentsWithStats and keep components
-    whose area is in a plausible range.
-  - Or cv2.HoughCircles with a radius range tied to the square size.
-  - Or findContours + circularity filter (4*pi*A/P^2 close to 1).
-  Make every size threshold RELATIVE to the square size: test squares vary.
+HINTS  hidden on purpose: python check.py d53 --hint (one step at a time)
 """
 
 

@@ -1,0 +1,246 @@
+# The concept map behind the drills. One shared graph: a concept is written once
+# and every drill that leans on it points here.
+#
+#   concepts.<id>: name, explain (2-4 lines), check (q, a), needs (prerequisite ids)
+#   drills.<stem>: the concepts the drill starts from
+#
+# `python coach.py` -> "I don't get the concept" walks down `needs` until you
+# answer a check question right, then explains back up one level at a time.
+
+concepts:
+  image_array:
+    name: an image is a numpy array
+    explain: >
+      A grayscale image is an H x W array, a colour one H x W x 3. Indexing is
+      row first: img[y, x], so img.shape is (height, width, channels). Every
+      pixel operation is an array operation.
+    check: {q: "img.shape is (480, 640, 3). How wide is the image?", a: "640 pixels: shape is (height, width, channels)."}
+    needs: []
+
+  array_slicing:
+    name: slicing and views
+    explain: >
+      img[y0:y1, x0:x1] takes rows y0..y1-1 and columns x0..x1-1 (the end is
+      excluded). A slice is a view: writing into it changes the original, so use
+      .copy() when you need your own. Slices past the edge are clipped silently.
+    check: {q: "What is the shape of img[2:5, 1:4] on a grayscale image?", a: "(3, 3): the end index is excluded."}
+    needs: [image_array]
+
+  dtype_uint8:
+    name: uint8 wraps around
+    explain: >
+      uint8 holds 0..255 and arithmetic wraps modulo 256: 250 + 10 = 4 and
+      10 - 20 = 246, with no error. Convert to a wider type (int16 or float64),
+      compute, np.clip to [0, 255], then convert back.
+    check: {q: "What is np.uint8(250) + np.uint8(10)?", a: "4: it wraps modulo 256."}
+    needs: [image_array]
+
+  rounding_cast:
+    name: round, clip, then cast
+    explain: >
+      .astype(np.uint8) truncates (2.7 becomes 2) and wraps values outside
+      0..255. To turn a float result into an image: np.round, then np.clip to
+      [0, 255], then .astype(np.uint8).
+    check: {q: "What does np.array([2.7, 255.9]).astype(np.uint8) give?", a: "[2, 255]: astype truncates toward zero, it doesn't round."}
+    needs: [dtype_uint8]
+
+  bgr_order:
+    name: OpenCV loads BGR
+    explain: >
+      cv2.imread returns channels in Blue, Green, Red order, so img[..., 2] is
+      red. matplotlib and most other libraries expect RGB: reverse the last axis
+      with img[..., ::-1] before showing an image there.
+    check: {q: "What does a pure red pixel look like in an image from cv2.imread?", a: "[0, 0, 255]: the channels are B, G, R."}
+    needs: [image_array]
+
+  luminance:
+    name: grayscale is a weighted sum
+    explain: >
+      Gray = 0.299 R + 0.587 G + 0.114 B, computed per pixel. The weights follow
+      how sensitive the eye is to each colour, green most of all. Compute in
+      float64 so the products don't wrap, then round and cast.
+    check: {q: "Why does green get the largest weight?", a: "The eye is most sensitive to green, so it contributes most to perceived brightness."}
+    needs: [bgr_order, rounding_cast]
+
+  text_parsing:
+    name: parsing annotation lines
+    explain: >
+      line.split() splits on any run of whitespace and ignores leading and
+      trailing spaces. Skip lines that are empty after strip(). Convert the
+      numeric fields with int(), and use len(parts) to detect optional fields.
+    check: {q: "What does 'a.jpg 1 2 3 4  \\n'.split() return?", a: "['a.jpg', '1', '2', '3', '4']"}
+    needs: []
+
+  inclusive_box:
+    name: inclusive boxes
+    explain: >
+      A box (xmin, ymin, xmax, ymax) with inclusive coordinates is
+      xmax - xmin + 1 wide. Slicing excludes the end, so crop with
+      img[ymin:ymax + 1, xmin:xmax + 1], after clipping the coordinates into the image.
+    check: {q: "A box (2, 3, 5, 9) is inclusive. How wide and tall is it?", a: "4 wide (5 - 2 + 1) and 7 tall (9 - 3 + 1)."}
+    needs: [array_slicing]
+
+  width_height_order:
+    name: (width, height) vs (height, width)
+    explain: >
+      numpy shapes are (height, width). OpenCV functions take sizes and points
+      as (width, height) and (x, y). cv2.resize(img, (W, H)) returns an array of
+      shape (H, W). Mixing these up transposes your result or crashes.
+    check: {q: "You want 100 rows and 50 columns. What dsize do you pass to cv2.resize?", a: "(50, 100): OpenCV takes (width, height)."}
+    needs: [image_array]
+
+  nearest_neighbour:
+    name: nearest-neighbour resizing
+    explain: >
+      Each output pixel copies one source pixel: y_src = floor(y * H_src / H_dst),
+      and the same for x. Build the two index arrays once and index with
+      img[ys[:, None], xs[None, :]], with no loops over pixels.
+    check: {q: "Scale the row [a, b] to width 4 with nearest neighbour.", a: "[a, a, b, b]"}
+    needs: [array_slicing, width_height_order]
+
+  aspect_padding:
+    name: keep the aspect ratio, then pad
+    explain: >
+      Letterboxing: scale = side / max(h, w), resize by that factor so the longer
+      side becomes `side`, then pad the short side with zeros, half on each
+      side (np.pad, or copy into a zeros array).
+    check: {q: "A 200x100 (h x w) image goes to side 100. What size after resizing, and how much padding?", a: "100x50, then 25 columns of zeros on each side."}
+    needs: [width_height_order]
+
+  neighbourhood:
+    name: a window around each pixel
+    explain: >
+      A filter's output at (y, x) depends on a window centred there. For a
+      kh x kw kernel the centre is (kh // 2, kw // 2), and kernel cell (i, j)
+      looks at pixel (y + i - ky, x + j - kx).
+    check: {q: "Where is the centre of a 3x5 kernel?", a: "(1, 2): (3 // 2, 5 // 2)."}
+    needs: [array_slicing]
+
+  padding_borders:
+    name: padding the border
+    explain: >
+      Near the border the window sticks out of the image, so pad first.
+      BORDER_REPLICATE repeats the edge pixel: np.pad(img, ((ky, ky), (kx, kx)),
+      mode="edge"). Then every window is fully inside the padded image.
+    check: {q: "Replicate-pad [1, 2, 3] by one pixel on each side.", a: "[1, 1, 2, 3, 3]"}
+    needs: [neighbourhood]
+
+  correlation:
+    name: correlation
+    explain: >
+      out[y, x] = sum of kernel * the window under it, kernel used as-is. Loop
+      over the kernel cells, not the pixels: for each (i, j),
+      out += k[i, j] * padded[i:i + H, j:j + W]. Nine whole-array operations for
+      a 3x3 kernel instead of millions of pixel loops.
+    check: {q: "Why loop over the kernel cells instead of the pixels?", a: "The kernel has a handful of cells; each step is one fast whole-array operation."}
+    needs: [neighbourhood, padding_borders]
+
+  convolution:
+    name: convolution is flipped correlation
+    explain: >
+      Convolution flips the kernel on both axes (k[::-1, ::-1]) and then
+      correlates. For symmetric kernels the two are identical. cv2.filter2D
+      computes correlation.
+    check: {q: "When do correlation and convolution give the same result?", a: "When the kernel is unchanged by a 180 degree rotation (symmetric, like a box or Gaussian)."}
+    needs: [correlation]
+
+  gaussian:
+    name: the Gaussian kernel
+    explain: >
+      g(i) is proportional to exp(-(i - c)^2 / (2 sigma^2)) around the centre c.
+      Divide by the sum so the kernel adds up to 1 and the blur keeps the
+      average brightness. sigma sets the width; ksize ~ 6 sigma, odd.
+    check: {q: "Why normalise the kernel so it sums to 1?", a: "So blurring keeps the average brightness of the image."}
+    needs: [correlation]
+
+  separability:
+    name: separable kernels
+    explain: >
+      The 2D Gaussian is the outer product of two 1D ones: np.outer(g, g). So a
+      blur can be two 1D passes, rows then columns, costing k + k multiplications
+      per pixel instead of k * k.
+    check: {q: "A 9x9 Gaussian: multiplications per pixel, separable vs not?", a: "18 vs 81."}
+    needs: [gaussian]
+
+  median:
+    name: the median filter
+    explain: >
+      Each pixel becomes the middle value of its window. One extreme pixel
+      can't move the median, so salt-and-pepper noise disappears and edges stay
+      sharp. Vectorised: stack the k*k shifted copies and take np.median(axis=0).
+    check: {q: "Median of the window [0, 10, 12, 11, 255]?", a: "11"}
+    needs: [neighbourhood, padding_borders]
+
+  noise_types:
+    name: matching the filter to the noise
+    explain: >
+      Salt and pepper is a few pixels at 0 or 255: the median removes them.
+      Gaussian noise is a small random change on every pixel: averaging (a
+      Gaussian blur) reduces it, a median does it worse.
+    check: {q: "Which filter for salt-and-pepper noise, and why?", a: "Median: isolated extreme values never become the middle value."}
+    needs: [median, gaussian]
+
+  gradient:
+    name: the image gradient
+    explain: >
+      A derivative in an image is a difference between neighbours. Sobel's gx
+      kernel [[-1,0,1],[-2,0,2],[-1,0,1]] is right minus left, smoothed
+      vertically; gy is down minus up, because y grows downward.
+    check: {q: "Is gx positive or negative where the image gets brighter to the right?", a: "Positive: gx is right minus left."}
+    needs: [correlation]
+
+  magnitude_orientation:
+    name: gradient magnitude and direction
+    explain: >
+      mag = sqrt(gx^2 + gy^2) is the edge strength. ang = degrees(arctan2(gy, gx)),
+      shifted into [0, 360), points toward the brighter side. With y down,
+      90 degrees means "brighter below".
+    check: {q: "gx = 0, gy = 5. What is the angle?", a: "90 degrees: brighter below, since y grows down."}
+    needs: [gradient]
+
+  edge_thinning_nms:
+    name: thinning edges (non-maximum suppression)
+    explain: >
+      Gradient magnitude gives edges several pixels wide. Keep a pixel only if
+      it is at least as strong as both neighbours along the gradient direction.
+      Quantise the angle (mod 180) into 4 bins to pick the neighbours.
+    check: {q: "The gradient angle is 90 degrees. Which neighbours do you compare with?", a: "Up and down: (y - 1, x) and (y + 1, x)."}
+    needs: [magnitude_orientation]
+
+  polar_line:
+    name: a line in polar form
+    explain: >
+      A line is x cos(theta) + y sin(theta) = rho, with theta in [0, 180) and rho
+      possibly negative. Unlike y = mx + b it handles vertical lines.
+    check: {q: "What (rho, theta) describes the vertical line x = 10?", a: "(10, 0 degrees)."}
+    needs: []
+
+  hough_voting:
+    name: Hough voting
+    explain: >
+      Every edge pixel votes for every line through it: for each theta compute
+      rho = x cos + y sin, round to a rho bin, add 1 there. Vectorise per theta
+      and use np.add.at, because acc[idx] += 1 counts repeated indices only once.
+    check: {q: "Why np.add.at(acc, idx, 1) instead of acc[idx] += 1?", a: "With fancy indexing, repeated indices are incremented only once."}
+    needs: [polar_line, image_array]
+
+  peak_nms:
+    name: picking peaks without duplicates
+    explain: >
+      Take the argmax of the accumulator, record it, zero out a window of +- nms
+      bins around it, and repeat. A thick line lights up neighbouring bins, and
+      this stops it from being reported twice.
+    check: {q: "Why zero a window around each peak?", a: "Neighbouring bins of a thick line are also high; without it the same line comes back."}
+    needs: [hough_voting]
+
+drills:
+  d00_gray: [luminance, bgr_order]
+  d01_crop: [text_parsing, inclusive_box]
+  d02_uint8: [dtype_uint8, rounding_cast]
+  d03_resize: [nearest_neighbour, aspect_padding]
+  d10_correlate: [correlation, convolution]
+  d11_gaussian: [separability, gaussian]
+  d12_sobel: [magnitude_orientation, gradient]
+  d13_median: [median, noise_types]
+  d20_edge_nms: [edge_thinning_nms]
+  d21_hough_lines: [hough_voting, peak_nms]

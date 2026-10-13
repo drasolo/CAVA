@@ -23,6 +23,10 @@ EXAMS = {
 QWIRKLE_TRAIN = REPO / "03_tema1-qwirkle" / "data" / "antrenare"
 MOCK_DATA = PRACTICE / "data"
 
+# Personal state (progress, cards, journal, sessions). Gitignored here; it is its
+# own private repo. Override with CAVA_ME to keep it somewhere else.
+ME = Path(os.environ.get("CAVA_ME", PRACTICE / "me"))
+
 
 def require(path: Path) -> Path:
     if not path.exists():

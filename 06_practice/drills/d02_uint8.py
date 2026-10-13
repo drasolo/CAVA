@@ -10,7 +10,7 @@ TASK
   mean_abs_diff(a, b)       -> float, mean of |a - b|.
 
 RULES  no cv2.add, cv2.subtract, cv2.absdiff.
-HINT   Convert to a wider signed type (np.int16 / np.int32) first, then clip.
+HINTS  hidden on purpose: python check.py d02 --hint (one step at a time)
 """
 
 

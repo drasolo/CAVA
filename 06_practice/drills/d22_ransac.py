@@ -16,9 +16,7 @@ TASK
       principal direction) and return that line and the inlier mask.
 
 RULES  no sklearn, cv2.fitLine.
-HINT   Line through p1, p2: direction d = p2 - p1, normal n = (-d_y, d_x)/|d|,
-       c = -n . p1. For the refit: centre the inliers; the normal is the
-       singular vector with the SMALLEST singular value.
+HINTS  hidden on purpose: python check.py d22 --hint (one step at a time)
 """
 
 

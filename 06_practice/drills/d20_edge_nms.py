@@ -20,8 +20,7 @@ NOTE   A 45 degree edge ends up 2 pixels wide per row with this scheme, because
        diagonal neighbours skip every other pixel. Real Canny interpolates the
        magnitude between neighbours to fix that. The test allows it.
 
-HINT   Loops over pixels are fine here (images in the test are small), but try
-       a vectorised version afterwards with shifted arrays.
+HINTS  hidden on purpose: python check.py d20 --hint (one step at a time)
 """
 
 

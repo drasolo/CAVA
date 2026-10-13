@@ -14,8 +14,7 @@ TASK
   best_match(img, tpl) -> (x, y) top-left corner of the best match.
 
 RULES  no cv2.matchTemplate.
-HINT   Looping over positions is fine for these sizes. Afterwards, think about
-       how a box filter (d10) could give you every patch mean at once.
+HINTS  hidden on purpose: python check.py d52 --hint (one step at a time)
 """
 
 

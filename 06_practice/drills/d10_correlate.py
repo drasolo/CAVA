@@ -13,8 +13,7 @@ TASK
   convolve2d(img, kernel) -> same, but with the kernel flipped.
 
 RULES  no cv2.filter2D, cv2.sepFilter2D, scipy.
-HINT   np.pad(img, ..., mode="edge") then loop over the KERNEL entries (a few),
-       not over the pixels (many): add kernel[i, j] * shifted_slice.
+HINTS  hidden on purpose: python check.py d10 --hint (one step at a time)
 """
 
 

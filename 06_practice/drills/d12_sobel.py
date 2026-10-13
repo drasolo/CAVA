@@ -13,7 +13,7 @@ TASK
       mag = sqrt(gx^2 + gy^2); ang in DEGREES in [0, 360).
 
 RULES  no cv2.Sobel, cv2.Scharr, cv2.spatialGradient, cv2.cartToPolar, cv2.phase.
-HINT   np.arctan2(gy, gx) returns radians in (-pi, pi]; shift negatives up by 360.
+HINTS  hidden on purpose: python check.py d12 --hint (one step at a time)
 """
 
 

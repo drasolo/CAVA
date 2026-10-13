@@ -10,10 +10,7 @@ TASK
   apply_h(H, pts) -> Nx2 array, H applied to each point (with the divide).
 
 RULES  no cv2.getPerspectiveTransform, cv2.findHomography, cv2.perspectiveTransform.
-HINT   For each pair (x, y) -> (u, v), two rows of A h = b:
-         [x, y, 1, 0, 0, 0, -u*x, -u*y] . h = u
-         [0, 0, 0, x, y, 1, -v*x, -v*y] . h = v
-       Solve with np.linalg.solve, append 1, reshape to 3x3.
+HINTS  hidden on purpose: python check.py d41 --hint (one step at a time)
 """
 
 

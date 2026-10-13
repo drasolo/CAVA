@@ -14,8 +14,7 @@ TASK
       Clip the box to the image: boxes may stick out past the border or be
       negative.
 
-HINTS  numpy slices are [y, x], i.e. img[ymin:ymax+1, xmin:xmax+1].
-       Negative slice starts wrap around in numpy. Clip BEFORE slicing.
+HINTS  hidden on purpose: python check.py d01 --hint (one step at a time)
 """
 
 

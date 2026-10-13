@@ -17,8 +17,7 @@ TASK
       +-nms bins around it so one thick line isn't reported twice.
 
 RULES  no cv2.HoughLines, cv2.HoughLinesP, skimage.transform.
-HINT   Vectorise over theta: for all edge points (ys, xs) and all thetas,
-       rho = xs[:, None]*cos + ys[:, None]*sin; then np.add.at(acc, (ri, ti), 1).
+HINTS  hidden on purpose: python check.py d21 --hint (one step at a time)
 """
 
 

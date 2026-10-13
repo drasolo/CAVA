@@ -10,11 +10,7 @@ TASK
       bottom-right, bottom-left. pts: any 4x2 / 4x1x2 array of (x, y), any order.
       Must work for boards rotated by up to +-30 degrees.
 
-HINT   Classic trick: TL has the smallest x+y, BR the largest; TR has the
-       smallest y-x, BL the largest. Fine up to ~30 degrees, but near 45
-       degrees two corners tie and it picks the same point twice. Sturdier:
-       sort by angle around the centroid (a consistent cycle), then rotate the
-       cycle to start at the smallest x+y. Try both.
+HINTS  hidden on purpose: python check.py d40 --hint (one step at a time)
 """
 
 

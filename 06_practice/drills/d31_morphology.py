@@ -13,8 +13,7 @@ TASK
       each "opening" or "closing".
 
 RULES  no cv2.erode, cv2.dilate, cv2.morphologyEx, scipy, skimage.
-HINT   Erosion = min over the window, dilation = max. Reuse the shifted-slice
-       trick from d10 with np.minimum / np.maximum.
+HINTS  hidden on purpose: python check.py d31 --hint (one step at a time)
 """
 
 ANSWERS = {"remove_white_specks": None, "fill_black_holes": None}

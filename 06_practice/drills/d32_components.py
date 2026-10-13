@@ -11,8 +11,7 @@ TASK
   component_areas(labels, n) -> list of n pixel counts, for labels 1..n.
 
 RULES  no cv2.connectedComponents*, skimage.measure, scipy.
-HINT   Breadth-first search from every unlabelled foreground pixel with a
-       collections.deque. Or union-find over a single raster scan.
+HINTS  hidden on purpose: python check.py d32 --hint (one step at a time)
 """
 
 

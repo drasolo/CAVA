@@ -1,18 +1,20 @@
-"""Theory quiz for the written part. Questions you miss come back more often.
+"""Review: the theory questions and your own drill cards, on a Leitner schedule.
 
-    python theory.py            10 questions, weighted toward the ones you miss
-    python theory.py 25         25 questions
-    python theory.py --stats    how you're doing per topic
+    python theory.py            up to 10 items: what's due first, then new ones
+    python theory.py 25         up to 25
+    python theory.py --due      how many items are due today (the coach uses this)
+    python theory.py --stats    how you're doing per topic, weakest first
 
 Answer out loud or on paper first, THEN press Enter to see the model answer,
-then say honestly whether you had it (y/n).
+then say honestly whether you had it (y/n). Right moves an item up a box
+(back in 3 days, 1 week, 2 weeks, 1 month); wrong sends it back to tomorrow.
 """
-import json
 import random
 import sys
 from pathlib import Path
 
-STATS = Path(__file__).resolve().parent / "theory_progress.json"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from cava_practice import leitner, state  # noqa: E402
 
 # (topic, question, answer)
 QUESTIONS = [
@@ -155,53 +157,54 @@ QUESTIONS = [
 ]
 
 
-def load_stats():
-    try:
-        return json.loads(STATS.read_text(encoding="utf-8"))
-    except (OSError, ValueError):
-        return {}
-
-
-def weight(stat):
-    seen, right = stat.get("seen", 0), stat.get("right", 0)
-    if seen == 0:
-        return 3.0
-    return 0.3 + 3.0 * (1 - right / seen)
+def items():
+    """Every reviewable item as (key, topic, question, answer): the bank plus your cards."""
+    out = [(q, t, q, a) for t, q, a in QUESTIONS]
+    for stem, c in sorted(state.load(state.CARDS).items()):
+        out.append((f"card:{stem}", c.get("topic", f"card {stem[:3]}"), c["q"], c["a"]))
+    return out
 
 
 def main():
-    stats = load_stats()
+    stats = leitner.migrate(state.load(state.THEORY))
+    today = state.today()
+    all_items = items()
+    if "--due" in sys.argv:
+        print(len(leitner.due_keys(stats, [k for k, *_ in all_items], today)))
+        return
     if "--stats" in sys.argv:
         topics = {}
-        for t, q, _ in QUESTIONS:
-            s = stats.get(q, {})
+        for key, t, _, _ in all_items:
+            s = stats.get(key, {})
             agg = topics.setdefault(t, [0, 0, 0])
             agg[0] += 1
             agg[1] += s.get("seen", 0)
             agg[2] += s.get("right", 0)
         for t, (n, seen, right) in sorted(topics.items(), key=lambda kv: (kv[1][2] / kv[1][1]) if kv[1][1] else -1):
             rate = f"{right / seen:.0%}" if seen else "not yet"
-            print(f"  {t:12s} {n:2d} questions   answered {seen:3d}x   right {rate}")
+            print(f"  {t:12s} {n:2d} items   answered {seen:3d}x   right {rate}")
         return
     n = int(sys.argv[1]) if len(sys.argv) > 1 else 10
-    pool = list(QUESTIONS)
-    picked = []
-    for _ in range(min(n, len(pool))):
-        w = [weight(stats.get(q, {})) for _, q, _ in pool]
-        i = random.choices(range(len(pool)), weights=w)[0]
-        picked.append(pool.pop(i))
+    keys = leitner.pick(stats, [k for k, *_ in all_items], today, n, random.Random())
+    by_key = {k: (t, q, a) for k, t, q, a in all_items}
+    if not keys:
+        print("Nothing due and nothing new. Come back tomorrow, or run a drill.")
+        return
     score = 0
-    for k, (topic, q, a) in enumerate(picked, 1):
-        print(f"\n[{k}/{len(picked)}] ({topic}) {q}")
+    for k, key in enumerate(keys, 1):
+        topic, q, a = by_key[key]
+        print()
+        print(f"[{k}/{len(keys)}] ({topic}) {q}")
         input("   ... answer it yourself, then press Enter ")
         print(f"   {a}")
         ok = input("   Did you have it? [y/n] ").strip().lower().startswith("y")
-        s = stats.setdefault(q, {"seen": 0, "right": 0})
-        s["seen"] += 1
-        s["right"] += ok
+        leitner.answer(stats, key, ok, today)
         score += ok
-        STATS.write_text(json.dumps(stats, indent=1), encoding="utf-8")
-    print(f"\n{score}/{len(picked)}. Run `python theory.py --stats` to see weak topics.")
+        state.save(state.THEORY, stats)
+        state.touch()
+    left = len(leitner.due_keys(stats, list(by_key), today))
+    print()
+    print(f"{score}/{len(keys)}." + (f" {left} still due today." if left else " Nothing else due today."))
 
 
 if __name__ == "__main__":

@@ -13,7 +13,7 @@ TASK
       with INTER_AREA is allowed here.
 
 RULES  resize_nearest must not use cv2.resize.
-HINT   Build index arrays with np.arange and use fancy indexing img[ys][:, xs].
+HINTS  hidden on purpose: python check.py d03 --hint (one step at a time)
 """
 
 

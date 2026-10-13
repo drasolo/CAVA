@@ -12,8 +12,7 @@ TASK
   chi2_distance(a, b) -> 0.5 * sum((a - b)^2 / (a + b + 1e-10))
 
 RULES  no cv2.calcHist, np.histogramdd.
-HINT   Compute each channel's bin index, then one combined index
-       (ih * bs + is) * bv + iv and np.bincount(..., minlength=...).
+HINTS  hidden on purpose: python check.py d51 --hint (one step at a time)
 """
 
 

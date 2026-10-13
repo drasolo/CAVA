@@ -12,8 +12,7 @@ TASK
       255 where gray > t (or where gray <= t when invert=True).
 
 RULES  no cv2.threshold, skimage.filters.
-HINT   hist = np.bincount(gray.ravel(), minlength=256); use cumulative sums so
-       every candidate t costs O(1).
+HINTS  hidden on purpose: python check.py d30 --hint (one step at a time)
 """
 
 
