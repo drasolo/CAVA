@@ -34,6 +34,20 @@ FEELINGS = [
     ("0", "I'm on fire", "the next drill (or the redo that is due)"),
     ("f", "I just finished a drill", "teach-back: Claude asks you one probing question"),
 ]
+# Read mode (the default): you learn each drill from its working code.
+FEELINGS_READ = [
+    ("1", "I can't get started", "the lesson for your current drill: it opens gently, with the concept"),
+    ("2", "I've been stuck for 15+ minutes", "walk the ideas behind the drill, one check question at a time"),
+    ("3", "I don't understand the code", "the code explained line by line; ask Claude about any line"),
+    ("4", "I don't get the concept", "walk the concept map down to something you have, then back up"),
+    ("5", "I'm overwhelmed", "one small step: predict a single number, nothing else"),
+    ("6", "I'm bored", "a few review items now (webcam playground: phase 2)"),
+    ("7", "I'm tired", "10 review items, no code"),
+    ("8", "I only have 15 minutes", "your due review items (cards and theory)"),
+    ("9", "I'm anxious about the exam", "a redo of a lesson you've done, shuffled"),
+    ("0", "I'm on fire", "the next lesson (or the redo that is due)"),
+    ("f", "I just finished a drill", "teach-back: Claude asks you one probing question"),
+]
 OTHER = [
     ("s", "start a session (drill / review / mock / tema / capstone)"),
     ("x", "stop the session"),
@@ -49,7 +63,19 @@ def run(*args):
     state.touch()
 
 
+def read_mode() -> bool:
+    return state.config().get("mode", "read") == "read"
+
+
+def feelings() -> list:
+    return FEELINGS_READ if read_mode() else FEELINGS
+
+
 def current_drill(progress: dict) -> str:
+    if read_mode():
+        for s in flow.stems():
+            if (ROOT / "lessons" / f"{s}.yaml").exists() and not progress.get(s, {}).get("passed"):
+                return s
     for s in flow.stems():
         if progress.get(s, {}).get("redo_active"):
             return s
@@ -224,9 +250,46 @@ def timed_redo(progress):
     run("check.py", stem[:3], "--redo")
 
 
+def act_read(key: str, progress: dict, cur: str) -> bool:
+    """Read-mode versions of the feelings. False when the key isn't one of them."""
+    import random
+    from cava_practice import read
+    if key == "1":
+        ensure_session("drill", cur)
+        run("check.py", cur[:3])
+    elif key in ("2", "4"):
+        ensure_session("drill", cur)
+        concepts.descend(cur)
+    elif key == "3":
+        ensure_session("drill", cur)
+        read.do_read(cur, read.lesson(cur) or {}, {}, random.Random())
+    elif key == "5":
+        L = read.lesson(cur)
+        ensure_session("drill", cur)
+        if L and L.get("probe"):
+            read.do_predict(cur, L, {}, random.Random())
+            print(f"\n    That's enough to start. The full lesson: option 1, or `python check.py {cur[:3]}`.")
+        else:
+            concepts.descend(cur)
+    elif key == "9":
+        passed = sorted(((e.get("passed_at", 0), s) for s, e in progress.items() if e.get("passed")))
+        if not passed:
+            print("    No lesson done yet: start with option 1.")
+            return True
+        stem = passed[0][1]
+        ensure_session("drill", stem)
+        run("check.py", stem[:3], "--redo")
+    else:
+        return False
+    state.touch()
+    return True
+
+
 def act(key: str) -> None:
     progress = state.load(state.PROGRESS)
     cur = current_drill(progress)
+    if read_mode() and act_read(key, progress, cur):
+        return
     if key == "1":
         starter(cur)
     elif key == "2":
@@ -290,8 +353,9 @@ def stop() -> None:
 
 
 def table() -> str:
-    w = max(len(f) for _, f, _ in FEELINGS)
-    return "\n".join(f"  {k}  {f:<{w}}  -> {a}" for k, f, a in FEELINGS)
+    rows = feelings()
+    w = max(len(f) for _, f, _ in rows)
+    return "\n".join(f"  {k}  {f:<{w}}  -> {a}" for k, f, a in rows)
 
 
 def main():

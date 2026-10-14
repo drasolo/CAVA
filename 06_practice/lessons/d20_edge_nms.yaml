@@ -1,0 +1,98 @@
+probe:
+  question: >
+    Across a vertical edge, one row of gradient magnitude reads 0, 0, 5, 9, 5, 0, 0, and the
+    gradient points right (angle 0) everywhere. After non-maximum suppression, how many
+    pixels in that row are still non-zero?
+  setup: |
+    mag = np.tile(np.array([0, 0, 5, 9, 5, 0, 0], np.float64), (3, 1))
+    ang = np.zeros_like(mag)
+  ask: "int((nonmax_suppression(mag, ang)[1] > 0).sum())"
+  why: >
+    Only the 9 is at least as big as both its left and right neighbours. The 5s each lose
+    to the 9 next to them: the thick edge becomes 1 pixel.
+
+lines:
+  "def nonmax_suppression(mag, ang):": "Thin thick edges: keep a pixel only if it's the strongest along its gradient direction."
+  "H, W = mag.shape": "The image size."
+  "a = ang % 180.0": "Direction mod 180: 10 degrees and 190 degrees compare the same two neighbours."
+  "out = np.zeros_like(mag, dtype=np.float64)": "The result. Its 1-pixel border stays 0."
+  "c = mag[1:-1, 1:-1]": "Every pixel except the border, as one array: the 'centres'."
+  "def sh(dy, dx):": "sh(dy, dx) returns the neighbour at offset (dy, dx) of every centre at once ..."
+  "return mag[1 + dy:H - 1 + dy, 1 + dx:W - 1 + dx]": "... by sliding the slice window. sh(0, 1) is each centre's right neighbour."
+  "aa = a[1:-1, 1:-1]": "The angles of the centres."
+  "bins = [": "The four direction bins, each with the two neighbours to compare against:"
+  "((aa < 22.5) | (aa >= 157.5), (0, 1), (0, -1)),": "gradient about horizontal (0 deg): compare right and left"
+  "((aa >= 22.5) & (aa < 67.5), (1, 1), (-1, -1)),": "about 45 deg: down-right and up-left (y grows down)"
+  "((aa >= 67.5) & (aa < 112.5), (1, 0), (-1, 0)),": "about vertical (90 deg): below and above"
+  "((aa >= 112.5) & (aa < 157.5), (1, -1), (-1, 1)),": "about 135 deg: down-left and up-right"
+  "keep = np.zeros_like(c, dtype=bool)": "Which centres survive. None yet."
+  "for sel, n1, n2 in bins:": "For each bin ..."
+  "keep |= sel & (c >= sh(*n1)) & (c >= sh(*n2))": |
+    ... a centre in this bin (sel) survives if it is >= both of its neighbours.
+    |= adds the survivors to `keep`. sh(*n1) unpacks the offset pair into dy, dx.
+  "out[1:-1, 1:-1] = np.where(keep, c, 0)": "Survivors keep their magnitude; everything else becomes 0."
+  "return out": "Edges about 1 pixel wide."
+
+order:
+  func: nonmax_suppression
+  lines:
+    - "a = ang % 180.0"
+    - "out = np.zeros_like(mag, dtype=np.float64)"
+    - "c, aa = mag[1:-1, 1:-1], a[1:-1, 1:-1]"
+    - "keep = ((aa < 22.5) | (aa >= 157.5)) & (c >= mag[1:-1, 2:]) & (c >= mag[1:-1, :-2])"
+    - "keep |= ((aa >= 22.5) & (aa < 67.5)) & (c >= mag[2:, 2:]) & (c >= mag[:-2, :-2])"
+    - "keep |= ((aa >= 67.5) & (aa < 112.5)) & (c >= mag[2:, 1:-1]) & (c >= mag[:-2, 1:-1])"
+    - "keep |= ((aa >= 112.5) & (aa < 157.5)) & (c >= mag[2:, :-2]) & (c >= mag[:-2, 2:])"
+    - "out[1:-1, 1:-1] = np.where(keep, c, 0)"
+    - "return out"
+
+fill:
+  - line: "a = ang % 180.0"
+    wrong:
+      - "a = (ang + 90.0) % 180.0"
+      - "a = 180.0 - ang % 180.0"
+      - "a = ang % 90.0"
+    why: >
+      The bins cover 0..180 degrees of GRADIENT direction. Adding 90 uses the edge's own
+      direction (along it, not across it), 180 - ang is the maths-class convention where
+      y grows UP (images grow down), and % 90 merges directions that aren't the same.
+  - line: "keep |= sel & (c >= sh(*n1)) & (c >= sh(*n2))"
+    wrong:
+      - "keep |= sel & (c >= sh(*n1)) | (c >= sh(*n2))"
+      - "keep &= sel & (c >= sh(*n1)) & (c >= sh(*n2))"
+      - "keep = sel & (c >= sh(*n1)) & (c >= sh(*n2))"
+    why: >
+      A pixel must beat BOTH neighbours (&, not |), and each bin's survivors are added to
+      the others (|=). &= or = would keep only the last bin.
+
+bugs:
+  - line: "((aa >= 22.5) & (aa < 67.5), (1, 1), (-1, -1)),"
+    bad: "((aa >= 22.5) & (aa < 67.5), (1, -1), (-1, 1)),"
+    why: >
+      With y growing DOWN, a 45 degree gradient points down-right, so its neighbours are
+      (y+1, x+1) and (y-1, x-1). Swapped, diagonal edges compare along the edge instead of
+      across it, and thick diagonal edges survive.
+  - line: "out[1:-1, 1:-1] = np.where(keep, c, 0)"
+    bad: "out[1:-1, 1:-1] = np.where(keep, 0, c)"
+    why: >
+      np.where(condition, if_true, if_false): this version deletes the edges and keeps
+      everything else.
+
+tweak:
+  question: >
+    You run this thinning on the gradient magnitude of a photo. Compared with the
+    magnitude, the edges become ...
+  options:
+    - "thicker and brighter"
+    - "thin lines, about 1 pixel wide"
+    - "gone"
+  answer: 1
+  why: >
+    Only the ridge of each edge survives. This is the step that makes Canny's edges thin.
+  images: true
+  run: |
+    g = cv2.GaussianBlur(cv2.cvtColor(demo_image(), cv2.COLOR_BGR2GRAY).astype(np.float64), (5, 5), 1.4)
+    gx, gy = cv2.Sobel(g, cv2.CV_64F, 1, 0), cv2.Sobel(g, cv2.CV_64F, 0, 1)
+    mag, ang = np.hypot(gx, gy), np.degrees(np.arctan2(gy, gx)) % 360
+    show("gradient magnitude: thick", mag)
+    show("nonmax_suppression: thin", nonmax_suppression(mag, ang))

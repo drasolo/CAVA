@@ -1,7 +1,7 @@
 """Run the practice drills, inside the learning flow.
 
     python check.py              list every drill, your progress and due redos
-    python check.py d12          test your drills/d12_*.py (asks for a prediction first)
+    python check.py d12          the lesson for d12 (read mode), or your code (--write / no lesson)
     python check.py d12 --hint   show the next hint step (strict drills: after 15 minutes)
     python check.py d12 --redo   start a from-memory redo: your code is archived, the stub comes back
     python check.py next         a due redo if there is one, else the first drill not passed
@@ -34,6 +34,10 @@ ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 
 from cava_practice import flow, journal, state  # noqa: E402
+
+
+def has_lesson(stem: str) -> bool:
+    return (ROOT / "lessons" / f"{stem}.yaml").exists()
 
 
 def load(path: Path, name: str):
@@ -183,6 +187,52 @@ def attempt(stem: str) -> bool:
     return ok
 
 
+def read_mode(args=None) -> bool:
+    if args is not None and getattr(args, "write", False):
+        return False
+    return state.config().get("mode", "read") == "read"
+
+
+def lesson(stem: str, redo: bool = False) -> bool:
+    """Read mode: run the drill's lesson and record it like a pass (or a redo)."""
+    from cava_practice import read
+    progress = state.load(state.PROGRESS)
+    entry = progress.get(stem, {})
+    redo = redo or bool(entry.get("passed"))
+    due = flow.due_redo(entry, state.today()) if entry.get("passed") else None
+    result = read.run_lesson(stem, redo=redo)
+    if result is None:
+        return False
+    progress, entry, rec = result
+    pts, total = rec["score"]
+    if not entry.get("passed"):
+        ph = flow.phase(stem, progress)
+        entry.update({"phase": ph, "passed": state.today().isoformat(), "passed_at": state.now(),
+                      "minutes": rec["minutes"], "prediction_right": rec.get("predict"),
+                      "runs_to_pass": 1 if pts >= total - 1 else 3})
+        entry["redos"] = flow.schedule_redos(state.today(), ph, bool(entry.get("assisted")),
+                                             dt.date.fromisoformat(state.config()["exam"]))
+        if entry.get("card"):
+            save_card(stem, entry["card"])
+        print(f"  Recorded. It comes back for a redo on {entry['redos'][0]}.")
+        if ph == "strict" and flow.early_exit(progress):
+            print("  Three smooth lessons in a row: the strict phase is over. Nice.")
+    else:
+        # One slip is fine; more and it comes back tomorrow.
+        good = pts >= total - 1
+        entry.setdefault("redo_log", []).append(
+            {"due": due or state.today().isoformat(), "ok": good, "minutes": rec["minutes"],
+             "runs": total - pts + 1, "on": state.today().isoformat()})
+        if not good:
+            entry["redos"] = sorted(set(entry.get("redos", []) + [(state.today() + dt.timedelta(days=1)).isoformat()]))
+        print("  It stuck." if good else "  A few slips: it comes back tomorrow.")
+    progress[stem] = entry
+    state.save(state.PROGRESS, progress)
+    journal.write()
+    state.touch()
+    return True
+
+
 def hint(stem: str) -> None:
     progress = state.load(state.PROGRESS)
     entry = progress.setdefault(stem, {})
@@ -236,6 +286,7 @@ def listing(stems, progress) -> None:
         e = progress.get(s, {})
         mark = "~" if e.get("passed") and flow.due_redo(e, today) else ("x" if e.get("passed") else " ")
         tag = "  (strict)" if s in flow.strict_stems() and not e.get("passed") and flow.phase(s, progress) == "strict" else ""
+        tag += "" if has_lesson(s) else "  (no lesson yet)"
         print(f"  [{mark}] {s:<24} {title(ROOT / 'drills' / f'{s}.py')}{tag}")
     done = sum(1 for s in stems if progress.get(s, {}).get("passed"))
     due = [s for s in stems if progress.get(s, {}).get("passed") and flow.due_redo(progress[s], today)]
@@ -249,6 +300,7 @@ def main():
     ap.add_argument("--all", action="store_true")
     ap.add_argument("--hint", action="store_true", help="show the next hint step")
     ap.add_argument("--redo", action="store_true", help="start a from-memory redo")
+    ap.add_argument("--write", action="store_true", help="write the code yourself instead of the lesson")
     args = ap.parse_args()
 
     stems = [p.stem for p in drills()]
@@ -269,7 +321,11 @@ def main():
         due = [s for s in stems if progress.get(s, {}).get("passed") and flow.due_redo(progress[s], today)
                and not progress[s].get("redo_active")]
         if due:
-            print(f"Redo due: {due[0]}. Start it with `python check.py {due[0][:3]} --redo` (your code gets archived).")
+            if read_mode(args) and has_lesson(due[0]):
+                print(f"Redo due: {due[0]}.")
+                lesson(due[0], redo=True)
+            else:
+                print(f"Redo due: {due[0]}. Start it with `python check.py {due[0][:3]} --redo` (your code gets archived).")
             return
         active = [s for s in stems if progress.get(s, {}).get("redo_active")]
         todo = active or [s for s in stems if not progress.get(s, {}).get("passed")]
@@ -287,9 +343,13 @@ def main():
             run_one(stem, ref=True)
         elif args.hint:
             hint(stem)
+        elif read_mode(args) and has_lesson(stem):
+            lesson(stem, redo=args.redo)
         elif args.redo:
             start_redo(stem)
         else:
+            if read_mode(args):
+                print(f"    {stem} has no lesson yet, so this is the write-it-yourself flow.")
             attempt(stem)
 
 

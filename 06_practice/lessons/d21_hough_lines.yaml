@@ -1,0 +1,108 @@
+probe:
+  question: >
+    Three edge pixels lie on the vertical line x = 10, at (x, y) = (10, 0), (10, 5), (10, 9).
+    How many votes does the line rho = 10, theta = 0 get?
+  setup: |
+    e = np.zeros((20, 20), np.uint8)
+    e[[0, 5, 9], 10] = 1
+    acc, rhos, thetas = hough_accumulator(e)
+  ask: "int(acc[int(np.argmin(np.abs(rhos - 10))), 0])"
+  why: >
+    At theta = 0, rho = x cos(0) + y sin(0) = x = 10 for all three pixels: 3 votes in the same cell.
+
+lines:
+  "def hough_accumulator(edges, theta_step=1.0, rho_step=1.0):": "Every edge pixel votes for every line through it; the votes go in a (rho, theta) table."
+  "H, W = edges.shape": "The image size."
+  "D = int(np.ceil(np.hypot(H, W)))": "The image diagonal: no line is farther than that from the origin, so rho stays in [-D, D]."
+  "thetas = np.arange(0, 180, theta_step)": "Angles 0..179 degrees: that covers every line direction exactly once."
+  "rhos = np.arange(-D, D + rho_step, rho_step)": "Distances from -D to D: rho is negative for some lines."
+  "ys, xs = np.nonzero(edges)": "The coordinates of every edge pixel (rows are y, columns are x)."
+  "t = np.deg2rad(thetas)": "cos and sin take radians."
+  "rho = xs[:, None] * np.cos(t) + ys[:, None] * np.sin(t)": |
+    For every pixel (a row) and every angle (a column): rho = x cos(theta) + y sin(theta).
+    xs[:, None] turns x into a column, so numpy combines it with all angles at once (broadcasting).
+  "ri = np.round((rho + D) / rho_step).astype(int)": "Each rho becomes a row index: shift by D so -D lands on row 0, then round to the nearest bin."
+  "ti = np.broadcast_to(np.arange(len(thetas)), ri.shape)": "The matching column index (which theta) for every entry."
+  "acc = np.zeros((len(rhos), len(thetas)), np.int64)": "The vote table: one row per rho, one column per theta."
+  "np.add.at(acc, (ri.ravel(), ti.ravel()), 1)": |
+    Add 1 at every (rho, theta) pair. np.add.at counts repeated pairs;
+    acc[idx] += 1 would count a cell only once even if many pixels vote for it.
+  "return acc, rhos, thetas": "The table, plus what each row and column means."
+  "def top_lines(acc, rhos, thetas, k, nms=5):": "The k strongest lines, without reporting one thick line twice."
+  "a = acc.astype(np.float64).copy()": "A copy we can erase peaks from."
+  "out = []": "The lines found so far."
+  "for _ in range(k):": "Find k peaks, one at a time:"
+  "i, j = np.unravel_index(np.argmax(a), a.shape)": "argmax gives a flat index; unravel_index turns it into (row, column) = (rho bin, theta bin)."
+  "out.append((float(rhos[i]), float(thetas[j])))": "Record the line in real units: a distance and an angle."
+  "a[max(0, i - nms):i + nms + 1, max(0, j - nms):j + nms + 1] = 0": |
+    Zero a window around the peak, so its neighbours (the same thick line) aren't picked next.
+    max(0, ...) keeps the window from wrapping around to the other end.
+  "return out": "Strongest first."
+
+order:
+  func: top_lines
+  lines:
+    - "a = acc.astype(np.float64).copy()"
+    - "out = []"
+    - "for _ in range(k):"
+    - "    i, j = np.unravel_index(np.argmax(a), a.shape)"
+    - "    out.append((float(rhos[i]), float(thetas[j])))"
+    - "    a[max(0, i - nms):i + nms + 1, max(0, j - nms):j + nms + 1] = 0"
+    - "return out"
+
+fill:
+  - line: "np.add.at(acc, (ri.ravel(), ti.ravel()), 1)"
+    wrong:
+      - "acc[ri.ravel(), ti.ravel()] += 1"
+      - "np.add.at(acc, (ti.ravel(), ri.ravel()), 1)"
+      - "acc[ri, ti] = 1"
+    why: >
+      Fancy-index += counts each cell once even when many pixels vote for it; np.add.at
+      counts every vote. Rows are rho and columns are theta.
+  - line: "ri = np.round((rho + D) / rho_step).astype(int)"
+    wrong:
+      - "ri = np.round(rho / rho_step).astype(int)"
+      - "ri = np.round((rho - D) / rho_step).astype(int)"
+      - "ri = np.round((rho + D) / rho_step)"
+    why: >
+      Row 0 holds rho = -D, so shift by +D before dividing by the bin size. Without the shift
+      negative rhos give negative indices, which silently wrap to the end of the table.
+      And an index must be an integer: np.round alone still gives floats.
+
+bugs:
+  - line: "rho = xs[:, None] * np.cos(t) + ys[:, None] * np.sin(t)"
+    bad: "rho = ys[:, None] * np.cos(t) + xs[:, None] * np.sin(t)"
+    why: >
+      The formula is x cos + y sin. Swapped, every line comes out mirrored across the
+      diagonal: vertical lines are found as horizontal ones.
+  - line: "out.append((float(rhos[i]), float(thetas[j])))"
+    bad: "out.append((float(thetas[j]), float(rhos[i])))"
+    why: >
+      i is the ROW of the accumulator (a rho bin) and j the column (a theta bin), and the
+      drill returns (rho, theta) pairs. Swapped, every line is reported as an angle-distance.
+
+tweak:
+  question: >
+    You run Hough on the edges of a photo of the Qwirkle board and draw the 10 strongest
+    lines. Where do they land?
+  options:
+    - "Randomly over the image"
+    - "Along the long straight edges: grid lines and the board's border"
+    - "Only on the brightest tiles"
+  answer: 1
+  why: >
+    Long straight edges collect the most votes, because every pixel on them votes for the
+    same (rho, theta) cell. That's how you'd find a board's grid when contours fail.
+  images: true
+  run: |
+    img = demo_image()
+    edges = cv2.Canny(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY), 80, 160)
+    acc, rhos, thetas = hough_accumulator(edges)
+    drawn = img.copy()
+    for r, t in top_lines(acc, rhos, thetas, 10):
+        c, s = np.cos(np.deg2rad(t)), np.sin(np.deg2rad(t))
+        x0, y0 = c * r, s * r
+        cv2.line(drawn, (int(x0 - 2000 * s), int(y0 + 2000 * c)), (int(x0 + 2000 * s), int(y0 - 2000 * c)), (0, 0, 255), 2)
+    show("edges", edges)
+    show("accumulator: bright spots are lines", acc)
+    show("the 10 strongest lines", drawn)

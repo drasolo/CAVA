@@ -1,0 +1,78 @@
+probe:
+  question: >
+    median_filter(img, 3) where img is 3x3, all 10 except one white speck of 255 in the
+    middle. What value does the middle pixel get?
+  setup: |
+    img = np.full((3, 3), 10, np.uint8)
+    img[1, 1] = 255
+  ask: "int(median_filter(img, 3)[1, 1])"
+  why: >
+    Sorted, the window is eight 10s and one 255: the middle value is 10. The speck is gone.
+    A mean would give (8 x 10 + 255) / 9 = 37: a gray smudge.
+
+lines:
+  'CHOICE = {"salt_pepper": "median", "gaussian_noise": "gaussian"}': |
+    Isolated black and white specks: median. A little noise on every pixel: Gaussian (averaging).
+  "def median_filter(gray, k):": "Each pixel becomes the middle value of its k x k neighbourhood."
+  "p = k // 2": "How far the window reaches from its centre."
+  'pad = np.pad(gray, p, mode="edge")': "Replicate the border so every window is full."
+  "win = np.lib.stride_tricks.sliding_window_view(pad, (k, k))": |
+    A view of every k x k window at once, shape (H, W, k, k), without copying any data.
+  "return np.median(win, axis=(-2, -1)).astype(np.uint8)": |
+    The median over the last two axes (each window), for every pixel at once, then back to uint8.
+
+order:
+  func: median_filter
+
+fill:
+  - line: "return np.median(win, axis=(-2, -1)).astype(np.uint8)"
+    wrong:
+      - "return np.mean(win, axis=(-2, -1)).astype(np.uint8)"
+      - "return np.median(win, axis=0).astype(np.uint8)"
+      - "return np.median(win).astype(np.uint8)"
+    why: >
+      The median is the point (a mean smears specks), and it has to be taken over the
+      window axes, the last two. With no axis you get ONE number for the whole image.
+  - line: 'pad = np.pad(gray, p, mode="edge")'
+    wrong:
+      - 'pad = np.pad(gray, k, mode="edge")'
+      - 'pad = np.pad(gray, (p, 0), mode="edge")'
+      - 'pad = gray'
+    why: >
+      Pad by the reach (k // 2) on BOTH sides so the output keeps the input's size.
+      (p, 0) pads only before, and no padding at all shrinks the image.
+
+bugs:
+  - line: "p = k // 2"
+    bad: "p = k"
+    why: >
+      A 3x3 window reaches 1 pixel from its centre, not 3. Too much padding makes more
+      windows than pixels, and the output comes out bigger than the input.
+  - line: 'CHOICE = {"salt_pepper": "median", "gaussian_noise": "gaussian"}'
+    bad: 'CHOICE = {"salt_pepper": "gaussian", "gaussian_noise": "median"}'
+    why: >
+      A Gaussian blur spreads each speck into a smudge; the median ignores outliers.
+      For fine noise everywhere, averaging is what reduces it.
+
+tweak:
+  question: >
+    Sprinkle salt-and-pepper noise on a photo, then clean it once with median_filter(3)
+    and once with a Gaussian blur. Which one looks clean?
+  options:
+    - "The Gaussian one"
+    - "The median one"
+    - "Both the same"
+  answer: 1
+  why: >
+    The median throws the specks away; the Gaussian averages them into gray dots and
+    also blurs the edges.
+  images: true
+  run: |
+    g = cv2.cvtColor(demo_image(), cv2.COLOR_BGR2GRAY)
+    noise = np.random.default_rng(0).random(g.shape)
+    noisy = g.copy()
+    noisy[noise < 0.05] = 0
+    noisy[noise > 0.95] = 255
+    show("salt and pepper", noisy)
+    show("median_filter(noisy, 3)", median_filter(noisy, 3))
+    show("Gaussian blur 5x5", cv2.GaussianBlur(noisy, (5, 5), 0))

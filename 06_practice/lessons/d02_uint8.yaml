@@ -1,0 +1,79 @@
+probe:
+  question: >
+    add_brightness on a single pixel of value 250 with delta = 10.
+    What value comes out?
+  setup: "img = np.array([[250]], np.uint8)"
+  ask: "int(add_brightness(img, 10)[0, 0])"
+  why: >
+    It saturates at 255. Plain uint8 maths would give 4 (260 wraps around past 255).
+
+lines:
+  "def add_brightness(img, delta):": "Brighten (or darken, with a negative delta) every pixel without wrapping around."
+  "return np.clip(img.astype(np.int32) + delta, 0, 255).astype(np.uint8)": |
+    .astype(np.int32) first: now 250 + 10 really is 260, not 4.
+    np.clip squeezes everything into 0..255 (260 -> 255, -5 -> 0), then back to uint8.
+  "def abs_diff(a, b):": "Per-pixel |a - b|: how different two frames are. The core of frame differencing (Qwirkle!)."
+  "return np.abs(a.astype(np.int16) - b.astype(np.int16)).astype(np.uint8)": |
+    int16 holds negatives, so 10 - 20 is -10 instead of 246.
+    np.abs makes it 10. The result is in 0..255 again, safe to store as uint8.
+  "def mean_abs_diff(a, b):": "One number for 'how different are these two images'."
+  "return float(np.mean(np.abs(a.astype(np.int16) - b.astype(np.int16))))": "The same difference, averaged over all pixels, as a plain Python float."
+
+order:
+  func: abs_diff
+  lines:
+    - "a16 = a.astype(np.int16)"
+    - "b16 = b.astype(np.int16)"
+    - "d = np.abs(a16 - b16)"
+    - "return d.astype(np.uint8)"
+
+fill:
+  - line: "return np.clip(img.astype(np.int32) + delta, 0, 255).astype(np.uint8)"
+    wrong:
+      - "return (img + delta).astype(np.uint8)"
+      - "return np.clip(img + delta, 0, 255).astype(np.uint8)"
+      - "return np.clip(img.astype(np.int32) + delta, 0, 255)"
+    why: >
+      The widening has to happen BEFORE the addition: clipping after uint8 maths is too late,
+      the value already wrapped. And the result must go back to uint8.
+  - line: "return np.abs(a.astype(np.int16) - b.astype(np.int16)).astype(np.uint8)"
+    wrong:
+      - "return np.abs(a - b).astype(np.uint8)"
+      - "return (a.astype(np.int16) - b.astype(np.int16)).astype(np.uint8)"
+      - "return np.abs(b - a)"
+    why: >
+      a - b on uint8 wraps before np.abs ever sees it, and without np.abs a negative
+      difference wraps when stored back as uint8.
+
+bugs:
+  - line: "return float(np.mean(np.abs(a.astype(np.int16) - b.astype(np.int16))))"
+    bad: "return float(np.mean(np.abs(a - b)))"
+    why: >
+      a - b on uint8 already wrapped: 10 - 20 is 246, and abs(246) is still 246.
+      The average comes out far too big.
+  - line: "return np.abs(a.astype(np.int16) - b.astype(np.int16)).astype(np.uint8)"
+    bad: "return np.abs(a.astype(np.int8) - b.astype(np.int8)).astype(np.uint8)"
+    why: >
+      int8 only holds -128..127, so a pixel of 200 becomes -56 before any subtraction.
+      Wide enough matters: int16 holds every uint8 value and every difference.
+
+tweak:
+  question: >
+    Frame differencing done naively: frame2 - frame1 in plain uint8, where frame2 is
+    the same photo 30 levels DARKER. What does the result look like?
+  options:
+    - "Black: the frames barely differ"
+    - "Almost white everywhere: -30 wrapped around to 226"
+    - "A dark gray of 30"
+  answer: 1
+  why: >
+    -30 wraps to 226, which is nearly white. abs_diff gives the honest answer: about 30,
+    a dark gray, everywhere.
+  images: true
+  run: |
+    img = cv2.cvtColor(demo_image(), cv2.COLOR_BGR2GRAY)
+    dark = add_brightness(img, -30)
+    show("frame 1", img)
+    show("frame 2: 30 darker", dark)
+    show("dark - img in plain uint8: wrapped", dark - img)
+    show("abs_diff(dark, img): about 30", abs_diff(dark, img))

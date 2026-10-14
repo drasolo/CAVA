@@ -1,0 +1,86 @@
+probe:
+  question: >
+    An image black on the left half and white on the right half (a vertical edge).
+    At the edge, is gx positive or negative? Type 1 for positive, -1 for negative.
+  setup: |
+    img = np.zeros((5, 6), np.uint8)
+    img[:, 3:] = 255
+    gx, gy = sobel(img)
+  ask: "int(np.sign(gx[2, 2]))"
+  why: >
+    gx is right minus left. Brighter on the right means positive.
+
+lines:
+  "import cv2": "cv2.filter2D does the correlation; it's allowed in this drill."
+  "KX = np.array([[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]], np.float64)": |
+    Sobel x: right column minus left column, with the middle row weighted double (a little vertical smoothing).
+  "def sobel(gray):": "Returns gx and gy: how fast brightness changes going right, and going down."
+  "g = gray.astype(np.float64)": "Floats: half the gradients are negative, and uint8 can't hold negatives."
+  "return cv2.filter2D(g, cv2.CV_64F, KX), cv2.filter2D(g, cv2.CV_64F, KX.T)": |
+    filter2D correlates g with KX: that's gx. KX.T (the transpose) is the same kernel on its side:
+    bottom row minus top row, which is gy, because y grows DOWN. cv2.CV_64F asks for float64 output.
+  "def magnitude_orientation(gx, gy):": "Turn (gx, gy) into edge strength and edge direction."
+  "mag = np.hypot(gx, gy)": "sqrt(gx^2 + gy^2): the length of the gradient vector, how strong the edge is."
+  "ang = np.degrees(np.arctan2(gy, gx)) % 360.0": |
+    arctan2 gives the angle in radians in (-pi, pi]; degrees() converts it; % 360 moves
+    negatives into [0, 360). The angle points toward the brighter side.
+  "return mag, ang": "Strength and direction, both float64 H x W."
+
+order:
+  func: sobel
+  lines:
+    - "g = gray.astype(np.float64)"
+    - "gx = cv2.filter2D(g, cv2.CV_64F, KX)"
+    - "gy = cv2.filter2D(g, cv2.CV_64F, KX.T)"
+    - "return gx, gy"
+
+fill:
+  - line: "return cv2.filter2D(g, cv2.CV_64F, KX), cv2.filter2D(g, cv2.CV_64F, KX.T)"
+    wrong:
+      - "return cv2.filter2D(g, cv2.CV_64F, KX.T), cv2.filter2D(g, cv2.CV_64F, KX)"
+      - "return cv2.filter2D(g, cv2.CV_64F, KX), cv2.filter2D(g, cv2.CV_64F, -KX.T)"
+      - "return cv2.filter2D(gray, -1, KX), cv2.filter2D(gray, -1, KX.T)"
+    why: >
+      gx comes from KX and gy from its transpose, gy is positive when it gets brighter
+      DOWNWARD, and on uint8 with ddepth -1 every negative gradient is cut to 0.
+  - line: "ang = np.degrees(np.arctan2(gy, gx)) % 360.0"
+    wrong:
+      - "ang = np.degrees(np.arctan2(gx, gy)) % 360.0"
+      - "ang = np.degrees(np.arctan2(gy, gx))"
+      - "ang = np.arctan2(gy, gx) % 360.0"
+    why: >
+      arctan2 takes (y, x), in that order. Without % 360 half the angles are negative,
+      and without np.degrees they are in radians.
+
+bugs:
+  - line: "mag = np.hypot(gx, gy)"
+    bad: "mag = gx + gy"
+    why: >
+      gx and gy can cancel out (a gradient of +5 and -5 adds to 0). The strength is the
+      length of the vector, sqrt(gx^2 + gy^2), which is never negative.
+  - line: "KX = np.array([[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]], np.float64)"
+    bad: "KX = np.array([[1, 0, -1], [2, 0, -2], [1, 0, -1]], np.float64)"
+    why: >
+      That's left minus right: every gradient points the wrong way, so every angle is off
+      by 180 degrees. This is the correlation vs convolution sign trap.
+
+tweak:
+  question: >
+    You show the gradient magnitude of a photo. Which parts are bright?
+  options:
+    - "Flat areas, like the table or the board"
+    - "Edges: tile borders and outlines"
+    - "The brightest objects"
+  answer: 1
+  why: >
+    The magnitude measures CHANGE, not brightness: a white wall is dark in it,
+    the border between a tile and the board is bright.
+  images: true
+  run: |
+    g = cv2.cvtColor(demo_image(), cv2.COLOR_BGR2GRAY)
+    gx, gy = sobel(g)
+    mag, ang = magnitude_orientation(gx, gy)
+    show("gray", g)
+    show("|gx|: vertical edges", np.abs(gx))
+    show("|gy|: horizontal edges", np.abs(gy))
+    show("magnitude", mag)

@@ -1,0 +1,85 @@
+# Read-mode lesson for d00 (see cava_practice/read.py). Code answers are checked
+# by running tests/d00_gray.py on them; selftest.py proves every wrong option fails.
+
+probe:
+  question: >
+    A 1x1 image holding one pure red pixel, BGR (0, 0, 255).
+    What number does to_gray return for it?
+  setup: "img = np.array([[[0, 0, 255]]], np.uint8)"
+  ask: "int(to_gray(img)[0, 0])"
+  tol: 0.5
+  why: >
+    Only the red channel is non-zero, and red is index 2 in BGR:
+    0.299 * 255 = 76.2, rounded to 76.
+
+lines:
+  "import numpy as np": "Images are numpy arrays, so everything here is array maths."
+  "def to_gray(img_bgr):": "Input: an H x W x 3 image in BGR order, which is what cv2.imread gives you."
+  "b, g, r = [img_bgr[..., i].astype(np.float64) for i in range(3)]": |
+    img_bgr[..., i] takes channel i of every pixel: 0 = blue, 1 = green, 2 = red.
+    .astype(np.float64) switches to decimals before any maths, so nothing wraps past 255.
+  "return np.round(0.299 * r + 0.587 * g + 0.114 * b).astype(np.uint8)": |
+    The weighted sum, for every pixel at once. Green weighs most: the eye is most sensitive to it.
+    np.round first, THEN .astype(np.uint8): astype alone cuts 76.9 down to 76.
+  "def bgr_to_rgb(img):": "Same pixels, channels in the opposite order, for libraries like matplotlib that expect RGB."
+  "return img[..., ::-1].copy()": |
+    [..., ::-1] reverses the LAST axis, the channels: B, G, R becomes R, G, B.
+    .copy() makes a real new array; the reversed view would share memory with the input.
+
+order:
+  func: to_gray
+  lines:
+    - "b = img_bgr[..., 0].astype(np.float64)"
+    - "g = img_bgr[..., 1].astype(np.float64)"
+    - "r = img_bgr[..., 2].astype(np.float64)"
+    - "gray = 0.299 * r + 0.587 * g + 0.114 * b"
+    - "return np.round(gray).astype(np.uint8)"
+
+fill:
+  - line: "return np.round(0.299 * r + 0.587 * g + 0.114 * b).astype(np.uint8)"
+    wrong:
+      - "return np.round(0.299 * b + 0.587 * g + 0.114 * r).astype(np.uint8)"
+      - "return np.round((r + g + b) / 3).astype(np.uint8)"
+      - "return np.round(0.299 * r + 0.587 * g + 0.114 * b)"
+    why: >
+      Each weight belongs to one colour (0.299 red, 0.587 green, 0.114 blue), a plain
+      average isn't luminance, and without .astype(np.uint8) you return decimals, not an image.
+  - line: "return img[..., ::-1].copy()"
+    wrong:
+      - "return img[::-1].copy()"
+      - "return img[:, ::-1].copy()"
+      - "return img.copy()"
+    why: >
+      [..., ::-1] reverses the last axis (channels). img[::-1] flips the image upside
+      down (rows), img[:, ::-1] mirrors it left to right (columns).
+
+bugs:
+  - line: "b, g, r = [img_bgr[..., i].astype(np.float64) for i in range(3)]"
+    bad: "r, g, b = [img_bgr[..., i].astype(np.float64) for i in range(3)]"
+    why: >
+      OpenCV's order is B, G, R: channel 0 is blue. Calling it r gives blue the red weight,
+      and pure red comes out 29 instead of 76. This is the most common colour bug there is.
+  - line: "return np.round(0.299 * r + 0.587 * g + 0.114 * b).astype(np.uint8)"
+    bad: "return np.round(0.299 * r + 0.587 * g + 0.114 * b).astype(np.int8)"
+    why: >
+      int8 holds -128..127, so every bright pixel wraps to a negative number.
+      Images are uint8: 0..255.
+
+tweak:
+  question: >
+    You feed to_gray an RGB image by mistake (channels swapped). On a real photo,
+    what changes in the gray result?
+  options:
+    - "Nothing: gray is gray"
+    - "Red things get darker and blue things get brighter"
+    - "The whole image gets darker"
+  answer: 1
+  why: >
+    Swapped, red gets blue's small weight (0.114) and blue gets red's (0.299).
+    Look at the red and blue tiles in the two windows.
+  images: true
+  run: |
+    img = demo_image()
+    show("colour photo", img)
+    show("to_gray(BGR): correct", to_gray(img))
+    show("to_gray(RGB): channels swapped", to_gray(img[..., ::-1]))

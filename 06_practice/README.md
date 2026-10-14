@@ -8,19 +8,20 @@ python coach.py      # the same thing, from this folder
 ```
 
 The first time, the coach offers the **onboarding** (`python learn.py`): one drill, d00, start to
-finish with the whole learning flow. After that, open the coach, say how you feel, and it picks
-the next step and starts it. `python coach.py --list` shows every option:
+finish. By default you learn it from working code (read mode, below), not by writing it.
+After that, open the coach, say how you feel, and it picks the next step and starts it.
+`python coach.py --list` shows every option (read mode):
 
 | You feel | The coach does |
 |---|---|
-| I can't get started | a 5-minute starter: only the "predict" step of your current drill |
-| Stuck for 15+ minutes | the next hint step (strict drills unlock hints after 15 minutes) |
-| My output differs and I don't see why | re-runs the checker on the failing case (visual diff: phase 2) |
+| I can't get started | the lesson for your current drill: it opens gently, with the concept |
+| Stuck for 15+ minutes | walks the ideas behind the drill, one check question at a time |
+| I don't understand the code | the code explained line by line; ask Claude about any line |
 | I don't get the concept | walks the concept map down to something you have, then back up |
-| Overwhelmed | shrinks it: one function, its part of the task, a 10-minute goal |
+| Overwhelmed | one small step: predict a single number, nothing else |
 | Bored / tired / only 15 minutes | review items: due cards first, then theory |
-| Anxious about the exam | a timed from-memory redo of a drill you passed |
-| On fire | the next drill, or the redo that is due |
+| Anxious about the exam | a redo of a lesson you've done, shuffled |
+| On fire | the next lesson, or the redo that is due |
 | Just finished a drill | teach-back: Claude asks you one probing question |
 
 A **session** starts with your first action. A small always-on-top window shows the active time
@@ -29,7 +30,28 @@ It turns green at 20 minutes: shorter sessions don't count. Under it is the week
 the target (4 hours, in `me/config.json`). When a counted session ends, its minutes go to the
 `cava` habit on dra-solo and `me/` is pushed to its private repo.
 
-## The flow
+## Read mode (the default): learn from working code
+
+You don't have to write the code to understand it. In read mode (`"mode": "read"` in
+`me/config.json`) every drill with a lesson (`lessons/dNN_*.yaml`, the first 10 so far) is
+eight steps around the solution that already works:
+
+1. **Concept:** the idea behind it, one check question at a time.
+2. **Predict:** one number from a tiny input, before you see any code. The real code checks it.
+3. **Read:** the code with an explanation under each line. Type a line number and Claude explains it differently.
+4. **Order:** the lines of one function, shuffled. Put them back; the drill's tests check your order.
+5. **Fill:** one key line blanked. Pick it from four options; a wrong pick shows what the tests say about it.
+6. **Bug:** a classic bug planted in the code. Find the line and say why it's wrong.
+7. **Tweak:** change a parameter, predict the effect, then see it on a real Qwirkle photo.
+8. **Explain:** two sentences in your own words, and a card for the review queue.
+
+`python check.py d00` runs the lesson, `python check.py d00 --write` the write-it-yourself flow
+below. A lesson comes back as a **redo** (shuffled, without the reading step) after 1 and 7 days
+for the strict drills; one slip is fine, more and it comes back the next day. `selftest.py` proves
+every lesson right: each correct answer passes the drill's tests and every wrong option and
+planted bug fails them, so the exercises never teach something false.
+
+## Write mode: the flow
 
 Every drill runs inside the same loop. Each step is there because it makes learning stick:
 

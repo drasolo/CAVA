@@ -1,0 +1,74 @@
+probe:
+  question: >
+    gaussian_1d(3, 1.0). Before normalising, the three values are exp(-1/2), 1, exp(-1/2),
+    which is about 0.61, 1, 0.61. After dividing by their sum, what is the MIDDLE value?
+    (two decimals)
+  setup: ""
+  ask: "round(float(gaussian_1d(3, 1.0)[1]), 2)"
+  tol: 0.02
+  why: >
+    The sum is about 2.21, so the middle is 1 / 2.21 = 0.45 and the sides are 0.27 each.
+
+lines:
+  "def gaussian_1d(ksize, sigma):": "A 1D bell curve sampled at ksize points, scaled to sum to 1."
+  "x = np.arange(ksize) - (ksize - 1) / 2": "Positions relative to the centre: for ksize 5, [-2, -1, 0, 1, 2]."
+  "g = np.exp(-x ** 2 / (2 * sigma ** 2))": "The Gaussian formula at each position. A bigger sigma makes a wider bell."
+  "return g / g.sum()": "Divide by the sum so the weights add up to 1: blurring then keeps the average brightness."
+  "def gaussian_2d(ksize, sigma):": "The 2D kernel, built from the 1D one."
+  "g = gaussian_1d(ksize, sigma)": "The 1D weights."
+  "return np.outer(g, g)": |
+    outer(g, g)[i, j] = g[i] * g[j]. The 2D Gaussian is separable: the product of two 1D ones.
+  "def box_kernel(ksize):": "The plain average filter."
+  "return np.full((ksize, ksize), 1.0 / ksize ** 2)": "Every weight equal to 1 / (number of cells), so they sum to 1."
+
+order:
+  func: gaussian_1d
+
+fill:
+  - line: "x = np.arange(ksize) - (ksize - 1) / 2"
+    wrong:
+      - "x = np.arange(ksize)"
+      - "x = np.arange(ksize) - ksize / 2"
+      - "x = np.arange(-ksize, ksize)"
+    why: >
+      The positions must be centred on 0 so the bell is symmetric. ksize / 2 is off by half
+      a pixel (for 5 it gives -2.5 .. 1.5), and arange(-ksize, ksize) has the wrong length.
+  - line: "return g / g.sum()"
+    wrong:
+      - "return g"
+      - "return g / g.max()"
+      - "return g / ksize"
+    why: >
+      Only dividing by the sum makes the weights add to exactly 1, so a blur neither
+      brightens nor darkens the image.
+
+bugs:
+  - line: "return np.outer(g, g)"
+    bad: "return g * g"
+    why: >
+      g * g multiplies element by element and stays 1D. np.outer builds the full ksize x ksize
+      table of every product g[i] * g[j].
+  - line: "g = np.exp(-x ** 2 / (2 * sigma ** 2))"
+    bad: "g = np.exp(-x ** 2 / (2 * sigma))"
+    why: >
+      The formula uses sigma SQUARED. With sigma = 1 you can't tell; with sigma = 3 the bell
+      comes out much narrower than asked.
+
+tweak:
+  question: >
+    Blur a photo with gaussian_2d(15, 1) and with gaussian_2d(15, 5).
+    Which result is blurrier?
+  options:
+    - "sigma 1"
+    - "sigma 5"
+    - "The same: the kernel size is 15 both times"
+  answer: 1
+  why: >
+    sigma sets how wide the bell is. ksize only has to be big enough to hold it
+    (about 6 x sigma); with sigma 1, most of a 15x15 kernel is near zero.
+  images: true
+  run: |
+    img = demo_image()
+    show("gaussian_2d(15, 1)", cv2.filter2D(img, -1, gaussian_2d(15, 1)))
+    show("gaussian_2d(15, 5)", cv2.filter2D(img, -1, gaussian_2d(15, 5)))
+    show("box_kernel(15)", cv2.filter2D(img, -1, box_kernel(15)))

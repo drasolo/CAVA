@@ -26,6 +26,38 @@ def pause(prompt: str = "press Enter to go on") -> str:
     return flow.ask(f"\n  ({prompt}) ", False)
 
 
+def read_onboarding(stem: str) -> None:
+    """Read mode: you learn the drill from its working code, in eight steps."""
+    say(f"""
+Welcome. You won't write code here: you'll learn {stem} from code that already works,
+and every step checks that you really understand it.
+
+  1 concept   the idea behind it, one check question at a time
+  2 predict   guess one number before you see the code; the real code checks you
+  3 read      the code with an explanation under each line; ask Claude about any line
+  4 order     the lines shuffled: put them back (the tests check your order)
+  5 fill      one line blanked: pick it from four
+  6 bug       a classic bug planted: find the line, say why
+  7 tweak     change a parameter, predict what happens, then see it on a real photo
+  8 explain   two sentences in your own words, and a card for later review
+
+Image windows close with any key. A session starts now: the small window shows
+active time, and it counts once it reaches 20 minutes.""")
+    session.start("drill", stem)
+    pause()
+    if not check.lesson(stem):
+        return
+    cfg = state.load(state.CONFIG)
+    cfg["onboarded"] = state.today().isoformat()
+    state.save(state.CONFIG, {**state.config(), **cfg})
+    say(f"""
+That's the flow. It comes back for a redo (shuffled, without the reading step)
+in a day or two, and your card joins the review queue (`python theory.py`).
+
+From here, `cava` is your start point: say how you feel and it picks the next step.
+The next lesson is option 0 ("I'm on fire") or `python check.py next`.""")
+
+
 def main():
     progress = state.load(state.PROGRESS)
     stems = flow.stems()
@@ -36,6 +68,9 @@ def main():
     else:
         stem = next((s for s in stems if not progress.get(s, {}).get("passed")), stems[0])
     ph = flow.phase(stem, progress)
+    if check.read_mode() and check.has_lesson(stem):
+        read_onboarding(stem)
+        return
 
     say(f"""
 Welcome. This walks you through {stem} with the full flow, once.

@@ -30,6 +30,8 @@ DEFAULT_CONFIG = {
     ],
     "exam": "2027-02-01",
     "tutor_in_tema": "concepts",   # "concepts" or "off"
+    # "read": learn each drill from its working code (lessons/), "write": write the code yourself.
+    "mode": "read",
 }
 
 

@@ -137,6 +137,28 @@ def test_concepts():
                f"{cid} needs an explanation and a check question with an answer")
 
 
+def test_read_helpers():
+    from cava_practice import read
+    src = "def f(x):\n    y = x + 1\n    return y\n"
+    expect(read.replace_line(src, "y = x + 1", "y = x + 2") == "def f(x):\n    y = x + 2\n    return y\n",
+           "replace_line keeps the indentation")
+    body = read.with_body(src, "f", ["for i in range(2):", "    x = x + i", "return x"])
+    expect(body == "def f(x):\n    for i in range(2):\n        x = x + i\n    return x\n",
+           f"with_body nests lines by their own indentation: {body!r}")
+    rec = {"predict": True, "fill": False, "tweak": True, "order": {"tries": 1}, "bug": {"found": True}}
+    expect(read.score(rec) == (4, 5), f"score counts first-try answers: {read.score(rec)}")
+    expect(read.score({"predict": None, "fill": None}) == (0, 0), "skipped steps don't count")
+
+
+def test_lessons():
+    """Every lesson teaches only true things: right answers pass the tests, wrong ones fail."""
+    from cava_practice import read
+    lessons = sorted(p.stem for p in (ROOT / "lessons").glob("*.yaml"))
+    expect(set(flow.strict_stems()) <= set(lessons), "every strict drill has a lesson")
+    problems = [p for s in lessons for p in read.validate(s)]
+    expect(not problems, "\n      ".join(problems))
+
+
 def main():
     tests = [v for k, v in globals().items() if k.startswith("test_")]
     failed = 0

@@ -1,0 +1,91 @@
+probe:
+  question: >
+    correlate2d on a 3x3 image of all 1s, with a 3x3 kernel of all 1s.
+    What value lands in the CORNER pixel, out[0, 0]?
+  setup: "img = np.ones((3, 3)); k = np.ones((3, 3))"
+  ask: "float(correlate2d(img, k)[0, 0])"
+  why: >
+    Replicate padding copies the edge pixels outward, so even the corner sees nine 1s: 9.
+    With zero padding it would see only four: 4.
+
+lines:
+  "def correlate2d(img, kernel):": "Slide the kernel over the image; each output pixel is the sum of kernel x the pixels under it."
+  "img = img.astype(np.float64)": "Decimals, so sums and negative weights are exact (no uint8 wrapping)."
+  "kh, kw = kernel.shape": "Kernel height and width: odd sizes like 3x3 or 3x5."
+  "py, px = kh // 2, kw // 2": "How far the kernel reaches from its centre: 1 for size 3, 2 for size 5."
+  'pad = np.pad(img, ((py, py), (px, px)), mode="edge")': |
+    Add py rows above and below and px columns left and right, copying the edge pixels (BORDER_REPLICATE).
+    Now the kernel never falls off the image.
+  "H, W = img.shape": "The original size: the output has the same size."
+  "out = np.zeros((H, W))": "Start from zero and add one kernel cell's contribution at a time."
+  "for i in range(kh):": "Loop over the KERNEL cells, not the pixels: 9 iterations for a 3x3 kernel ..."
+  "for j in range(kw):": "... and each iteration is a whole-image operation."
+  "out += kernel[i, j] * pad[i:i + H, j:j + W]": |
+    pad[i:i + H, j:j + W] is the whole image, shifted by one kernel offset.
+    Weight it by kernel[i, j] and add. After all cells, every pixel holds its full sum.
+  "return out": "Same size as the input, float64."
+  "def convolve2d(img, kernel):": "Convolution is correlation with the kernel flipped on both axes."
+  "return correlate2d(img, kernel[::-1, ::-1])": "[::-1, ::-1] flips up-down and left-right: a 180 degree rotation."
+
+order:
+  func: correlate2d
+  lines:
+    - "img = img.astype(np.float64)"
+    - "kh, kw = kernel.shape"
+    - "py, px = kh // 2, kw // 2"
+    - 'pad = np.pad(img, ((py, py), (px, px)), mode="edge")'
+    - "H, W = img.shape"
+    - "out = np.zeros((H, W))"
+    - "for i in range(kh):"
+    - "    for j in range(kw):"
+    - "        out += kernel[i, j] * pad[i:i + H, j:j + W]"
+    - "return out"
+
+fill:
+  - line: "out += kernel[i, j] * pad[i:i + H, j:j + W]"
+    wrong:
+      - "out += kernel[i, j] * pad[i:H, j:W]"
+      - "out += kernel[i, j] * img[i:i + H, j:j + W]"
+      - "out = kernel[i, j] * pad[i:i + H, j:j + W]"
+    why: >
+      The window must be exactly H x W and come from the PADDED image, and `+=` adds
+      every cell's contribution (`=` would keep only the last one).
+  - line: 'pad = np.pad(img, ((py, py), (px, px)), mode="edge")'
+    wrong:
+      - 'pad = np.pad(img, ((px, px), (py, py)), mode="edge")'
+      - 'pad = np.pad(img, ((py, py), (px, px)))'
+      - 'pad = np.pad(img, ((py, py), (px, px)), mode="reflect")'
+    why: >
+      Rows get py and columns get px (it matters for a 3x5 kernel), and the statement asks
+      for BORDER_REPLICATE, which is mode="edge" (the default pads with zeros).
+
+bugs:
+  - line: "return correlate2d(img, kernel[::-1, ::-1])"
+    bad: "return correlate2d(img, kernel[::-1])"
+    why: >
+      kernel[::-1] only flips the rows. Convolution flips BOTH axes; with a symmetric
+      kernel you'd never notice, with a gradient kernel the sign comes out wrong.
+  - line: "py, px = kh // 2, kw // 2"
+    bad: "py, px = kw // 2, kh // 2"
+    why: >
+      The vertical reach comes from the kernel's height. Swapped, a 3x5 kernel gets padding
+      of the wrong shape and the windows stop lining up.
+
+tweak:
+  question: >
+    You correlate a photo with the 1x3 kernel [[-1, 0, 1]] (right minus left).
+    What does the result show?
+  options:
+    - "A blurred photo"
+    - "Vertical edges light up, flat areas go to about 0"
+    - "Horizontal edges light up"
+  answer: 1
+  why: >
+    Right minus left is large only where brightness changes going sideways: vertical edges.
+    A box kernel (all equal weights) is what blurs.
+  images: true
+  run: |
+    g = cv2.cvtColor(demo_image(), cv2.COLOR_BGR2GRAY)
+    show("gray", g)
+    show("correlate2d with [[-1, 0, 1]]", np.abs(correlate2d(g, np.array([[-1.0, 0.0, 1.0]]))))
+    show("correlate2d with a 5x5 box: blur", correlate2d(g, np.ones((5, 5)) / 25))

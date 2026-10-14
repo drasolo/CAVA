@@ -30,6 +30,17 @@ def render(progress: dict) -> str:
                 f"passed {e['passed']} · {e.get('minutes', '?')} min · {e.get('runs_to_pass', '?')} run(s) · "
                 f"{e.get('phase', '?')}" + (" · assisted" if e.get("assisted") else "")
                 + (f" · {len(e['hints'])} hint(s)" if e.get("hints") else ""), ""]
+        for k, r in enumerate(e.get("read_log", [])):
+            pts, total = r.get("score", [0, 0])
+            missed = [s for s in ("predict", "fill", "tweak") if r.get(s) is False]
+            if r.get("order") and r["order"]["tries"] > 1:
+                missed.append("order")
+            if r.get("bug") and not r["bug"]["found"]:
+                missed.append("bug")
+            out.append(f"- **{'Lesson' if k == 0 else 'Redo'} {r.get('on', '')}:** {pts}/{total} first try"
+                       + (f" · missed: {', '.join(missed)}" if missed else ""))
+            if r.get("bug", {}) and r["bug"].get("why"):
+                out.append(f"  - why the bug was wrong, in my words: {r['bug']['why']}")
         p = e.get("prediction")
         if p:
             right = {True: "right", False: "wrong"}.get(e.get("prediction_right"), "?")

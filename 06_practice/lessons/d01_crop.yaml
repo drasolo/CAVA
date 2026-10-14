@@ -1,0 +1,80 @@
+probe:
+  question: >
+    crop(img, (2, 3, 5, 9)) on a 20x20 image. The box is inclusive.
+    How many pixels WIDE is the result?
+  setup: "img = np.zeros((20, 20), np.uint8)"
+  ask: "crop(img, (2, 3, 5, 9)).shape[1]"
+  why: >
+    Inclusive means both ends count: 5 - 2 + 1 = 4 columns (and 9 - 3 + 1 = 7 rows).
+
+lines:
+  "def parse_annotations(lines):": "Input: the lines of an annotation file, as strings."
+  "out = []": "The list we build: one dict per non-empty line."
+  "for line in lines:": "One annotation per line."
+  "parts = line.split()": "split() with no argument splits on any run of spaces and ignores trailing spaces and the newline."
+  "if not parts:": "A blank line gives an empty list ..."
+  "continue": "... so skip it."
+  "box = tuple(int(float(v)) for v in parts[1:5])": |
+    Fields 1 to 4 are xmin ymin xmax ymax. parts[1:5] takes exactly those four.
+    int(float(v)) also copes with values written like '12.0'.
+  'out.append({"file": parts[0], "box": box, "label": parts[5] if len(parts) > 5 else None})': |
+    Field 0 is the file name. A sixth field, when there is one, is the label (the character).
+  "return out": "All the annotations."
+  "def crop(img, box):": "Cut a box out of an image. The coordinates are inclusive."
+  "h, w = img.shape[:2]": "shape is (height, width[, channels]): the first two are all we need."
+  "x0, y0, x1, y1 = box": "Unpack the corners."
+  "x0, y0 = max(0, x0), max(0, y0)": "Clip: a box can start left of or above the image (negative coordinates)."
+  "x1, y1 = min(w - 1, x1), min(h - 1, y1)": "... or end past the right or bottom edge. The last valid index is w - 1, not w."
+  "return img[y0:y1 + 1, x0:x1 + 1]": |
+    Rows first (y), then columns (x).
+    + 1 because the box includes its end and slicing excludes it.
+
+order:
+  func: crop
+
+fill:
+  - line: "return img[y0:y1 + 1, x0:x1 + 1]"
+    wrong:
+      - "return img[y0:y1, x0:x1]"
+      - "return img[x0:x1 + 1, y0:y1 + 1]"
+      - "return img[y0:y1 + 1][x0:x1 + 1]"
+    why: >
+      Rows (y) come first in numpy, the + 1 makes the end inclusive, and img[a][b]
+      slices rows twice instead of rows then columns.
+  - line: "box = tuple(int(float(v)) for v in parts[1:5])"
+    wrong:
+      - "box = tuple(int(float(v)) for v in parts[0:4])"
+      - "box = tuple(int(float(v)) for v in parts[1:4])"
+      - "box = parts[1:5]"
+    why: >
+      Field 0 is the file name, the box is fields 1, 2, 3, 4 (a slice end is excluded,
+      so 1:5), and they have to become numbers, not stay strings.
+
+bugs:
+  - line: "x1, y1 = min(w - 1, x1), min(h - 1, y1)"
+    bad: "x1, y1 = min(h - 1, x1), min(w - 1, y1)"
+    why: >
+      x goes with the width and y with the height. On a square image you'd never notice;
+      on a wide one the crop gets cut in the wrong place.
+  - line: "x0, y0 = max(0, x0), max(0, y0)"
+    bad: "x0, y0 = min(0, x0), min(0, y0)"
+    why: >
+      min(0, x) is never above 0, so every crop starts at the corner. Clipping a start
+      coordinate needs max: "at least 0".
+
+tweak:
+  question: >
+    A box (-5, -5, 3, 3) sticks out past the top-left corner of a 10x10 image.
+    What shape does crop return?
+  options:
+    - "(9, 9): the box size"
+    - "(4, 4): only the part inside the image"
+    - "An error"
+  answer: 1
+  why: >
+    Clipping keeps the part that exists. Without it, img[-5:4] would be EMPTY: a negative
+    index counts from the end, so -5:4 means "from row 5 to row 3".
+  run: |
+    img = np.arange(100, dtype=np.uint8).reshape(10, 10)
+    say(f"crop(img, (-5, -5, 3, 3)).shape = {crop(img, (-5, -5, 3, 3)).shape}")
+    say(f"without clipping, img[-5:4, -5:4].shape = {img[-5:4, -5:4].shape}")

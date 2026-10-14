@@ -1,0 +1,80 @@
+probe:
+  question: >
+    img has shape (10, 20). You call resize_nearest(img, (4, 2)).
+    How many ROWS does the result have?
+  setup: "img = np.zeros((10, 20), np.uint8)"
+  ask: "resize_nearest(img, (4, 2)).shape[0]"
+  why: >
+    dsize is (WIDTH, HEIGHT), like cv2.resize: 4 columns and 2 rows, so the shape is (2, 4).
+
+lines:
+  "import cv2": "OpenCV, used here only for the area-averaging resize in fit_square."
+  "def resize_nearest(img, dsize):": "dsize is (WIDTH, HEIGHT), the OpenCV convention."
+  "w, h = dsize": "So unpack width first."
+  "H, W = img.shape[:2]": "The source size. numpy shapes are (height, width)."
+  "ys = np.minimum((np.arange(h) * H) // h, H - 1)": |
+    For every output row y, the source row floor(y * H / h). // is integer division, which floors.
+    np.minimum is a safety net that keeps the index inside the image.
+  "xs = np.minimum((np.arange(w) * W) // w, W - 1)": "The same for the columns."
+  "return img[ys][:, xs]": "Pick those rows, then those columns. Every output pixel copies one source pixel, with no loop."
+  "def fit_square(img, side):": "Make any image side x side without stretching it (letterboxing)."
+  "s = side / max(H, W)": "One scale factor, chosen so the LONGER side becomes `side`."
+  "nw, nh = max(1, round(W * s)), max(1, round(H * s))": "The new width and height. max(1, ...) so a very thin image never shrinks to 0 pixels."
+  "small = cv2.resize(img, (nw, nh), interpolation=cv2.INTER_AREA)": |
+    cv2.resize takes (width, height). INTER_AREA averages pixels, the right choice when shrinking.
+  "out = np.zeros((side, side) + img.shape[2:], img.dtype)": |
+    A black canvas. img.shape[2:] is (3,) for a colour image and () for gray, so it works for both.
+  "y0, x0 = (side - nh) // 2, (side - nw) // 2": "Where to paste so the padding is equal on both sides."
+  "out[y0:y0 + nh, x0:x0 + nw] = small": "Paste the resized image in the middle."
+  "return out": "The square result."
+
+order:
+  func: fit_square
+
+fill:
+  - line: "w, h = dsize"
+    wrong:
+      - "h, w = dsize"
+      - "w, h = dsize[::-1]"
+      - "w, h = img.shape[:2]"
+    why: >
+      OpenCV-style sizes are (width, height). img.shape is the SOURCE size, and it is
+      (height, width): that's the trap this drill is named after.
+  - line: "small = cv2.resize(img, (nw, nh), interpolation=cv2.INTER_AREA)"
+    wrong:
+      - "small = cv2.resize(img, (nh, nw), interpolation=cv2.INTER_AREA)"
+      - "small = cv2.resize(img, (side, side), interpolation=cv2.INTER_AREA)"
+      - "small = cv2.resize(img, (nw, nw), interpolation=cv2.INTER_AREA)"
+    why: >
+      cv2.resize wants (width, height). Resizing straight to side x side stretches the
+      image, and (nw, nw) makes it square, so it no longer fits the hole it's pasted into.
+
+bugs:
+  - line: "ys = np.minimum((np.arange(h) * H) // h, H - 1)"
+    bad: "ys = np.minimum((np.arange(h) * W) // h, H - 1)"
+    why: >
+      Rows scale with the HEIGHT. Using W only looks right on square images.
+  - line: "y0, x0 = (side - nh) // 2, (side - nw) // 2"
+    bad: "y0, x0 = (side - nw) // 2, (side - nh) // 2"
+    why: >
+      The vertical offset depends on the new height. Swapped, the paste lands in the
+      wrong place (or doesn't fit at all).
+
+tweak:
+  question: >
+    A photo 400 wide and 200 tall goes through fit_square(img, 200).
+    Where do the black bars go?
+  options:
+    - "Left and right"
+    - "Top and bottom"
+    - "Nowhere: the photo gets stretched to fill the square"
+  answer: 1
+  why: >
+    The longer side (width 400) becomes 200, so the photo is 200 x 100: the 100 missing
+    rows are split into bars above and below. Stretching is what plain cv2.resize does.
+  images: true
+  run: |
+    img = cv2.resize(demo_image(), (400, 200), interpolation=cv2.INTER_AREA)
+    show("400 x 200 photo", img)
+    show("fit_square(img, 200)", fit_square(img, 200))
+    show("cv2.resize to 200 x 200: stretched", cv2.resize(img, (200, 200)))
